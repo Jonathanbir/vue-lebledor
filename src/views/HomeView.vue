@@ -318,8 +318,15 @@
   </div>
 </template>
 
-<script setup>
+<script>
 import BannerController from "../components/BannerController.vue";
+
+export default {
+  data() {
+    return { submenu: false };
+  },
+  components: { BannerController },
+};
 </script>
 
 <style lang="scss" scoped>

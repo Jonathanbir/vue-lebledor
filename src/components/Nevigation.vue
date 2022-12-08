@@ -12,11 +12,19 @@
         <RouterLink to="/"
           ><img class="shopping" src="../images/10017.svg"
         /></RouterLink>
-        <RouterLink class="menu" to="/menu"
+        <RouterLink
+          class="menu"
+          to="/"
+          @mouseover="$emit('mouseOver', { submenu: true, show: true })"
+          @mouseout="$emit('mouseOut', { submenu: true, show: false })"
           >美味餐點
           <img class="arrow-triggle" src="../images/10018.png" />
         </RouterLink>
-        <RouterLink class="location" to="/location"
+        <RouterLink
+          class="location"
+          to="/"
+          @mouseover="$emit('mouseOver', { show: true, submenu: false })"
+          @mouseout="$emit('mouseOut', { show: false, submenu: false })"
           >餐廳據點 <img class="arrow-triggle" src="../images/10018.png"
         /></RouterLink>
         <RouterLink to="/news">最新消息</RouterLink>
@@ -34,11 +42,16 @@
 </template>
 
 <script>
+import { toRefs } from "vue";
 import { RouterLink, RouterView, useRouter } from "vue-router";
+
 export default {
-  setup() {
-    const router = useRouter();
-    return {};
+  props: ["show", "submenu"],
+  emits: ["mouseOver", "mouseOut"],
+
+  setup(props) {
+    const { show, submenu } = toRefs(props);
+    return show, submenu;
   },
 };
 </script>
