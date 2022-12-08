@@ -3,11 +3,22 @@
     <div class="wrapper">
       <nav>
         <RouterLink to="/"><div class="sprite-nav-logo"></div></RouterLink>
+        <RouterLink to="/">
+          <div class="translate-btn">
+            <div class="translate-cn-btn"></div>
+            <div class="translate-en-btn"></div>
+          </div>
+        </RouterLink>
         <RouterLink to="/"
           ><img class="shopping" src="../images/10017.svg"
         /></RouterLink>
-        <RouterLink to="/menu">美味餐點</RouterLink>
-        <RouterLink to="/location">餐廳據點</RouterLink>
+        <RouterLink class="menu" to="/menu"
+          >美味餐點
+          <img class="arrow-triggle" src="../images/10018.png" />
+        </RouterLink>
+        <RouterLink class="location" to="/location"
+          >餐廳據點 <img class="arrow-triggle" src="../images/10018.png"
+        /></RouterLink>
         <RouterLink to="/news">最新消息</RouterLink>
         <RouterLink to="/members">會員優惠</RouterLink>
         <RouterLink class="button-rectangle" to="/">
@@ -49,6 +60,75 @@ nav {
   font-size: 12px;
   text-align: center;
   margin-top: 2rem;
+  transition: all 0.5s ease-in-out;
+
+  .menu {
+    position: relative;
+    padding: 5px 20px;
+    border-left: none;
+
+    &:hover .arrow-triggle {
+      transform: rotate(180deg);
+    }
+    .arrow-triggle {
+      position: absolute;
+      top: 6px;
+      right: 4px;
+      width: 10px;
+    }
+  }
+
+  .location {
+    position: relative;
+    padding: 5px 20px;
+
+    &:hover .arrow-triggle {
+      transform: rotate(180deg);
+    }
+    .arrow-triggle {
+      position: absolute;
+      top: 6px;
+      right: 4px;
+      width: 10px;
+    }
+  }
+
+  .translate-btn {
+    position: relative;
+    width: 71px;
+    height: 31px;
+    background-image: url("../images/10014.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .translate-cn-btn {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 13px;
+    height: 14px;
+    background-image: url("../images/10015.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .translate-en-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 24px;
+    height: 14px;
+    background-image: url("../images/10016.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .shopping {
+    width: 65px;
+    margin-top: -3px;
+  }
 
   a {
     display: inline-block;
@@ -62,11 +142,11 @@ nav {
     border-left: 1px solid #ccb7a5;
   }
 
-  a.router-link-exact-active {
+  .router-link-exact-active {
     color: var(--color-text);
   }
 
-  a.router-link-exact-active:hover {
+  .router-link-exact-active:hover {
     background-color: transparent;
   }
 
@@ -171,7 +251,7 @@ nav a:nth-child(3) {
   border: 0;
 }
 
-nav .shopping {
-  width: 65px;
+nav a:hover {
+  color: #fff;
 }
 </style>
