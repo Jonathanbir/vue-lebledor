@@ -1,12 +1,7 @@
 <template>
   <main>
     <Transition name="fadeAndShow">
-      <div
-        class="sub-menu"
-        id="nav-top-sub"
-        style="transform: matrix(1, 0, 0, 1, 0, 0)"
-        v-show="show"
-      >
+      <div class="sub-menu" id="nav-top-sub" :class="{ transform: show }">
         <div
           class="sub-menu-inner cuisine active"
           id="nav-top-sub-cuisine"
@@ -234,6 +229,7 @@ export default {
     const { show, submenu } = toRefs(props);
     console.log("...", show.value, submenu.value);
   },
+  methods: {},
 };
 </script>
 
@@ -252,20 +248,20 @@ export default {
 .fadeAndShow-leave-to {
   top: -300px;
 }
+
 .sub-menu {
   position: fixed;
   top: 0;
   will-change: transform;
-  -webkit-transform: translateY(-450px);
-  transform: translateY(-450px);
+  transform: translateY(-1000px);
   width: 100%;
   height: 80%;
   padding-top: 35px;
   text-align: center;
   background-color: #000;
   opacity: 0.8;
-  z-index: 1;
-  transition: all 5s ease-in-out;
+  z-index: 99;
+  transition: all 0.5s ease-in-out;
   .sub-menu-inner {
     position: relative;
     top: 80px;
@@ -317,5 +313,8 @@ export default {
       }
     }
   }
+}
+.transform {
+  transform: matrix(1, 0, 0, 1, 0, 0);
 }
 </style>
