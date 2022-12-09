@@ -222,13 +222,9 @@
 </template>
 
 <script>
-import { Transition, toRefs } from "vue";
+import { Transition } from "vue";
 export default {
   props: ["show", "submenu"],
-  setup(props) {
-    const { show, submenu } = toRefs(props);
-    console.log("...", show.value, submenu.value);
-  },
   methods: {},
 };
 </script>

@@ -42,17 +42,11 @@
 </template>
 
 <script>
-import { toRefs } from "vue";
 import { RouterLink, RouterView, useRouter } from "vue-router";
 
 export default {
   props: ["show", "submenu"],
   emits: ["mouseOver", "mouseOut"],
-
-  setup(props) {
-    const { show, submenu } = toRefs(props);
-    return show, submenu;
-  },
 };
 </script>
 
