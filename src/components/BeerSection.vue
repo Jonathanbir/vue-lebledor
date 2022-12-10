@@ -7,42 +7,85 @@
         </div>
         <div class="center">
           <h3 class="title-background">滴滴是精釀</h3>
-
           <div class="left">
             <div class="container-beer">
               <div class="container-img">
-                <img class="img-beer" :src="beers[flavor].beer" />
+                <Transition name="fadeAndScale" mode="out-in">
+                  <img
+                    v-show="show"
+                    class="img-beer"
+                    :src="beers[flavor].beer"
+                  />
+                </Transition>
               </div>
             </div>
-            <div id="beer-buttons" class="container-text">
+            <div id="beer-buttons" class="beer-buttons">
               <button
-                class="button button-beer active"
+                :class="
+                  flavor == '0'
+                    ? 'button button-beer active'
+                    : 'button button-beer'
+                "
+                :style="
+                  (flavor == '2' && { color: '#c77b5d' }) ||
+                  (flavor == '3' && { color: '#c77b5d' })
+                "
                 beer-id="0"
-                @click="flavor = '0'"
+                @click="
+                  animation();
+                  flavor = '0';
+                "
               >
                 蜂蜜
               </button>
               <hr class="hr" />
               <button
-                class="button button-beer"
+                :class="
+                  flavor == '1'
+                    ? 'button button-beer active'
+                    : 'button button-beer'
+                "
+                :style="
+                  (flavor == '2' && { color: '#c77b5d' }) ||
+                  (flavor == '3' && { color: '#c77b5d' })
+                "
                 beer-id="1"
-                @click="flavor = '1'"
+                @click="
+                  animation();
+                  flavor = '1';
+                "
               >
                 琥珀
               </button>
               <hr class="hr" />
               <button
-                class="button button-beer"
+                :class="
+                  flavor == '2'
+                    ? 'button button-beer active-white'
+                    : 'button button-beer'
+                "
+                :style="flavor == '3' && { color: '#c77b5d' }"
                 beer-id="2"
-                @click="flavor = '2'"
+                @click="
+                  animation();
+                  flavor = '2';
+                "
               >
                 小麥
               </button>
               <hr class="hr" />
               <button
-                class="button button-beer"
+                :class="
+                  flavor == '3'
+                    ? 'button button-beer active-white'
+                    : 'button button-beer'
+                "
+                :style="flavor == '2' && { color: '#c77b5d' }"
                 beer-id="3"
-                @click="flavor = '3'"
+                @click="
+                  animation();
+                  flavor = '3';
+                "
               >
                 黑麥
               </button>
@@ -51,25 +94,35 @@
           <div class="right">
             <div class="hidden-box">
               <div class="container-text">
-                <div class="title-article">
-                  <h3 class="text active">
-                    Honey <span class="no-break">in Charm</span>
-                    <hr class="title-article-hr" />
-                  </h3>
-                </div>
-                <div class="subtitle-text">
-                  <h3
-                    class="sprite sprite-article-honey-title"
-                    :style="beers[flavor].title"
-                  >
-                    {{ beers[flavor].h3 }}
-                  </h3>
-                </div>
-                <div class="paragraph">
-                  <p class="beer-shortcut active">
-                    {{ beers[flavor].content }}
-                  </p>
-                </div>
+                <Transition name="fadeAndIn">
+                  <div v-show="show">
+                    <div class="title-article">
+                      <h3 class="text active">
+                        Honey <span class="no-break">in Charm</span>
+                        <hr class="title-article-hr" />
+                      </h3>
+                    </div>
+                    <div class="subtitle-text">
+                      <h3
+                        class="sprite sprite-article-honey-title"
+                        :style="beers[flavor].title"
+                        v-show="show"
+                      >
+                        {{ beers[flavor].h3 }}
+                      </h3>
+                    </div>
+                  </div>
+                </Transition>
+                <Transition name="fadeAndDown" mode="out-in">
+                  <div class="paragraph" v-show="show">
+                    <p
+                      class="beer-shortcut active"
+                      :style="flavor == '0' && { color: '#000' }"
+                    >
+                      {{ beers[flavor].content }}
+                    </p>
+                  </div>
+                </Transition>
               </div>
             </div>
           </div>
@@ -81,7 +134,15 @@
 
 <script setup>
 import { ref } from "vue";
-let flavor = ref("0");
+import { Transition } from "vue";
+const flavor = ref("0");
+const show = ref(true);
+let animation = () => {
+  show.value = false;
+  setTimeout(() => {
+    show.value = true;
+  }, 300);
+};
 const beers = ref([
   {
     id: 1,
@@ -143,6 +204,98 @@ const beers = ref([
 </script>
 
 <style lang="scss" scoped>
+.fadeAndScale-enter-active {
+  animation: scale 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.fadeAndScale-enter-from {
+  opacity: 0;
+}
+
+.fadeAndScale-enter-to {
+  opacity: 1;
+}
+
+.fadeAndScale-leave-active {
+  transition: all 0.7s ease-in;
+  animation: scale 0.7s ease-in reverse;
+}
+
+.fadeAndScale-leave-from {
+  opacity: 1;
+}
+.fadeAndScale-leave-to {
+  opacity: 0;
+}
+.fadeAndScale-enter-active {
+  animation: scale 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.fadeAndScale-leave-active {
+  transition: all 0.3s ease-in;
+  animation: scale 0.3s ease-in reverse;
+}
+.fadeAndIn-enter-from {
+  opacity: 0;
+  left: -300px;
+}
+
+.fadeAndIn-enter-to {
+  opacity: 1;
+  left: 0;
+}
+.fadeAndIn-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeAndIn-leave-to {
+  opacity: 0;
+  transform: translateX(-300px);
+}
+.fadeAndIn-enter-active {
+  animation: scale 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.fadeAndIn-leave-active {
+  transition: all 0.7s ease-in;
+  animation: scale 0.7s ease-in;
+}
+
+.fadeAndDown-enter-from {
+  position: relative;
+  top: -200px;
+  opacity: 0;
+}
+.fadeAndDown-enter-to {
+  position: relative;
+  top: 0;
+  opacity: 1;
+}
+
+.fadeAndDown-leave-from {
+  position: relative;
+  top: 0;
+  opacity: 1;
+}
+.fadeAndDown-leave-to {
+  position: relative;
+  top: -200px;
+  opacity: 0;
+}
+.fadeAndDown-enter-active {
+  animation: scale 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.fadeAndDown-leave-active {
+  transition: all 0.3s ease-in;
+  animation: scale 0.3s ease-in reverse;
+}
+
 .title-article {
   width: 210px;
   margin-bottom: 20px;
@@ -232,6 +385,7 @@ const beers = ref([
           padding-bottom: 205.205%;
           max-width: 365px;
           pointer-events: none;
+          transition: all 1s ease-in-out;
           .container-img {
             width: 80%;
             position: absolute;
@@ -245,13 +399,14 @@ const beers = ref([
             }
           }
         }
-        .container-text {
+        .beer-buttons {
           position: absolute;
           bottom: 150px;
           left: 35px;
           width: 50px;
           text-align: center;
           z-index: 2;
+          transition: all 0.5s ease-in-out;
           .button {
             position: relative;
             border: none;
@@ -263,8 +418,14 @@ const beers = ref([
           .button:hover {
             color: #a2502f;
           }
+          .button-brown {
+            color: #c77b5d;
+          }
           .active {
             color: #a2502f;
+          }
+          .active-white {
+            color: #fff;
           }
           .hr {
             margin: 12px auto;
@@ -301,31 +462,34 @@ const beers = ref([
                 line-height: 24px;
                 margin-bottom: 30px;
                 height: 90px;
+                color: #fff;
               }
             }
-            .title-article {
-              margin-bottom: -15px;
-              color: #89412e;
-              .title-article-hr {
-                margin-top: 15px;
-                margin-bottom: 15px;
-                width: 122px;
-                border-color: #89412e;
+            div {
+              .title-article {
+                margin-bottom: -15px;
+                color: #89412e;
+                .title-article-hr {
+                  margin-top: 15px;
+                  margin-bottom: 15px;
+                  width: 122px;
+                  border-color: #89412e;
+                }
               }
-            }
-            .subtitle-text {
-              position: absolute;
-              top: 5px;
-              left: 148px;
-              .sprite-article-honey-title {
+              .subtitle-text {
                 position: absolute;
-                top: 4px;
-                left: 50px;
-                width: 250px;
-                height: 34px;
-                text-indent: -9999px;
-                text-align: start;
-                background-size: 100% 100%;
+                top: 5px;
+                left: 148px;
+                .sprite-article-honey-title {
+                  position: absolute;
+                  top: 4px;
+                  left: 50px;
+                  width: 250px;
+                  height: 34px;
+                  text-indent: -9999px;
+                  text-align: start;
+                  background-size: 100% 100%;
+                }
               }
             }
           }

@@ -230,20 +230,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.fadeAndShow-enter-from {
-  top: -500px;
-}
+// .fadeAndShow-enter-from {
+//   top: -500px;
+// }
 
-.fadeAndShow-enter-to {
-  top: 0px;
-}
-.fadeAndShow-leave-from {
-  top: 0px;
-}
+// .fadeAndShow-enter-to {
+//   top: 0px;
+// }
+// .fadeAndShow-leave-from {
+//   top: 0px;
+// }
 
-.fadeAndShow-leave-to {
-  top: -300px;
-}
+// .fadeAndShow-leave-to {
+//   top: -300px;
+// }
 
 .sub-menu {
   position: fixed;
