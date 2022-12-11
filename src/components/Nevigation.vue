@@ -171,7 +171,7 @@ nav {
 
   .sprite-nav-logo {
     position: absolute;
-    top: 0px;
+    top: -10px;
     left: -150px;
     width: 82px;
     height: 41px;

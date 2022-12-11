@@ -1,13 +1,5 @@
 <template>
-  <div class="banner">
-    <BannerController />
-    <h1 class="web-title"></h1>
-    <div class="web-title-2"></div>
-    <div class="web-title-3"></div>
-    <div class="haccp"></div>
-    <div class="awwwards"></div>
-    <div class="cssdesignawards"></div>
-  </div>
+  <BannerVue />
   <div class="signature">
     <div class="sprite"></div>
     <div class="container-article">
@@ -237,7 +229,7 @@
 </template>
 
 <script>
-import BannerController from "../components/BannerController.vue";
+import BannerVue from "../components/Banner.vue";
 import BeerSectionVue from "../components/BeerSection.vue";
 import LocationsVue from "../components/Locations.vue";
 
@@ -245,7 +237,7 @@ export default {
   data() {
     return { submenu: false };
   },
-  components: { BannerController, BeerSectionVue, LocationsVue },
+  components: { BannerVue, BeerSectionVue, LocationsVue },
 };
 </script>
 
@@ -334,111 +326,6 @@ export default {
   transition: color 0.1s ease-out;
 }
 /* home first section */
-.banner {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background-image: url("../images/10024.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  .web-title {
-    position: absolute;
-    top: -80px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 150px;
-    height: 150px;
-    margin: auto;
-    background-image: url("../images/10026.png");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .web-title-2 {
-    position: absolute;
-    top: 0px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    margin: auto;
-    background-image: url("../images/10027.png");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .web-title-3 {
-    position: absolute;
-    top: 50px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 150px;
-    height: 150px;
-    margin: auto;
-    background-image: url("../images/10028.png");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .haccp {
-    display: block;
-    width: 99px;
-    height: 99px;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    background-image: url("../images/10021.png");
-    background-size: 100%;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
-
-  .haccp:hover {
-    left: 0;
-    background-position: 0 -99px;
-  }
-
-  .awwwards {
-    width: 90px;
-    height: 135px;
-    position: absolute;
-    top: 200px;
-    left: -40px;
-    background-image: url("../images/10022.png");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-  }
-  .awwwards:hover {
-    left: 0;
-  }
-  .cssdesignawards {
-    width: 90px;
-    height: 90px;
-    position: absolute;
-    top: 350px;
-    left: -50px;
-    background-image: url("../images/10023.png");
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
-  }
-  .cssdesignawards:hover {
-    left: 0;
-  }
-}
 
 /* home second section */
 .signature {
