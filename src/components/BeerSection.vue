@@ -38,7 +38,13 @@
               >
                 蜂蜜
               </button>
-              <hr class="hr" />
+              <hr
+                class="hr"
+                :style="
+                  (flavor == '2' && { background: '#c77b5d' }) ||
+                  (flavor == '3' && { background: '#c77b5d' })
+                "
+              />
               <button
                 :class="
                   flavor == '1'
@@ -57,7 +63,13 @@
               >
                 琥珀
               </button>
-              <hr class="hr" />
+              <hr
+                class="hr"
+                :style="
+                  (flavor == '2' && { background: '#c77b5d' }) ||
+                  (flavor == '3' && { background: '#c77b5d' })
+                "
+              />
               <button
                 :class="
                   flavor == '2'
@@ -73,7 +85,13 @@
               >
                 小麥
               </button>
-              <hr class="hr" />
+              <hr
+                class="hr"
+                :style="
+                  (flavor == '2' && { background: '#c77b5d' }) ||
+                  (flavor == '3' && { background: '#c77b5d' })
+                "
+              />
               <button
                 :class="
                   flavor == '3'
