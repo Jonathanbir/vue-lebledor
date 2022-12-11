@@ -303,6 +303,21 @@
     "picocolors" "^1.0.0"
     "source-map-js" "^1.0.2"
 
+"primeflex@^3.3.0":
+  "integrity" "sha512-4hvyIO7lERN5bnyURn67Qpozghins8Jq/GSXO6tymc3oa2ADHWuiYBti8ZptPwHu+uD/HTEisS26NEmeIGfPZQ=="
+  "resolved" "https://registry.npmjs.org/primeflex/-/primeflex-3.3.0.tgz"
+  "version" "3.3.0"
+
+"primeicons@^5.0.0 || ^6.0.0", "primeicons@^6.0.1":
+  "integrity" "sha512-KDeO94CbWI4pKsPnYpA1FPjo79EsY9I+M8ywoPBSf9XMXoe/0crjbUK7jcQEDHuc0ZMRIZsxH3TYLv4TUtHmAA=="
+  "resolved" "https://registry.npmjs.org/primeicons/-/primeicons-6.0.1.tgz"
+  "version" "6.0.1"
+
+"primevue@^3.21.0":
+  "integrity" "sha512-VqXMvigzz24JRPgG+i20Vj1AMS0AKiNdT9iFkmcWnO4EilntLS2I1yR2OE1hd9bMFV97ePsdaScIygW+bedN2g=="
+  "resolved" "https://registry.npmjs.org/primevue/-/primevue-3.21.0.tgz"
+  "version" "3.21.0"
+
 "readdirp@~3.6.0":
   "integrity" "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA=="
   "resolved" "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz"
@@ -381,7 +396,7 @@
   dependencies:
     "@vue/devtools-api" "^6.4.5"
 
-"vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.41", "vue@3.2.45":
+"vue@^3.0.0", "vue@^3.2.0", "vue@^3.2.25", "vue@^3.2.41", "vue@3.2.45":
   "integrity" "sha512-9Nx/Mg2b2xWlXykmCwiTUCWHbWIj53bnkizBxKai1g61f2Xit700A1ljowpTIM11e3uipOeiPcSqnmBg6gyiaA=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-3.2.45.tgz"
   "version" "3.2.45"

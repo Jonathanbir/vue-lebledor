@@ -7,21 +7,22 @@
             It's like <span class="no-break">no place else</span>
           </h3>
           <h3 class="sprite sprite-article-locations-title">三五好友湊一桌</h3>
-
           <hr class="title-article-hr" />
           <div class="dropdown">
-            <button
-              class="dropdown-button"
-              id="dLabel"
-              type="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
+            <Dropdown
+              v-model="selectedGroupedCity"
+              :options="groupedCities"
+              optionLabel="label"
+              optionGroupLabel="label"
+              optionGroupChildren="items"
+              placeholder="選擇分店"
             >
-              選擇分店
-              <div class="sprite sprite-button-arrow-down"></div>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dLabel"></div>
+              <template #optiongroup="slotProps">
+                <div class="flex align-items-center country-item">
+                  <div>{{ slotProps.option.label }}</div>
+                </div>
+              </template>
+            </Dropdown>
           </div>
         </div>
       </div>
@@ -39,14 +40,70 @@
 </template>
 
 <script>
+import { RouterLink, RouterView, useRouter } from "vue-router";
+
 export default {
-  setup() {
-    return {};
+  data() {
+    return {
+      selectedGroupedCity: null,
+      groupedCities: [
+        {
+          label: "北部",
+          code: "DE",
+          items: [
+            { label: "台北美麗華店", value: "台北美麗華店" },
+            { label: "台北京站店", value: "台北京站店" },
+            { label: "信義誠品店", value: "信義誠品店" },
+            { label: "南港CITYLINK店", value: "南港CITYLINK店" },
+            { label: "板橋大遠百店", value: "板橋大遠百店" },
+            { label: "新莊晶冠店", value: "新莊晶冠店" },
+            { label: "新竹巨城店PARK15", value: "新竹巨城店PARK15" },
+            { label: "中壢SOGO店", value: "中壢SOGO店" },
+            { label: "新竹竹北店", value: "新竹竹北店" },
+          ],
+        },
+        {
+          label: "中部",
+          code: "US",
+          items: [
+            { label: "台中市政店", value: "台中市政店" },
+            { label: "台中勤美店", value: "台中勤美店" },
+            { label: "台南南紡店", value: "台南南紡店" },
+          ],
+        },
+        {
+          label: "南部",
+          code: "JP",
+          items: [
+            { label: "台南南紡店", value: "台南南紡店" },
+            { label: "高雄義大店", value: "高雄義大店" },
+          ],
+        },
+        {
+          label: "UMAMI 金色三麥",
+          code: "JP",
+          items: [{ label: "微風南山店", value: "微風南山店" }],
+        },
+      ],
+    };
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.p-dropdown {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  text-align: left;
+  padding: 0 20px;
+  background: #ccb9aa;
+  color: #000;
+  font-size: 16px;
+  line-height: 16px;
+  border-radius: initial;
+}
+
 .title-article {
   width: 210px;
   margin-bottom: 20px;
