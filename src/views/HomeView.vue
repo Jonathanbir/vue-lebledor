@@ -99,7 +99,7 @@
         id="article-great-start-right"
         width="381"
         height="257"
-        style="transform: translate3d(0px, 64.1379px, 0px)"
+        style="transform: translate3d(-60px, 64.1379px, 0px)"
         src="../images/10003.jpg"
       />
       <div class="container-text">
@@ -323,7 +323,6 @@ import LocationsVue from "../components/Locations.vue";
 /* home second section */
 .signature {
   position: relative;
-  min-width: 1500px;
   max-height: 767px;
   box-sizing: border-box;
   padding-top: 5%;
@@ -402,6 +401,7 @@ import LocationsVue from "../components/Locations.vue";
   align-items: flex-start;
   justify-content: center;
   background-color: #2e2822;
+  overflow: hidden;
   .left {
     position: relative;
     width: 50%;
