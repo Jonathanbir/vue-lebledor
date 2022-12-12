@@ -18,12 +18,10 @@ export default {
   },
   methods: {
     handleMouseOver(value) {
-      // console.log("1", value.show, value.submenu);
       this.submenu = value.submenu;
       this.show = value.show;
     },
     handleMouseOut(value) {
-      // console.log("2", value.show, value.submenu);
       this.submenu = value.submenu;
       this.show = value.show;
     },

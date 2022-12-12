@@ -1,3 +1,37 @@
+.fadeAndShow-enter-active {
+  animation: scale 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.fadeAndShow-enter-from {
+  opacity: 0;
+}
+
+.fadeAndShow-enter-to {
+  opacity: 1;
+}
+
+.fadeAndShow-leave-active {
+  transition: all 0.7s ease-in;
+  animation: scale 0.7s ease-in reverse;
+}
+
+.fadeAndShow-leave-from {
+  opacity: 1;
+}
+.fadeAndShow-leave-to {
+  opacity: 0;
+}
+.fadeAndShow-enter-active {
+  animation: scale 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.fadeAndShow-leave-active {
+  transition: all 0.3s ease-in;
+  animation: scale 0.3s ease-in reverse;
+}
+
 .dropdown {
   transform: translateX(100px);
 }

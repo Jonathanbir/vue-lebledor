@@ -10,7 +10,7 @@
           <div class="left">
             <div class="container-beer">
               <div class="container-img">
-                <Transition name="fadeAndScale" mode="out-in">
+                <Transition name="fadeAndShow" mode="out-in">
                   <img
                     v-show="show"
                     class="img-beer"
@@ -222,39 +222,6 @@ const beers = ref([
 </script>
 
 <style lang="scss" scoped>
-.fadeAndScale-enter-active {
-  animation: scale 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
-}
-
-.fadeAndScale-enter-from {
-  opacity: 0;
-}
-
-.fadeAndScale-enter-to {
-  opacity: 1;
-}
-
-.fadeAndScale-leave-active {
-  transition: all 0.7s ease-in;
-  animation: scale 0.7s ease-in reverse;
-}
-
-.fadeAndScale-leave-from {
-  opacity: 1;
-}
-.fadeAndScale-leave-to {
-  opacity: 0;
-}
-.fadeAndScale-enter-active {
-  animation: scale 0.7s ease-in-out;
-  transition: all 0.7s ease-in-out;
-}
-
-.fadeAndScale-leave-active {
-  transition: all 0.3s ease-in;
-  animation: scale 0.3s ease-in reverse;
-}
 .fadeAndIn-enter-from {
   opacity: 0;
   left: -300px;
