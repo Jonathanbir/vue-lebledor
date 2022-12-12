@@ -4,10 +4,14 @@
       <div
         class="sub-menu-inner cuisine active"
         id="nav-top-sub-cuisine"
-        v-if="submenu"
+        v-if="props.submenu"
       >
         <div class="row picture">
-          <div class="circle" id="nav-top-sub-cuisine-img" :style="style"></div>
+          <div
+            class="circle"
+            id="nav-top-sub-cuisine-img"
+            :style="hover.style"
+          ></div>
         </div>
         <div class="row">
           <h4 class="title">主廚推薦</h4>
@@ -17,9 +21,8 @@
               href="/menu/chef-recommended/signature"
               data-id="2011"
               @mouseover="
-                this.style =
-                  'opacity:1;background-image:url(https:////lebledor-img.s3.amazonaws.com/cover/536c9e8a9dc058d004a0294b55840313.png);';
-                animation();
+                hover.style =
+                  'opacity:1;background-image:url(https:////lebledor-img.s3.amazonaws.com/cover/536c9e8a9dc058d004a0294b55840313.png);'
               "
               >精選菜色</a
             >
@@ -31,7 +34,7 @@
               href="/menu/appetizer/starter"
               data-id="2022"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/e422d258991d8f566cfd179f426e2520.png);'
               "
               >開胃菜</a
@@ -40,7 +43,7 @@
               href="/menu/appetizer/salad"
               data-id="2021"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/ad50eb7e0a527ea2fe8dcf6557c995d9.png);'
               "
               >沙拉類</a
@@ -55,7 +58,7 @@
               href="/menu/iconic-dishes/pot"
               data-id="2036"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d508c3b35aef826342d403cceb397fb8.png);'
               "
               >鍋湯類</a
@@ -64,7 +67,7 @@
               href="/menu/iconic-dishes/pasta"
               data-id="2032"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d192096e541416472bf682f2e290002a.png);'
               "
               >義大利麵</a
@@ -73,7 +76,7 @@
               href="/menu/iconic-dishes/rice"
               data-id="2031"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/57ca230b9258d09a416d513267503c4f.png);'
               "
               >飯類</a
@@ -82,7 +85,7 @@
               href="/menu/iconic-dishes/grilled"
               data-id="2035"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/a77e2f529ed139cfa316479d231f9a07.png);'
               "
               >燒烤類</a
@@ -91,7 +94,7 @@
               href="/menu/iconic-dishes/pizza"
               data-id="2033"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d1a972853865f69d459300cdf4e731ad.png);'
               "
               >披薩類</a
@@ -100,7 +103,7 @@
               href="/menu/iconic-dishes/fried"
               data-id="2034"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/a180d6ab309298c29c13a0ef4cec4cae.png);'
               "
               >酥炸類</a
@@ -115,7 +118,7 @@
               href="/menu/classic-confection/dessert"
               data-id="2041"
               @mouseover="
-                this.style =
+                hover.style =
                   'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/78fe6c6e1029b356063e788b306fdfa7.png);'
               "
               >甜點飲料</a
@@ -128,7 +131,7 @@
           <div
             class="circle location-circle"
             id="nav-top-sub-locations-img"
-            :style="locations"
+            :style="hover.locations"
           ></div>
         </div>
         <div class="row">
@@ -138,7 +141,7 @@
               class="button button-nav-top-sub"
               href="/location/miramar"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
               "
               >台北美麗華店</a
@@ -146,7 +149,7 @@
               class="button button-nav-top-sub"
               href="/location/qsquare"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
               "
               >台北京站店</a
@@ -154,7 +157,7 @@
               class="button button-nav-top-sub"
               href="/location/cellar"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/3-cellar/cover.png);'
               "
               >信義誠品店</a
@@ -162,7 +165,7 @@
               class="button button-nav-top-sub"
               href="/location/citylink"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/4-citylink/cover.png);'
               "
               >南港CITYLINK店</a
@@ -170,7 +173,7 @@
               class="button button-nav-top-sub"
               href="/location/megacity"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/5-megacity/cover.png);'
               "
               >板橋大遠百店</a
@@ -178,7 +181,7 @@
               class="button button-nav-top-sub"
               href="/location/jingguan"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
               "
               >新莊晶冠店</a
@@ -186,7 +189,7 @@
               class="button button-nav-top-sub"
               href="/location/bigcity"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/7-bigcity/cover.png);'
               "
               >新竹巨城店PARK15</a
@@ -194,7 +197,7 @@
               class="button button-nav-top-sub"
               href="/location/sogoa21"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/14-sogoa21/cover.png);'
               "
               >中壢SOGO店</a
@@ -202,7 +205,7 @@
               class="button button-nav-top-sub"
               href="/location/zhubei"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/17-zhubei/cover.png);'
               "
               >新竹竹北店</a
@@ -216,7 +219,7 @@
               class="button button-nav-top-sub"
               href="/location/shizheng"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/8-shizheng/cover.png);'
               "
               >台中市政店</a
@@ -224,7 +227,7 @@
               class="button button-nav-top-sub"
               href="/location/cmp"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/9-cmp/cover.png);'
               "
               >台中勤美店</a
@@ -236,7 +239,7 @@
               class="button button-nav-top-sub"
               href="/location/dreammall"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/10-dreammall/cover.png);'
               "
               >台南南紡店 </a
@@ -244,7 +247,7 @@
               class="button button-nav-top-sub"
               href="/location/edamall"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
               "
               >高雄義大店</a
@@ -252,7 +255,7 @@
               class="button button-nav-top-sub"
               href="/location/hanshin"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/15-hanshin/cover.png);'
               "
               >漢神巨蛋店</a
@@ -266,7 +269,7 @@
               class="button button-nav-top-sub"
               href="/location/umami"
               @mouseover="
-                this.locations =
+                hover.locations =
                   'opacity:1;background-image:url(https://www.lebledor.com/img/location/16-umami/cover.png);'
               "
               >微風南山店</a
@@ -278,14 +281,10 @@
   </main>
 </template>
 
-<script>
-import { Transition } from "vue";
-export default {
-  props: ["show", "submenu"],
-  data() {
-    return { style: "", locations: "" };
-  },
-};
+<script setup>
+import { ref } from "vue";
+const hover = ref({ style: "", locations: "" });
+const props = defineProps(["show", "submenu"]);
 </script>
 
 <style lang="scss" scoped>

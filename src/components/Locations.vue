@@ -10,8 +10,8 @@
           <hr class="title-article-hr" />
           <div class="dropdown">
             <Dropdown
-              v-model="selectedGroupedCity"
-              :options="groupedCities"
+              v-model="location.selectedGroupedCity"
+              :options="location.groupedCities"
               optionLabel="label"
               optionGroupLabel="label"
               optionGroupChildren="items"
@@ -26,68 +26,55 @@
           </div>
         </div>
       </div>
-      <div
-        class="article-loader"
-        id="article-locations-loader"
-        style="
-          transform: matrix(1, 0, 0, 1, 0, 0);
-          visibility: hidden;
-          opacity: 0;
-        "
-      ></div>
+      <div class="article-loader" id="article-locations-loader"></div>
     </article>
   </main>
 </template>
 
-<script>
-import { RouterLink, RouterView, useRouter } from "vue-router";
-
-export default {
-  data() {
-    return {
-      selectedGroupedCity: null,
-      groupedCities: [
-        {
-          label: "北部",
-          code: "DE",
-          items: [
-            { label: "台北美麗華店", value: "台北美麗華店" },
-            { label: "台北京站店", value: "台北京站店" },
-            { label: "信義誠品店", value: "信義誠品店" },
-            { label: "南港CITYLINK店", value: "南港CITYLINK店" },
-            { label: "板橋大遠百店", value: "板橋大遠百店" },
-            { label: "新莊晶冠店", value: "新莊晶冠店" },
-            { label: "新竹巨城店PARK15", value: "新竹巨城店PARK15" },
-            { label: "中壢SOGO店", value: "中壢SOGO店" },
-            { label: "新竹竹北店", value: "新竹竹北店" },
-          ],
-        },
-        {
-          label: "中部",
-          code: "US",
-          items: [
-            { label: "台中市政店", value: "台中市政店" },
-            { label: "台中勤美店", value: "台中勤美店" },
-            { label: "台南南紡店", value: "台南南紡店" },
-          ],
-        },
-        {
-          label: "南部",
-          code: "JP",
-          items: [
-            { label: "台南南紡店", value: "台南南紡店" },
-            { label: "高雄義大店", value: "高雄義大店" },
-          ],
-        },
-        {
-          label: "UMAMI 金色三麥",
-          code: "JP",
-          items: [{ label: "微風南山店", value: "微風南山店" }],
-        },
+<script setup>
+import { ref } from "vue";
+const location = ref({
+  selectedGroupedCity: null,
+  groupedCities: [
+    {
+      label: "北部",
+      code: "DE",
+      items: [
+        { label: "台北美麗華店", value: "台北美麗華店" },
+        { label: "台北京站店", value: "台北京站店" },
+        { label: "信義誠品店", value: "信義誠品店" },
+        { label: "南港CITYLINK店", value: "南港CITYLINK店" },
+        { label: "板橋大遠百店", value: "板橋大遠百店" },
+        { label: "新莊晶冠店", value: "新莊晶冠店" },
+        { label: "新竹巨城店PARK15", value: "新竹巨城店PARK15" },
+        { label: "中壢SOGO店", value: "中壢SOGO店" },
+        { label: "新竹竹北店", value: "新竹竹北店" },
       ],
-    };
-  },
-};
+    },
+    {
+      label: "中部",
+      code: "US",
+      items: [
+        { label: "台中市政店", value: "台中市政店" },
+        { label: "台中勤美店", value: "台中勤美店" },
+        { label: "台南南紡店", value: "台南南紡店" },
+      ],
+    },
+    {
+      label: "南部",
+      code: "JP",
+      items: [
+        { label: "台南南紡店", value: "台南南紡店" },
+        { label: "高雄義大店", value: "高雄義大店" },
+      ],
+    },
+    {
+      label: "UMAMI 金色三麥",
+      code: "JP",
+      items: [{ label: "微風南山店", value: "微風南山店" }],
+    },
+  ],
+});
 </script>
 
 <style lang="scss" scoped>

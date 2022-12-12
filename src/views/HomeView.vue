@@ -228,17 +228,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import BannerVue from "../components/Banner.vue";
 import BeerSectionVue from "../components/BeerSection.vue";
 import LocationsVue from "../components/Locations.vue";
-
-export default {
-  data() {
-    return { submenu: false };
-  },
-  components: { BannerVue, BeerSectionVue, LocationsVue },
-};
 </script>
 
 <style lang="scss" scoped>

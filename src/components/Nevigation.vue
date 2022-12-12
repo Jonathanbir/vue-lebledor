@@ -41,13 +41,11 @@
   <RouterView />
 </template>
 
-<script>
+<script setup>
 import { RouterLink, RouterView, useRouter } from "vue-router";
 
-export default {
-  props: ["show", "submenu"],
-  emits: ["mouseOver", "mouseOut"],
-};
+const props = defineProps(["show", "submenu"]);
+const emits = defineEmits(["mouseOver", "mouseOut"]);
 </script>
 
 <style lang="scss" scoped>

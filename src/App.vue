@@ -1,32 +1,28 @@
 <template>
   <NevigationVue
-    :show="show"
-    :submenu="submenu"
+    :show="message.show"
+    :submenu="message.submenu"
     @mouseOver="handleMouseOver"
     @mouseOut="handleMouseOut"
+    @scroll="handleScroll(e)"
   />
-  <SubMenuVue :show="show" :submenu="submenu" />
+  <SubMenuVue :show="message.show" :submenu="message.submenu" />
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
 import NevigationVue from "./components/Nevigation.vue";
 import SubMenuVue from "./components/SubMenu.vue";
 
-export default {
-  data() {
-    return { show: false, submenu: true };
-  },
-  methods: {
-    handleMouseOver(value) {
-      this.submenu = value.submenu;
-      this.show = value.show;
-    },
-    handleMouseOut(value) {
-      this.submenu = value.submenu;
-      this.show = value.show;
-    },
-  },
-  components: { NevigationVue, SubMenuVue },
+const message = ref({ show: false, submenu: true });
+
+const handleMouseOver = (value) => {
+  message.value.submenu = value.submenu;
+  message.value.show = value.show;
+};
+const handleMouseOut = (value) => {
+  message.value.submenu = value.submenu;
+  message.value.show = value.show;
 };
 </script>
 

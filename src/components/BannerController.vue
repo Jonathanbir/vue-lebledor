@@ -28,46 +28,40 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return { deg: 1, flag: false };
-  },
-  computed: {
-    rotateStyle() {
-      return {
-        transform: "rotate(" + this.deg + "deg)",
-      };
-    },
-  },
-  mounted() {
-    setInterval(() => {
-      if (this.deg % 90 == 0 || this.deg % 180 == 0 || this.deg % 270 == 0) {
-        setTimeout(() => {
-          this.deg++;
-        }, 3000);
-      } else {
-        this.deg++;
-        if (this.deg % 360 == 0) {
-          this.deg = 0;
-        }
+<script setup>
+import { ref, computed, onMounted } from "vue";
+const deg = ref(0);
+
+const rotateStyle = computed(() => {
+  return "transform: rotate(" + deg.value + "deg)";
+});
+
+onMounted(() => {
+  setInterval(() => {
+    if (deg.value % 90 == 0 || deg.value % 180 == 0 || deg.value % 270 == 0) {
+      setTimeout(() => {
+        deg.value++;
+      }, 3000);
+    } else {
+      deg.value++;
+      if (deg.value % 360 == 0) {
+        deg.value = 0;
       }
-    }, 100);
-  },
-  methods: {
-    clickDeg01() {
-      this.deg = 270;
-    },
-    clickDeg02() {
-      this.deg = 0;
-    },
-    clickDeg03() {
-      this.deg = 90;
-    },
-    clickDeg04() {
-      this.deg = 180;
-    },
-  },
+    }
+  }, 100);
+});
+
+let clickDeg01 = () => {
+  deg.value = 270;
+};
+let clickDeg02 = () => {
+  deg.value = 0;
+};
+let clickDeg03 = () => {
+  deg.value = 90;
+};
+let clickDeg04 = () => {
+  deg.value = 180;
 };
 </script>
 
