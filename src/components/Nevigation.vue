@@ -1,8 +1,19 @@
 <template>
   <header>
-    <div class="wrapper">
+    <div class="wrapper" :style="show && { background: '#000', top: '-15px' }">
       <nav>
-        <RouterLink to="/"><div class="sprite-nav-logo"></div></RouterLink>
+        <RouterLink to="/"
+          ><div
+            class="sprite-nav-logo"
+            :style="
+              show && {
+                transform: 'translate(10px, 4px)',
+                width: '64px',
+                height: '32px',
+              }
+            "
+          ></div
+        ></RouterLink>
         <RouterLink to="/">
           <div class="translate-btn">
             <div class="translate-cn-btn"></div>
@@ -42,13 +53,28 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from "vue";
 import { RouterLink, RouterView, useRouter } from "vue-router";
 
 const props = defineProps(["show", "submenu"]);
 const emits = defineEmits(["mouseOver", "mouseOut"]);
+const show = ref(false);
+
+onMounted(() => {
+  setInterval(() => {
+    if (window.pageYOffset > 25) {
+      show.value = true;
+    } else {
+      show.value = false;
+    }
+  }, 100);
+});
 </script>
 
 <style lang="scss" scoped>
+.black {
+  background-color: #000;
+}
 header .wrapper {
   display: flex;
   justify-content: center;
@@ -57,6 +83,7 @@ header .wrapper {
   position: fixed;
   top: 0;
   z-index: 999;
+  transition: all 0.5s ease-in-out;
 }
 
 nav {
