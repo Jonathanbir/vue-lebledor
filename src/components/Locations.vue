@@ -91,23 +91,6 @@ const location = ref({
   border-radius: initial;
 }
 
-.title-article {
-  width: 210px;
-  margin-bottom: 20px;
-  font-weight: 400;
-  line-height: 47px;
-  font-size: 43px;
-  color: #bd7461;
-  font-weight: 400;
-}
-.title-article-hr {
-  display: inline-block;
-  vertical-align: top;
-  width: 114px;
-  margin: 0;
-  border: 0;
-  border-bottom: solid 1px #bd7461;
-}
 .locations {
   width: 100%;
   height: 0;

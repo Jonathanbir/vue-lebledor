@@ -31,96 +31,7 @@
       </div>
     </div>
   </div>
-  <div class="container-article transition">
-    <div class="left">
-      <div class="container-salad">
-        <img
-          class="img-salad"
-          id="article-great-start-salad"
-          width="662"
-          height="331"
-          src="../images/great-start-salad.jpeg"
-        />
-        <img
-          class="img-salad fallback"
-          id="article-great-start-salad-fallback"
-          width="669"
-          height="358"
-          data-src="/img/home/great-start-salad-fallback"
-          data-file="png"
-        />
-        <div class="container-pieces" id="article-great-start-salad-pieces">
-          <div
-            class="sprite sprite-salad-piece1"
-            style="transform: matrix(1, 0, 0, 1, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece9"
-            style="transform: matrix(1, 0, 0, 1, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece2"
-            style="transform: matrix(1, 0, 0, 1, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece3"
-            style="transform: matrix(0.9848, 0.17364, -0.17364, 0.9848, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece4"
-            style="transform: matrix(0.96592, -0.25881, 0.25881, 0.96592, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece6"
-            style="transform: matrix(1, 0, 0, 1, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece7"
-            style="transform: matrix(1, 0, 0, 1, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece8"
-            style="transform: matrix(0.96592, 0.25881, -0.25881, 0.96592, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece10"
-            style="transform: matrix(1, 0, 0, 1, 0, 0)"
-          ></div>
-          <div
-            class="sprite sprite-salad-piece5"
-            style="transform: matrix(0.99862, 0.05233, -0.05233, 0.99862, 0, 0)"
-          ></div>
-        </div>
-      </div>
-    </div>
-    <div class="right">
-      <img
-        class="img-right"
-        id="article-great-start-right"
-        width="381"
-        height="257"
-        style="transform: translate3d(-60px, 64.1379px, 0px)"
-        src="../images/10003.jpg"
-      />
-      <div class="container-text">
-        <h3 class="title-article">Make a great start</h3>
-        <hr class="title-article-hr" />
-        <h3 class="sprite sprite-article-great-start-title">美好的開始</h3>
-        <p class="paragraph">
-          清新鮮脆，涼爽沁口，酥炸夠味，<br />想選哪一類，溫柔喚醒味覺，為饗宴揭開序幕。
-        </p>
-        <button
-          class="button button-rectangle"
-          onclick="window.location='/menu/appetizer';"
-        >
-          <div class="text">
-            開胃前菜
-            <span class="arrow sprite sprite-button-rectangle-arrow"></span>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
+  <AppetizerVue />
   <article class="main-attraction" id="article-main-attraction">
     <div class="container-article transition">
       <div class="center">
@@ -231,93 +142,11 @@
 <script setup>
 import BannerVue from "../components/Banner.vue";
 import BeerSectionVue from "../components/BeerSection.vue";
+import AppetizerVue from "../components/Appetizer.vue";
 import LocationsVue from "../components/Locations.vue";
 </script>
 
 <style lang="scss" scoped>
-// 共用
-.transition {
-  transition: all 0.5s ease-in-out;
-}
-.title-article {
-  width: 210px;
-  margin-bottom: 20px;
-  font-weight: 400;
-  line-height: 47px;
-  font-size: 43px;
-  color: #bd7461;
-  font-weight: 400;
-}
-.title-article-hr {
-  display: inline-block;
-  vertical-align: top;
-  width: 114px;
-  margin: 0;
-  border: 0;
-  border-bottom: solid 1px #bd7461;
-}
-
-.paragraph {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 30px;
-  margin-bottom: 35px;
-  width: 300px;
-  margin-bottom: 35px;
-}
-.button.button-rectangle {
-  position: relative;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 15px 70px;
-  border: 1px solid rgba(205, 184, 165, 0.6);
-  -webkit-transition: border-color 0.1s ease-out;
-  transition: border-color 0.1s ease-out;
-  margin-left: 5px;
-  margin: 0;
-  background: 0 0;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.button.button-rectangle:hover:before {
-  -webkit-transform: scaleY(1);
-  transform: scaleY(1);
-}
-
-.button.button-rectangle:before {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #cdb8a5;
-  pointer-events: none;
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transition: -webkit-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
-  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
-}
-.button.button-rectangle:hover .text {
-  color: #2e2822;
-}
-
-.button.button-rectangle .text {
-  position: relative;
-  z-index: 2;
-  color: #cdb8a5;
-  letter-spacing: 1px;
-  font-size: 18px;
-  font-weight: 400;
-  -webkit-transition: color 0.1s ease-out;
-  transition: color 0.1s ease-out;
-}
 /* home first section */
 
 /* home second section */
@@ -396,71 +225,6 @@ import LocationsVue from "../components/Locations.vue";
   }
 }
 
-.container-article {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  background-color: #2e2822;
-  overflow: hidden;
-  .left {
-    position: relative;
-    width: 50%;
-    height: 540px;
-    max-width: 670px;
-    text-align: right;
-    .container-salad {
-      display: inline-block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      max-width: 670px;
-      width: 100%;
-      padding-bottom: 98.507%;
-      pointer-events: none;
-      .img-salad {
-        position: absolute;
-        width: 100%;
-        height: 50%;
-        bottom: 0;
-        right: 0;
-      }
-    }
-  }
-  .right {
-    position: relative;
-    width: 50%;
-    height: 540px;
-    .img-right {
-      position: absolute;
-      top: 27px;
-      z-index: 1;
-      will-change: transform;
-      left: 510px;
-    }
-    .container-text {
-      position: relative;
-      margin-top: 140px;
-      padding-left: 83px;
-      color: #fff;
-      z-index: 2;
-
-      .sprite-article-great-start-title {
-        display: inline-block;
-        vertical-align: top;
-        margin-top: -3px;
-        margin-left: 17px;
-        margin-bottom: 22px;
-        width: 182px;
-        height: 31px;
-        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALYAAAAfCAMAAAB9PccQAAAATlBMVEUAAADNuKXNuKXNuKXNuKXNuKXNuKXNuKXNuKXNuKXNuKXNuKXNuKXNuKXNuKW2dGG2dGG2dGG2dGG2dGG2dGG2dGG2dGG2dGHNuKW2dGHZM0ORAAAAGHRSTlMARHe7ESKZ7sxmM91Vqoi78SAK07+niDxRVoUsAAAElUlEQVRYw62Y24KjIAyGJRwFdGZnT+n7v+iaiEREW7u7/42WpskHiQE73JSK3ZAd7YWxWJh6H50a/lU7D98+Pj++nVuN01jvA2p1dILdWG8xbRaAmHIzp+0bXhCzjTZLAWk/WYupAn08Ho8fF2EdRyoA6I6zQkQ4jsEBG3W5nxB986Upk86oLQGCocGAM11lrjjLp527z8eiC2yTEPO22LQM7VKUmRhVNSLqNqre7lM3R6wCMq0KjYOJruLizmoPczGE9RLRtdjjupB6U6KoZv9zWxOM3rTOq2+9OuNBjUhFIylSTVE+r21TLX2kmH7lC02laPYpKgZ5ZyEZHstPIb7EHpoQ+zl4+6IF4KWg9Wltk5wQpXPEgRdYc3k5RLvSwRvYCZMwkb1x5hm3ebKoEjbQt07Jis5tn8EA4JBryWPVfKjtgl3VhJjqykxc9ODzcEeCbXRdStCLEL3WuwTE0p4EGxY5NsgLu1rkEEO8vdqRTQI6w/VqV3pn3sKeEDeuuDBQvpUKWNzYXGYl2CBXR5X9VpE4FJFFKMGNx3DNDXiq3LTtyGFM3VriFbbx3p5gO07Ahq1IAVHKFNi5xoluZ4kbros7vqptQM+xkxTFJfbI94VOsNPaNEOZDyk1vYOdewSbvV/mBCx+WJ6oxwa7H584tm4wsz3DTmTUYRcDHlBg+9oO6NhOZdmL9DwhTnexpY1LcwKGmveYxnvVY6u607gOWxRTPGDzsioqRo/JwajYjeUt4OvbV18AWuQRQ90EhdswwEhQLOBSnSmDHfaUja6L2WBnLUrknLElYbY8rDk2m5oafn8+Pn93240SBZfVTlsRZPa/YCrPswpcqixTYroyHcil3/bYZrHgmTsM5LzBBkwMqY90C8P35Uzy/dnGc3LOk76lMbW1vF+qVKYDa98ae+xyVeyuq21HBWjYzIaxrvVkn54AJbzMM+waDLBPd40NcuW8jG9iJ8xcI5GNErAmRDoh/Vyofz7Bhv2JV9faNuwtI+ab2BFRv8JWDbblrh0wrEYaWG593fj69fHrq3sBuBZzM3CaraNM3MMePE4vsDO6FVsO22NkKzEWf72MEnn0OamdtrpzvP3CbWxdN1XBnvGgeYetE1AIb+5it9HdEM4NbaCE3cXmCSeiEmy7tpq8dRJlK7Y8WX+D7aiGx/PdNK4LdAdbUIWqGvjh8EiKgMvybeyI7C6dcZuAgbKY/w0bcLrEtogzcd/FFjJvV9vZdIkgfxOivsCumsXfCXZAdYmt0Q3Ebd/Cjgu12pLlwR6oU+RtpMdud0k2sFv/0QdsxSM9dk2ESWR4H9sAMpmc2gMoI4/jZFbXeQTCuywSfn92ya/nG9dimxCKm6CUZcZdH9aGL0uJougptp09ejBdL/ec8uyDqq+dFkLvDjDl5g+1vBqpGoB/MAVTT7TOs4VELFPUrr5TyPKcyYwBvcttxWgiK6+jOvcbFAGIVO68Erdr0wGwOSCPJqBUkbzs3m2Ac5og9sOq/idou+8wvH7jGDkBgj11MbL8ywdND7C4TULR4/bfZO4YNZjGnFm8/O/WZrr7A0/6a0kP2zbdAAAAAElFTkSuQmCC");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        text-indent: -9999px;
-      }
-    }
-  }
-}
 .main-attraction {
   height: 709px;
   padding-bottom: 0;

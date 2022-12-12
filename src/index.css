@@ -1,3 +1,87 @@
+// 共用
+.transition {
+  transition: all 0.5s ease-in-out;
+}
+.title-article {
+  width: 210px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  line-height: 47px;
+  font-size: 43px;
+  color: #bd7461;
+  font-weight: 400;
+}
+.title-article-hr {
+  display: inline-block;
+  vertical-align: top;
+  width: 114px;
+  margin: 0;
+  border: 0;
+  border-bottom: solid 1px #bd7461;
+}
+
+.paragraph {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 35px;
+  width: 300px;
+  margin-bottom: 35px;
+}
+.button.button-rectangle {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 15px 70px;
+  border: 1px solid rgba(205, 184, 165, 0.6);
+  -webkit-transition: border-color 0.1s ease-out;
+  transition: border-color 0.1s ease-out;
+  margin-left: 5px;
+  margin: 0;
+  background: 0 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button.button-rectangle:hover:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+.button.button-rectangle:before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #cdb8a5;
+  pointer-events: none;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+.button.button-rectangle:hover .text {
+  color: #2e2822;
+}
+
+.button.button-rectangle .text {
+  position: relative;
+  z-index: 2;
+  color: #cdb8a5;
+  letter-spacing: 1px;
+  font-size: 18px;
+  font-weight: 400;
+  -webkit-transition: color 0.1s ease-out;
+  transition: color 0.1s ease-out;
+}
+
 .fadeAndShow-enter-active {
   animation: scale 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
