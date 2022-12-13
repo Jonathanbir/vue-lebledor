@@ -1,6 +1,11 @@
-import { createStore } from "vuex";
+import { createStore, createLogger } from "vuex";
 
 export const store = createStore({
+  plugins: [
+    createLogger({
+      collapsed: false, // 默认展开
+    }),
+  ],
   state() {
     return {
       bool: { show: false, submenu: true },

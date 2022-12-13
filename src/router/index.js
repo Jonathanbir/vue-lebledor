@@ -10,12 +10,12 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: "/menu",
+      path: "/menu:afterUser(.*)",
       name: "menu",
       component: () => import("../views/MenuView.vue"),
     },
     {
-      path: "/location",
+      path: "/location:afterUser(.*)",
       name: "location",
       // dynamic  import
       component: () => import("../views/LocationView.vue"),
