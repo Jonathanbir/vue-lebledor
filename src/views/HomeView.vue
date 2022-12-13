@@ -1,7 +1,10 @@
 <template>
   <BannerVue />
   <div class="signature">
-    <div class="signature-title" :style="scrollStyle"></div>
+    <div
+      class="signature-title"
+      :style="'transform:translate3d(-60px,' + height + 'px ,0px)'"
+    ></div>
     <div class="container-article">
       <div class="container-inner">
         <div class="container-text">
@@ -90,7 +93,7 @@
             width="381"
             height="257"
             id="article-sweet-tooth-img1"
-            :style="scrollStyle"
+            :style="'transform:translate3d(0px,' + height + 'px ,0px)'"
             src="../images/10004.jpg"
           />
         </div>
@@ -140,16 +143,13 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import BannerVue from "../components/Banner.vue";
 import BeerSectionVue from "../components/BeerSection.vue";
 import AppetizerVue from "../components/Appetizer.vue";
 import LocationsVue from "../components/Locations.vue";
 const height = ref("");
 
-const scrollStyle = computed(() => {
-  return "transform:translate3d(-60px," + height.value + "px ,0px)";
-});
 onMounted(() => {
   window.addEventListener(
     "scroll",
