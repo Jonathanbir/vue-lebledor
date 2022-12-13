@@ -347,7 +347,7 @@ onMounted(() => {
         .img-left {
           position: absolute;
           bottom: 400px;
-          left: -550px;
+          right: 450px;
           will-change: transform;
         }
       }
