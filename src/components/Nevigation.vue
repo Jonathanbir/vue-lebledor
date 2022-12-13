@@ -9,7 +9,7 @@
           ><div
             class="sprite-nav-logo"
             :style="
-              show && {
+              scroll && {
                 transform: 'translate(10px, 4px)',
                 width: '64px',
                 height: '32px',
