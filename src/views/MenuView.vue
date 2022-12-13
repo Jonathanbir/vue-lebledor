@@ -66,31 +66,22 @@
           </div>
         </div>
         <div class="slider-nav slick-initialized slick-slider">
-          <button
-            type="button"
-            data-role="none"
-            class="slick-prev slick-arrow slick-disabled"
-            aria-label="Previous"
-            role="button"
-            aria-disabled="true"
-            style=""
+          <swiper
+            :slidesPerView="5"
+            :spaceBetween="30"
+            :navigation="true"
+            :modules="modules"
+            class="mySwiper"
           >
-            Previous
-          </button>
-          <div aria-live="polite" class="slick-list">
-            <div
-              class="slick-track"
-              role="listbox"
-              style="opacity: 1; width: 1536px; left: 0px"
-            >
-              <div
+            <swiper-slide
+              ><div
                 class="menu-slide slick-slide slick-current slick-active active"
                 data-slick-index="0"
                 aria-hidden="false"
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide00"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/7b942d07cdd519e2d815ed7f632c27e2.png"
@@ -98,15 +89,16 @@
                   data-info="精選新鮮大蝦事先去除蝦殼，加入蔥蒜、辣椒乾煎後以啤酒調味，蝦肉鮮甜略帶淡淡啤酒麥香，是不可錯過的下酒良伴。"
                 />
                 <p>金色三麥現釀啤酒蝦</p>
-              </div>
-              <div
+              </div></swiper-slide
+            ><swiper-slide
+              ><div
                 class="menu-slide slick-slide slick-active"
                 data-slick-index="1"
                 aria-hidden="false"
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide01"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/45bde60ce8bab51f706ca2a5b1d6a6b8.png"
@@ -114,15 +106,16 @@
                   data-info="經典招牌組合，含酥炸椒麻雞、德國豬腳、美式薯條、德式香腸，一次享受所有經典、品味異國特色料理。"
                 />
                 <p>金色三麥經典大拼盤</p>
-              </div>
-              <div
+              </div></swiper-slide
+            ><swiper-slide
+              ><div
                 class="menu-slide slick-slide slick-active"
                 data-slick-index="2"
                 aria-hidden="false"
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide02"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/fcb1903e38bbf04a580bd835022346a3.png"
@@ -130,15 +123,16 @@
                   data-info="大火將墨魚煎至金黃酥脆口感，再與烘烤過的烏魚子、培根丁拌炒，濃郁鹹香，一口接一口。"
                 />
                 <p>墨魚醉嗆烏魚子</p>
-              </div>
-              <div
+              </div></swiper-slide
+            ><swiper-slide
+              ><div
                 class="menu-slide slick-slide slick-active"
                 data-slick-index="3"
                 aria-hidden="false"
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide03"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/3f003b081f2f681fa9a6102a852fb369.png"
@@ -146,15 +140,16 @@
                   data-info="以墨魚醉嗆烏魚子與椒香滿天飛共譜驚豔味蕾的磅礡交響曲，一次擁有海陸美味。"
                 />
                 <p>海陸交響曲</p>
-              </div>
-              <div
+              </div></swiper-slide
+            ><swiper-slide
+              ><div
                 class="menu-slide slick-slide slick-active"
                 data-slick-index="4"
                 aria-hidden="false"
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide04"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/0c80741437f6c0a2184b482cad162ca1.png"
@@ -162,15 +157,16 @@
                   data-info="尾韻輕盈的蜂蜜香氣，好吃到讓心飛起來！來自精選中段雞翅先炸再爆炒，飽滿吸收主廚的天然蜂蜜蔬果醬，香甜卻不膩口，蜜香迴盪久久。"
                 />
                 <p>蜜香滿天飛</p>
-              </div>
-              <div
+              </div> </swiper-slide
+            ><swiper-slide
+              ><div
                 class="menu-slide slick-slide"
                 data-slick-index="5"
                 aria-hidden="true"
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide05"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/536c9e8a9dc058d004a0294b55840313.png"
@@ -182,14 +178,16 @@
                 />
                 <p>極鮮和風紅鮪魚〔季節限定〕</p>
               </div>
-              <div
+            </swiper-slide>
+            <swiper-slide
+              ><div
                 class="menu-slide slick-slide"
                 data-slick-index="6"
                 aria-hidden="true"
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide06"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/9af4cfad2ddb8b7186ccfeba474762fe.png"
@@ -198,6 +196,8 @@
                 />
                 <p>中卷花開滿堂香</p>
               </div>
+            </swiper-slide>
+            <swiper-slide>
               <div
                 class="menu-slide slick-slide"
                 data-slick-index="7"
@@ -205,7 +205,7 @@
                 tabindex="-1"
                 role="option"
                 aria-describedby="slick-slide07"
-                style="width: 192px"
+                style="width: 154px"
               >
                 <img
                   src="//lebledor-img.s3.amazonaws.com/cover/6b1f37ccb3cf8fe181c1a76f53f7b914.png"
@@ -214,19 +214,16 @@
                 />
                 <p>舞味鮮蝦拌墨魚</p>
               </div>
-            </div>
+            </swiper-slide>
+          </swiper>
+
+          <div aria-live="polite" class="slick-list">
+            <div
+              class="slick-track"
+              role="listbox"
+              style="opacity: 1; width: 1536px; left: 0px"
+            ></div>
           </div>
-          <button
-            type="button"
-            data-role="none"
-            class="slick-next slick-arrow"
-            aria-label="Next"
-            role="button"
-            style=""
-            aria-disabled="false"
-          >
-            Next
-          </button>
         </div>
       </div>
       <!-- Slick -->
@@ -235,6 +232,14 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation } from "swiper";
+
+// Import Swiper styles
+import "swiper/css";
+
+let modules = [Navigation];
 const scroll = ref(false);
 
 onMounted(() => {
@@ -251,7 +256,42 @@ onMounted(() => {
   );
 });
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
+.swiper {
+  position: relative;
+}
+.swiper-button-prev {
+  position: absolute;
+  bottom: 50%;
+  z-index: 2;
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.5;
+  color: white;
+  width: 11px;
+  height: 19px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMAD9wdy8gb3r/StSEf9w0oPWcAAABESURBVAjXYwCBzAUgkk2vAUQZPREAksx6jmDOUzCnLhDEOQ7mcEM428Echr7LDDApsC6gHNQMmCEILhuUmwTjNkBtBwAgxxN2m5eeFgAAAABJRU5ErkJggg==");
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+.swiper-button-next {
+  position: absolute;
+  right: 0;
+  bottom: 50%;
+  z-index: 2;
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.5;
+  color: white;
+  width: 11px;
+  height: 19px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAENrNHBXXyhne0B/GwCDcgbhvAAAASElEQVQI12O4HMAAAvWpYCrqWwOIYl2fgcK1VwFzhT85gChGKFccwuX+fwFEyfx8AJKrnw2W+rkBwoFqQ+gKhmg6D7HgFNh8ABv2F5K6a92UAAAAAElFTkSuQmCC");
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
 .menu-section {
   position: relative;
   .header {
@@ -394,6 +434,23 @@ onMounted(() => {
               z-index: 2;
               width: 100%;
             }
+          }
+        }
+      }
+      .slider-nav {
+        border-top: 1px solid #f7f4f1;
+        border-bottom: 1px solid #f7f4f1;
+        padding: 1em 0;
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+        .menu-slide {
+          cursor: pointer;
+          text-align: center;
+          img {
+            margin: auto;
+            width: 120px;
+            height: 89.6px;
           }
         }
       }
