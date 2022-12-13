@@ -55,7 +55,7 @@
   </main>
 </template>
 <script setup>
-import { onMounted, computed, ref } from "vue";
+import { ref, computed, onMounted } from "vue";
 const height = ref("");
 const drop = ref("");
 const scrollStyle = computed(() => {
@@ -73,12 +73,15 @@ const dropStyle = computed(() => {
     "deg)"
   );
 });
-
 onMounted(() => {
-  setInterval(() => {
-    height.value = window.pageYOffset * 0.15 - 100;
-    drop.value = window.pageYOffset * 0.2;
-  }, 100);
+  window.addEventListener(
+    "scroll",
+    () => {
+      height.value = window.pageYOffset * 0.15 - 100;
+      drop.value = window.pageYOffset * 0.2;
+    },
+    true
+  );
 });
 </script>
 

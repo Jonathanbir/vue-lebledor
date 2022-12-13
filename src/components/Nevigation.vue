@@ -61,13 +61,17 @@ const emits = defineEmits(["mouseOver", "mouseOut"]);
 const show = ref(false);
 
 onMounted(() => {
-  setInterval(() => {
-    if (window.pageYOffset > 25) {
-      show.value = true;
-    } else {
-      show.value = false;
-    }
-  }, 100);
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.pageYOffset > 25) {
+        show.value = true;
+      } else {
+        show.value = false;
+      }
+    },
+    true
+  );
 });
 </script>
 

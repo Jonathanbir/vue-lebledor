@@ -1,7 +1,7 @@
 <template>
   <BannerVue />
   <div class="signature">
-    <div class="sprite"></div>
+    <div class="signature-title" :style="scrollStyle"></div>
     <div class="container-article">
       <div class="container-inner">
         <div class="container-text">
@@ -90,7 +90,7 @@
             width="381"
             height="257"
             id="article-sweet-tooth-img1"
-            style="transform: translate3d(0px, -46.8391px, 0px)"
+            :style="scrollStyle"
             src="../images/10004.jpg"
           />
         </div>
@@ -140,10 +140,25 @@
 </template>
 
 <script setup>
+import { ref, computed, onMounted } from "vue";
 import BannerVue from "../components/Banner.vue";
 import BeerSectionVue from "../components/BeerSection.vue";
 import AppetizerVue from "../components/Appetizer.vue";
 import LocationsVue from "../components/Locations.vue";
+const height = ref("");
+
+const scrollStyle = computed(() => {
+  return "transform:translate3d(-60px," + height.value + "px ,0px)";
+});
+onMounted(() => {
+  window.addEventListener(
+    "scroll",
+    () => {
+      height.value = window.pageYOffset * 0.15 - 100;
+    },
+    true
+  );
+});
 </script>
 
 <style lang="scss" scoped>
@@ -210,7 +225,7 @@ import LocationsVue from "../components/Locations.vue";
     }
   }
 
-  .sprite {
+  .signature-title {
     position: absolute;
     top: 40px;
     left: 150px;
@@ -331,7 +346,7 @@ import LocationsVue from "../components/Locations.vue";
         }
         .img-left {
           position: absolute;
-          bottom: 50px;
+          bottom: 400px;
           left: -550px;
           will-change: transform;
         }
