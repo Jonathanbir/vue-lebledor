@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { ref, onMounted } from "vue";
 import { RouterLink, RouterView, useRouter } from "vue-router";
 
 const props = defineProps(["show", "submenu"]);

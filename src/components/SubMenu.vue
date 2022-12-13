@@ -1,6 +1,11 @@
 <template>
   <main>
-    <div class="sub-menu" id="nav-top-sub" :class="{ transform: show }">
+    <div
+      class="sub-menu"
+      id="nav-top-sub"
+      :class="{ transform: show }"
+      :style="black && { opacity: '1' }"
+    >
       <div
         class="sub-menu-inner cuisine active"
         id="nav-top-sub-cuisine"
@@ -282,9 +287,24 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const hover = ref({ style: "", locations: "" });
 const props = defineProps(["show", "submenu"]);
+const black = ref(false);
+
+onMounted(() => {
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.pageYOffset > 25) {
+        black.value = true;
+      } else {
+        black.value = false;
+      }
+    },
+    true
+  );
+});
 </script>
 
 <style lang="scss" scoped>
