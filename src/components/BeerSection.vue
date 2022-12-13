@@ -1,153 +1,147 @@
 <template>
-  <main>
-    <article class="honey" id="article-honey">
-      <div class="container-article transition">
-        <div class="beer-background-container">
-          <div class="beer-background" :style="beers[flavor].background"></div>
-        </div>
-        <div class="center">
-          <h3 class="title-background">滴滴是精釀</h3>
-          <div class="left">
-            <div class="container-beer">
-              <div class="container-img">
-                <Transition name="fadeAndShow" mode="out-in">
-                  <img
-                    v-show="show"
-                    class="img-beer"
-                    :src="beers[flavor].beer"
-                  />
-                </Transition>
-              </div>
-            </div>
-            <div id="beer-buttons" class="beer-buttons">
-              <button
-                :class="
-                  flavor == '0'
-                    ? 'button button-beer active'
-                    : 'button button-beer'
-                "
-                :style="
-                  (flavor == '2' && { color: '#c77b5d' }) ||
-                  (flavor == '3' && { color: '#c77b5d' })
-                "
-                beer-id="0"
-                @click="
-                  animation();
-                  flavor = '0';
-                "
-              >
-                蜂蜜
-              </button>
-              <hr
-                class="hr"
-                :style="
-                  (flavor == '2' && { background: '#c77b5d' }) ||
-                  (flavor == '3' && { background: '#c77b5d' })
-                "
-              />
-              <button
-                :class="
-                  flavor == '1'
-                    ? 'button button-beer active'
-                    : 'button button-beer'
-                "
-                :style="
-                  (flavor == '2' && { color: '#c77b5d' }) ||
-                  (flavor == '3' && { color: '#c77b5d' })
-                "
-                beer-id="1"
-                @click="
-                  animation();
-                  flavor = '1';
-                "
-              >
-                琥珀
-              </button>
-              <hr
-                class="hr"
-                :style="
-                  (flavor == '2' && { background: '#c77b5d' }) ||
-                  (flavor == '3' && { background: '#c77b5d' })
-                "
-              />
-              <button
-                :class="
-                  flavor == '2'
-                    ? 'button button-beer active-white'
-                    : 'button button-beer'
-                "
-                :style="flavor == '3' && { color: '#c77b5d' }"
-                beer-id="2"
-                @click="
-                  animation();
-                  flavor = '2';
-                "
-              >
-                小麥
-              </button>
-              <hr
-                class="hr"
-                :style="
-                  (flavor == '2' && { background: '#c77b5d' }) ||
-                  (flavor == '3' && { background: '#c77b5d' })
-                "
-              />
-              <button
-                :class="
-                  flavor == '3'
-                    ? 'button button-beer active-white'
-                    : 'button button-beer'
-                "
-                :style="flavor == '2' && { color: '#c77b5d' }"
-                beer-id="3"
-                @click="
-                  animation();
-                  flavor = '3';
-                "
-              >
-                黑麥
-              </button>
+  <article class="honey" id="article-honey">
+    <div class="container-article transition">
+      <div class="beer-background-container">
+        <div class="beer-background" :style="beers[flavor].background"></div>
+      </div>
+      <div class="center">
+        <h3 class="title-background">滴滴是精釀</h3>
+        <div class="left">
+          <div class="container-beer">
+            <div class="container-img">
+              <Transition name="fadeAndShow" mode="out-in">
+                <img v-show="show" class="img-beer" :src="beers[flavor].beer" />
+              </Transition>
             </div>
           </div>
-          <div class="right">
-            <div class="hidden-box">
-              <div class="container-text">
-                <Transition name="fadeAndIn">
-                  <div v-show="show">
-                    <div class="title-article">
-                      <h3 class="text active">
-                        Honey <span class="no-break">in Charm</span>
-                        <hr class="title-article-hr" />
-                      </h3>
-                    </div>
-                    <div class="subtitle-text">
-                      <h3
-                        class="sprite sprite-article-honey-title"
-                        :style="beers[flavor].title"
-                        v-show="show"
-                      >
-                        {{ beers[flavor].h3 }}
-                      </h3>
-                    </div>
+          <div id="beer-buttons" class="beer-buttons">
+            <button
+              :class="
+                flavor == '0'
+                  ? 'button button-beer active'
+                  : 'button button-beer'
+              "
+              :style="
+                (flavor == '2' && { color: '#c77b5d' }) ||
+                (flavor == '3' && { color: '#c77b5d' })
+              "
+              beer-id="0"
+              @click="
+                animation();
+                flavor = '0';
+              "
+            >
+              蜂蜜
+            </button>
+            <hr
+              class="hr"
+              :style="
+                (flavor == '2' && { background: '#c77b5d' }) ||
+                (flavor == '3' && { background: '#c77b5d' })
+              "
+            />
+            <button
+              :class="
+                flavor == '1'
+                  ? 'button button-beer active'
+                  : 'button button-beer'
+              "
+              :style="
+                (flavor == '2' && { color: '#c77b5d' }) ||
+                (flavor == '3' && { color: '#c77b5d' })
+              "
+              beer-id="1"
+              @click="
+                animation();
+                flavor = '1';
+              "
+            >
+              琥珀
+            </button>
+            <hr
+              class="hr"
+              :style="
+                (flavor == '2' && { background: '#c77b5d' }) ||
+                (flavor == '3' && { background: '#c77b5d' })
+              "
+            />
+            <button
+              :class="
+                flavor == '2'
+                  ? 'button button-beer active-white'
+                  : 'button button-beer'
+              "
+              :style="flavor == '3' && { color: '#c77b5d' }"
+              beer-id="2"
+              @click="
+                animation();
+                flavor = '2';
+              "
+            >
+              小麥
+            </button>
+            <hr
+              class="hr"
+              :style="
+                (flavor == '2' && { background: '#c77b5d' }) ||
+                (flavor == '3' && { background: '#c77b5d' })
+              "
+            />
+            <button
+              :class="
+                flavor == '3'
+                  ? 'button button-beer active-white'
+                  : 'button button-beer'
+              "
+              :style="flavor == '2' && { color: '#c77b5d' }"
+              beer-id="3"
+              @click="
+                animation();
+                flavor = '3';
+              "
+            >
+              黑麥
+            </button>
+          </div>
+        </div>
+        <div class="right">
+          <div class="hidden-box">
+            <div class="container-text">
+              <Transition name="fadeAndIn">
+                <div v-show="show">
+                  <div class="title-article">
+                    <h3 class="text active">
+                      Honey <span class="no-break">in Charm</span>
+                      <hr class="title-article-hr" />
+                    </h3>
                   </div>
-                </Transition>
-                <Transition name="fadeAndDown" mode="out-in">
-                  <div class="paragraph" v-show="show">
-                    <p
-                      class="beer-shortcut active"
-                      :style="flavor == '0' && { color: '#000' }"
+                  <div class="subtitle-text">
+                    <h3
+                      class="sprite sprite-article-honey-title"
+                      :style="beers[flavor].title"
+                      v-show="show"
                     >
-                      {{ beers[flavor].content }}
-                    </p>
+                      {{ beers[flavor].h3 }}
+                    </h3>
                   </div>
-                </Transition>
-              </div>
+                </div>
+              </Transition>
+              <Transition name="fadeAndDown" mode="out-in">
+                <div class="paragraph" v-show="show">
+                  <p
+                    class="beer-shortcut active"
+                    :style="flavor == '0' && { color: '#000' }"
+                  >
+                    {{ beers[flavor].content }}
+                  </p>
+                </div>
+              </Transition>
             </div>
           </div>
         </div>
       </div>
-    </article>
-  </main>
+    </div>
+  </article>
 </template>
 
 <script setup>

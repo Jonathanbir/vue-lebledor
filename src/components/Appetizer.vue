@@ -1,58 +1,56 @@
 <template>
-  <main>
-    <div class="container-article transition">
-      <div class="left">
-        <div class="container-salad">
-          <img
-            class="img-salad"
-            id="article-great-start-salad"
-            width="662"
-            height="331"
-            src="../images/salid.png"
-          />
-          <div class="container-pieces" id="article-great-start-salad-pieces">
-            <div class="sprite sprite-salad-piece1" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece9" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece2" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece3" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece4" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece5" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece6" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece7" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece8" :style="dropStyle"></div>
-            <div class="sprite sprite-salad-piece10" :style="dropStyle"></div>
-          </div>
-        </div>
-      </div>
-      <div class="right transition">
+  <div class="container-article transition">
+    <div class="left">
+      <div class="container-salad">
         <img
-          class="img-right"
-          id="article-great-start-right"
-          width="381"
-          height="257"
-          :style="scrollStyle"
-          src="../images/10003.jpg"
+          class="img-salad"
+          id="article-great-start-salad"
+          width="662"
+          height="331"
+          src="../images/salid.png"
         />
-        <div class="container-text">
-          <h3 class="title-article">Make a great start</h3>
-          <hr class="title-article-hr" />
-          <h3 class="sprite sprite-article-great-start-title">美好的開始</h3>
-          <p class="paragraph">
-            清新鮮脆，涼爽沁口，酥炸夠味，<br />想選哪一類，溫柔喚醒味覺，為饗宴揭開序幕。
-          </p>
-          <button
-            class="button button-rectangle"
-            onclick="window.location='/menu/appetizer';"
-          >
-            <div class="text">
-              開胃前菜
-              <span class="arrow sprite sprite-button-rectangle-arrow"></span>
-            </div>
-          </button>
+        <div class="container-pieces" id="article-great-start-salad-pieces">
+          <div class="sprite sprite-salad-piece1" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece9" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece2" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece3" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece4" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece5" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece6" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece7" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece8" :style="dropStyle"></div>
+          <div class="sprite sprite-salad-piece10" :style="dropStyle"></div>
         </div>
       </div>
     </div>
-  </main>
+    <div class="right transition">
+      <img
+        class="img-right"
+        id="article-great-start-right"
+        width="381"
+        height="257"
+        :style="scrollStyle"
+        src="../images/10003.jpg"
+      />
+      <div class="container-text">
+        <h3 class="title-article">Make a great start</h3>
+        <hr class="title-article-hr" />
+        <h3 class="sprite sprite-article-great-start-title">美好的開始</h3>
+        <p class="paragraph">
+          清新鮮脆，涼爽沁口，酥炸夠味，<br />想選哪一類，溫柔喚醒味覺，為饗宴揭開序幕。
+        </p>
+        <button
+          class="button button-rectangle"
+          onclick="window.location='/menu/appetizer';"
+        >
+          <div class="text">
+            開胃前菜
+            <span class="arrow sprite sprite-button-rectangle-arrow"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 <script setup>
 import { ref, computed, onMounted } from "vue";

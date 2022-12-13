@@ -1,6 +1,4 @@
-<template>
-  <main>Members</main>
-</template>
+<template>Members</template>
 
 <script setup></script>
 

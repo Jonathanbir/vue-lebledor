@@ -1,18 +1,16 @@
 <template>
-  <main>
-    <div class="banner" :style="banners[index].background">
-      <Transition name="fadeAndScale" mode="out-in">
-        <div class="black-banner" v-show="show"></div>
-      </Transition>
-      <BannerController />
-      <h1 class="web-title"></h1>
-      <div class="web-title-2"></div>
-      <div class="web-title-3"></div>
-      <div class="haccp"></div>
-      <div class="awwwards"></div>
-      <div class="cssdesignawards"></div>
-    </div>
-  </main>
+  <div class="banner" :style="banners[index].background">
+    <Transition name="fadeAndScale" mode="out-in">
+      <div class="black-banner" v-show="show"></div>
+    </Transition>
+    <BannerController />
+    <h1 class="web-title"></h1>
+    <div class="web-title-2"></div>
+    <div class="web-title-3"></div>
+    <div class="haccp"></div>
+    <div class="awwwards"></div>
+    <div class="cssdesignawards"></div>
+  </div>
 </template>
 
 <script setup>

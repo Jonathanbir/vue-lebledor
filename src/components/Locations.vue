@@ -1,34 +1,32 @@
 <template>
-  <main>
-    <article class="locations" id="article-locations">
-      <div class="container-article transition">
-        <div class="container-text">
-          <h3 class="title-article">
-            It's like <span class="no-break">no place else</span>
-          </h3>
-          <h3 class="sprite sprite-article-locations-title">三五好友湊一桌</h3>
-          <hr class="title-article-hr" />
-          <div class="dropdown">
-            <Dropdown
-              v-model="location.selectedGroupedCity"
-              :options="location.groupedCities"
-              optionLabel="label"
-              optionGroupLabel="label"
-              optionGroupChildren="items"
-              placeholder="選擇分店"
-            >
-              <template #optiongroup="slotProps">
-                <div class="flex align-items-center country-item">
-                  <div>{{ slotProps.option.label }}</div>
-                </div>
-              </template>
-            </Dropdown>
-          </div>
+  <article class="locations" id="article-locations">
+    <div class="container-article transition">
+      <div class="container-text">
+        <h3 class="title-article">
+          It's like <span class="no-break">no place else</span>
+        </h3>
+        <h3 class="sprite sprite-article-locations-title">三五好友湊一桌</h3>
+        <hr class="title-article-hr" />
+        <div class="dropdown">
+          <Dropdown
+            v-model="location.selectedGroupedCity"
+            :options="location.groupedCities"
+            optionLabel="label"
+            optionGroupLabel="label"
+            optionGroupChildren="items"
+            placeholder="選擇分店"
+          >
+            <template #optiongroup="slotProps">
+              <div class="flex align-items-center country-item">
+                <div>{{ slotProps.option.label }}</div>
+              </div>
+            </template>
+          </Dropdown>
         </div>
       </div>
-      <div class="article-loader" id="article-locations-loader"></div>
-    </article>
-  </main>
+    </div>
+    <div class="article-loader" id="article-locations-loader"></div>
+  </article>
 </template>
 
 <script setup>
