@@ -28,7 +28,7 @@
         /></RouterLink>
         <RouterLink
           class="menu"
-          to="/"
+          to="/menu"
           @mouseover="
             store.commit('handleMouseOver', { show: true, submenu: true })
           "
@@ -40,7 +40,7 @@
         </RouterLink>
         <RouterLink
           class="location"
-          to="/"
+          to="/location"
           @mouseover="
             store.commit('handleMouseOver', { show: true, submenu: false })
           "

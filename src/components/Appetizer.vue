@@ -10,16 +10,16 @@
           src="../images/salid.png"
         />
         <div class="container-pieces" id="article-great-start-salad-pieces">
-          <div class="sprite sprite-salad-piece1" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece9" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece2" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece3" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece4" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece5" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece6" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece7" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece8" :style="dropStyle"></div>
-          <div class="sprite sprite-salad-piece10" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece1" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece9" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece2" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece3" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece4" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece5" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece6" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece7" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece8" :style="dropStyle"></div>
+          <div class="sprites sprite-salad-piece10" :style="dropStyle"></div>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
       <div class="container-text">
         <h3 class="title-article">Make a great start</h3>
         <hr class="title-article-hr" />
-        <h3 class="sprite sprite-article-great-start-title">美好的開始</h3>
+        <h3 class="sprites sprite-article-great-start-title">美好的開始</h3>
         <p class="paragraph">
           清新鮮脆，涼爽沁口，酥炸夠味，<br />想選哪一類，溫柔喚醒味覺，為饗宴揭開序幕。
         </p>
@@ -45,7 +45,7 @@
         >
           <div class="text">
             開胃前菜
-            <span class="arrow sprite sprite-button-rectangle-arrow"></span>
+            <span class="arrow sprites sprite-button-rectangle-arrow"></span>
           </div>
         </button>
       </div>
@@ -115,7 +115,7 @@ onMounted(() => {
       .container-pieces {
         position: relative;
         width: 100%;
-        .sprite {
+        .sprites {
           position: absolute;
           pointer-events: visible;
           will-change: transform;

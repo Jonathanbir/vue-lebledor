@@ -20,6 +20,12 @@
   border-bottom: solid 1px #bd7461;
 }
 
+.sprite {
+  background-size: 100% 100%;
+  text-indent: -999999px;
+  text-align: start;
+}
+
 .paragraph {
   font-size: 14px;
   font-weight: 400;
