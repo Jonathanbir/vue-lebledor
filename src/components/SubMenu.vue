@@ -5,11 +5,18 @@
       id="nav-top-sub"
       :class="{ transform: show }"
       :style="black && { opacity: '1' }"
+      @mouseover="
+        store.commit('handleMouseOver', { show: true, submenu: submenu })
+      "
+      @mouseout="
+        store.commit('handleMouseOut', { show: false, submenu: submenu })
+      "
     >
       <div
         class="sub-menu-inner cuisine active"
         id="nav-top-sub-cuisine"
-        v-if="props.submenu"
+        v-if="submenu"
+        @mouseover="store.commit('handleMouseOver', { submenu: true })"
       >
         <div class="row picture">
           <div
@@ -287,11 +294,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
+import { useStore } from "vuex";
 const hover = ref({ style: "", locations: "" });
-const props = defineProps(["show", "submenu"]);
 const black = ref(false);
+const store = useStore();
 
+const show = computed(() => store.state.bool.show);
+const submenu = computed(() => store.state.bool.submenu);
 onMounted(() => {
   window.addEventListener(
     "scroll",

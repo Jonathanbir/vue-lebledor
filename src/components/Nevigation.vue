@@ -1,6 +1,9 @@
 <template>
   <header>
-    <div class="wrapper" :style="show && { background: '#000', top: '-15px' }">
+    <div
+      class="wrapper"
+      :style="scroll && { background: '#000', top: '-15px' }"
+    >
       <nav>
         <RouterLink to="/"
           ><div
@@ -26,16 +29,22 @@
         <RouterLink
           class="menu"
           to="/"
-          @mouseover="$emit('mouseOver', { submenu: true, show: true })"
-          @mouseout="$emit('mouseOut', { submenu: true, show: false })"
+          @mouseover="
+            store.commit('handleMouseOver', { show: true, submenu: true })
+          "
+          @mouseout="
+            store.commit('handleMouseOut', { show: false, submenu: true })
+          "
           >美味餐點
           <img class="arrow-triggle" src="../images/10018.png" />
         </RouterLink>
         <RouterLink
           class="location"
           to="/"
-          @mouseover="$emit('mouseOver', { show: true, submenu: false })"
-          @mouseout="$emit('mouseOut', { show: false, submenu: false })"
+          @mouseover="
+            store.commit('handleMouseOver', { show: true, submenu: false })
+          "
+          @mouseout="store.commit('handleMouseOut', { show: false })"
           >餐廳據點 <img class="arrow-triggle" src="../images/10018.png"
         /></RouterLink>
         <RouterLink to="/news">最新消息</RouterLink>
@@ -54,20 +63,21 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { useStore } from "vuex";
 import { RouterLink, RouterView, useRouter } from "vue-router";
 
-const props = defineProps(["show", "submenu"]);
-const emits = defineEmits(["mouseOver", "mouseOut"]);
-const show = ref(false);
+const store = useStore();
+
+const scroll = ref(false);
 
 onMounted(() => {
   window.addEventListener(
     "scroll",
     () => {
       if (window.pageYOffset > 25) {
-        show.value = true;
+        scroll.value = true;
       } else {
-        show.value = false;
+        scroll.value = false;
       }
     },
     true
