@@ -452,6 +452,13 @@ onMounted(() => {
             width: 120px;
             height: 89.6px;
           }
+          p {
+            display: block;
+            line-height: 1.5;
+            font-size: 14px;
+            margin-top: 0.5em;
+            color: #000;
+          }
         }
       }
     }
