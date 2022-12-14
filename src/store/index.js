@@ -8,6 +8,7 @@ export const store = createStore({
   ],
   state() {
     return {
+      animation: false,
       bool: { show: false, submenu: true },
       menu: [
         {
@@ -61,6 +62,12 @@ export const store = createStore({
     handleMouseOut(state, value) {
       state.bool.submenu = value.submenu;
       state.bool.show = value.show;
+    },
+    handleAnimation(state) {
+      state.animation = false;
+      setTimeout(() => {
+        state.animation = true;
+      }, 300);
     },
   },
   actions: {},

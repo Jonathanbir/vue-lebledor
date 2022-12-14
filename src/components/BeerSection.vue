@@ -10,7 +10,11 @@
           <div class="container-beer">
             <div class="container-img">
               <Transition name="fadeAndShow" mode="out-in">
-                <img v-show="show" class="img-beer" :src="beers[flavor].beer" />
+                <img
+                  v-show="animationShow"
+                  class="img-beer"
+                  :src="beers[flavor].beer"
+                />
               </Transition>
             </div>
           </div>
@@ -27,7 +31,7 @@
               "
               beer-id="0"
               @click="
-                animation();
+                store.commit('handleAnimation');
                 flavor = '0';
               "
             >
@@ -52,7 +56,7 @@
               "
               beer-id="1"
               @click="
-                animation();
+                store.commit('handleAnimation');
                 flavor = '1';
               "
             >
@@ -74,7 +78,7 @@
               :style="flavor == '3' && { color: '#c77b5d' }"
               beer-id="2"
               @click="
-                animation();
+                store.commit('handleAnimation');
                 flavor = '2';
               "
             >
@@ -96,7 +100,7 @@
               :style="flavor == '2' && { color: '#c77b5d' }"
               beer-id="3"
               @click="
-                animation();
+                store.commit('handleAnimation');
                 flavor = '3';
               "
             >
@@ -108,7 +112,7 @@
           <div class="hidden-box">
             <div class="container-text">
               <Transition name="fadeAndIn">
-                <div v-show="show">
+                <div v-show="animationShow">
                   <div class="title-article">
                     <h3 class="text active">
                       Honey <span class="no-break">in Charm</span>
@@ -119,7 +123,7 @@
                     <h3
                       class="sprite sprite-article-honey-title"
                       :style="beers[flavor].title"
-                      v-show="show"
+                      v-show="animationShow"
                     >
                       {{ beers[flavor].h3 }}
                     </h3>
@@ -127,7 +131,7 @@
                 </div>
               </Transition>
               <Transition name="fadeAndDown" mode="out-in">
-                <div class="paragraph" v-show="show">
+                <div class="paragraph" v-show="animationShow">
                   <p
                     class="beer-shortcut active"
                     :style="flavor == '0' && { color: '#000' }"
@@ -145,16 +149,17 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed, onMounted } from "vue";
+import { useStore } from "vuex";
 import { Transition } from "vue";
 const flavor = ref("0");
-const show = ref(true);
-let animation = () => {
-  show.value = false;
-  setTimeout(() => {
-    show.value = true;
-  }, 300);
-};
+const animationShow = computed(() => store.state.animation);
+
+const store = useStore();
+onMounted(() => {
+  store.commit("handleAnimation");
+});
+
 const beers = ref([
   {
     id: 1,
