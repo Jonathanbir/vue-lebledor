@@ -66,7 +66,7 @@
             :modules="modules"
             class="mySwiper"
           >
-            <swiper-slide v-for="item in menu">
+            <swiper-slide v-for="item in menunow">
               <div
                 class="menu-slide slick-slide"
                 data-slick-index="7"
@@ -76,7 +76,7 @@
                 aria-describedby="slick-slide07"
                 style="width: 154px"
                 @click="
-                  changeImg([item.id, item.src]);
+                  store.commit('handleChangeMenuActive', [item.id, item.src]);
                   store.commit('handleAnimation');
                 "
               >
@@ -113,18 +113,12 @@ import { Navigation } from "swiper";
 import "swiper/css";
 
 const store = useStore();
-const menu = computed(() => store.state.menu);
+const menunow = computed(() => store.state.menu.menu);
 const animationShow = computed(() => store.state.animation);
-
+const active = computed(() => store.state.menu.active);
+console.log("active", active.value);
 const modules = [Navigation];
 const scroll = ref(false);
-const active = ref([menu.value[0].id, menu.value[0].src]);
-
-const changeImg = (item) => {
-  setTimeout(() => {
-    active.value = item;
-  }, 300);
-};
 
 onMounted(() => {
   store.commit("handleAnimation");

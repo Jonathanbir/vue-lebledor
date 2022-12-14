@@ -11,8 +11,13 @@ export const store = createStore({
     return {
       animation: false,
       bool: { show: false, submenu: true },
-      menudata: MENU_DATA,
-      menu: MENU_DATA[0].data,
+      // menudata: MENU_DATA,
+      // menu: MENU_DATA[0].data,
+      menu: {
+        data: MENU_DATA,
+        menu: MENU_DATA[0].data,
+        active: [MENU_DATA[0].data[0].id, MENU_DATA[0].data[0].src],
+      },
     };
   },
   mutations: {
@@ -25,8 +30,13 @@ export const store = createStore({
       state.bool.show = value.show;
     },
     handleChangeMenu(state, value) {
+      state.menu.menu = value;
+    },
+    handleChangeMenuActive(state, value) {
       console.log("value", value);
-      state.menu = value;
+      setTimeout(() => {
+        state.menu.active = value;
+      }, 300);
     },
     handleAnimation(state) {
       state.animation = false;

@@ -31,7 +31,13 @@
             class="button button-nav-top-sub"
             to="/menu/chef-recommended/signature"
             data-id="2011"
-            @click="store.commit('handleChangeMenu', menudata[0].data)"
+            @click="
+              store.commit('handleChangeMenu', menudata[0].data);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[0].data[0].src,
+              ]);
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https:////lebledor-img.s3.amazonaws.com/cover/536c9e8a9dc058d004a0294b55840313.png);'
@@ -48,7 +54,13 @@
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/e422d258991d8f566cfd179f426e2520.png);'
             "
-            @click="store.commit('handleChangeMenu', menudata[1].data)"
+            @click="
+              store.commit('handleChangeMenu', menudata[1].data);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[1].data[0].src,
+              ]);
+            "
             >開胃菜
           </router-link>
           <router-link
@@ -70,7 +82,13 @@
             class="button button-nav-top-sub"
             to="/menu/iconic-dishes/pot"
             data-id="2036"
-            @click="store.commit('handleChangeMenu', menudata[2].data)"
+            @click="
+              store.commit('handleChangeMenu', menudata[2].data);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[2].data[0].src,
+              ]);
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d1a972853865f69d459300cdf4e731ad.png);'
@@ -311,10 +329,10 @@ import { useStore } from "vuex";
 const hover = ref({ style: "", locations: "" });
 const black = ref(false);
 const store = useStore();
-
 const show = computed(() => store.state.bool.show);
 const submenu = computed(() => store.state.bool.submenu);
-const menudata = computed(() => store.state.menudata);
+const menudata = computed(() => store.state.menu.data);
+
 onMounted(() => {
   window.addEventListener(
     "scroll",
