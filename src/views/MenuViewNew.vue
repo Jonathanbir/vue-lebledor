@@ -71,13 +71,6 @@
           >
             <swiper-slide v-for="item in menuitem.items">
               <div
-                class="menu-slide slick-slide"
-                data-slick-index="7"
-                aria-hidden="true"
-                tabindex="-1"
-                role="option"
-                aria-describedby="slick-slide07"
-                style="width: 154px"
                 @click="
                   store.commit('handleChangeMenuActive', [item.id, item.src]);
                   store.commit('handleAnimation');
@@ -122,7 +115,7 @@ const active = computed(() => store.state.menu.active);
 const menuindex = computed(() => store.state.menu.index);
 const modules = [Navigation];
 const scroll = ref(false);
-console.log("menunow", menunow.value);
+// console.log("menunow", menunow.value);
 
 onMounted(() => {
   store.commit("handleAnimation");
@@ -147,32 +140,12 @@ onMounted(() => {
   position: absolute;
   bottom: 50%;
   z-index: 2;
-  font-family: "slick";
-  font-size: 20px;
-  line-height: 1;
-  opacity: 0.5;
-  color: white;
-  width: 11px;
-  height: 19px;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMAD9wdy8gb3r/StSEf9w0oPWcAAABESURBVAjXYwCBzAUgkk2vAUQZPREAksx6jmDOUzCnLhDEOQ7mcEM428Echr7LDDApsC6gHNQMmCEILhuUmwTjNkBtBwAgxxN2m5eeFgAAAABJRU5ErkJggg==");
-  -webkit-font-smoothing: antialiased;
-  cursor: pointer;
 }
 .swiper-button-next {
   position: absolute;
   right: 0;
   bottom: 50%;
   z-index: 2;
-  font-family: "slick";
-  font-size: 20px;
-  line-height: 1;
-  opacity: 0.5;
-  color: white;
-  width: 11px;
-  height: 19px;
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAENrNHBXXyhne0B/GwCDcgbhvAAAASElEQVQI12O4HMAAAvWpYCrqWwOIYl2fgcK1VwFzhT85gChGKFccwuX+fwFEyfx8AJKrnw2W+rkBwoFqQ+gKhmg6D7HgFNh8ABv2F5K6a92UAAAAAElFTkSuQmCC");
-  -webkit-font-smoothing: antialiased;
-  cursor: pointer;
 }
 
 .menu-section {

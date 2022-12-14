@@ -2,6 +2,33 @@
 .transition {
   transition: all 0.5s ease-in-out;
 }
+
+.swiper-button-prev {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.5;
+  color: white;
+  width: 11px;
+  height: 19px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAALVBMVEUAAAD///////////////////////////////////////////////////////+hSKubAAAADnRSTlMAD9wdy8gb3r/StSEf9w0oPWcAAABESURBVAjXYwCBzAUgkk2vAUQZPREAksx6jmDOUzCnLhDEOQ7mcEM428Echr7LDDApsC6gHNQMmCEILhuUmwTjNkBtBwAgxxN2m5eeFgAAAABJRU5ErkJggg==");
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
+.swiper-button-next {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.5;
+  color: white;
+  width: 11px;
+  height: 19px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAATBAMAAAC0B+rjAAAAMFBMVEUAAAD///////////////////////////////////////////////////////////87TQQwAAAAD3RSTlMAENrNHBXXyhne0B/GwCDcgbhvAAAASElEQVQI12O4HMAAAvWpYCrqWwOIYl2fgcK1VwFzhT85gChGKFccwuX+fwFEyfx8AJKrnw2W+rkBwoFqQ+gKhmg6D7HgFNh8ABv2F5K6a92UAAAAAElFTkSuQmCC");
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+}
+
 .title-article {
   width: 210px;
   margin-bottom: 20px;

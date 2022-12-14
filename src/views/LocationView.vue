@@ -2,7 +2,29 @@
   <section class="location">
     <article class="intro" id="article-intro">
       <div class="container-article">
-        <div class="container-imgs"></div>
+        <div class="container-imgs">
+          <swiper
+            :slidesPerView="1"
+            :spaceBetween="30"
+            :cssMode="true"
+            :navigation="true"
+            :pagination="true"
+            :autoplay="true"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide
+              ><img
+                src="https://www.lebledor.com/img/location/1-miramar/img1-x2.jpg" /></swiper-slide
+            ><swiper-slide
+              ><img
+                src="https://www.lebledor.com/img/location/1-miramar/img2-x2.jpg" /></swiper-slide
+            ><swiper-slide
+              ><img
+                src="https://www.lebledor.com/img/location/1-miramar/img3-x2.jpg"
+            /></swiper-slide>
+          </swiper>
+        </div>
         <div class="container-text">
           <h1 class="sprite title" id="article-intro-title">台北美麗華店</h1>
           <p class="paragraph" id="article-intro-paragraph">
@@ -62,21 +84,59 @@
           </div>
         </button>
       </div>
-      <div
-        class="article-loader"
-        id="article-info-loader"
-        style="
-          transform: matrix(1, 0, 0, 1, 0, 0);
-          visibility: hidden;
-          opacity: 0;
-        "
-      ></div>
+      <div class="article-loader" id="article-info-loader"></div>
     </article>
   </section>
 </template>
-<script setup></script>
+<script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
 
-<style lang="scss" scoped>
+import { Navigation, Pagination, Autoplay } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+const modules = [Navigation, Pagination, Autoplay];
+</script>
+
+<style lang="scss">
+.swiper {
+  position: relative;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  z-index: 2;
+  width: 53px;
+  height: 53px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAACbElEQVRo3u2avy8EQRTHtxDuSETufyCXUyrUrrvbUyp0flzhKFHIuTsiIkQ0CoWGoFGpUFBQU6g0CoJCoVCIHxF8J3mTbPYs7m7f2x8Un5j1Y+Z97O3Mm9lnnO5vGS5SD1pBF+gBQ2AcFMEUfR2n7/fQ77WBBjfjcKOTCOgAfZbgK6VIf99B/XkmFQPdIF+liBN56jcmKaX+k6ka7koldy9VzZ2rVCgBxphl7IzRuK5L1QFTWMaOSXG4IhUFgx4LaQYpnpqkmsGIT4Q0IxRXVVKNIOczIU2O4qtISn12sz4V0mSdnjEnKdPnQtbJ41dSiYAIaRI/SUU8WIfcWMci30mlAiakSTlJtYBCQKUKFH+ZlBlQobJJw7om5aUCONnbPAa7DNl91CrVKSh0CD7ACUP/nVapfiGhXRI6w/U0wxj9WioqsDdSQjskdM4kpPdgUSUVFxDaBu/gAtczzOPFlVSSeZAtyLyBS7RnBT7mSSXVyzjAOmRewQ3ac0KTUa/BuL1YhcwLuEN7XnC9GjboHM7tjlcg8wzu0V4UXoRHDYbUaBkyj+AB7SUPMosJg2Gmu1ZTN9obXqVMob1TXM/Uk5fPlMTstyA9+3GuU2u0Tt1Kr1NSGcWVZEYRFxhIPPcLZZYeyv2U9M73QGrnq84oJgXFjpjOKBpDf5qkz/2KARUqOp37KdIBlUr/ubN0RXvApNr/7Pup0L5JVDT5+J3vMMX3/3Y+1HUU1mcs47FQxs2Kl9DWJtkX6LTAq9QCjcNeRWbPFU2G7H6S+m3xQ2XmQI2VmQN+qMz8igaqiU3aamhLFHyJrnP08yRHDe0nh6EiYtJIqTYAAAAASUVORK5CYII=");
+}
+
+.swiper-button-next {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 2;
+  width: 53px;
+  height: 53px;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAA1CAYAAADh5qNwAAACcklEQVRo3u2avy8EQRTHtxDuSET8D0TuSoXadXd7SoXOjyscJQo5d4iIRIRCQqEhaDQ0joSGmoJGoxFRKBQKESL4TvIm2exZ3N3Mm92l+OTGj5uZz83tzpu3zzo/3LYUUgtaQCfoBoNgDBTAFL2O0e+76f9aQZ3KeajoJALaQa9j8uVSoPe3U3/GpJpBF8hVKOJFjvpt5pQSn2SyilUpZ/WSlaxcuUIxMKpZxs0ojatcqgbYzDJubJqHEqkoGDAsJBmg+VQl1QiGfSIkGaZ5VSRVD7I+E5JkaX5lSYnvbsanQpKM1zXmJWX7XMh58/iVVCwgQpLYT1IRA/uQin0s8p1UMmBCkqSXVBPIB1QqT/MvkbIDKlRy03DuSUqj7bODrSI4YZTKyWhDSnWoHgRCZ+ADHDGKdTil+jQMMA2hSxLbZ5Lqk1JRjWcjIXZFYrsMUsIjKqTaNA80A6Fr8I72DoNYm5BKMAw0C6kb8Ib2tuaxEkKqh+n7PgepO/CK9rrGcXos5uPFPKTuwQvaa5rGGLIoD8e5SS5A6gE8o72iof8Ry1BotASpR/CE9rLivsctg2HNJt3qb1X3bWqlFnWvlMlralXXNRXKu5+JfWpD9z4VyoiCLfYDbLEfV5S+xxml6zxPXZBQkfs8pfvke2zq5CtyFBMachSnzDmK+tBnk2TerxBQoYJX3k+QCqhU6s/l0gXxgEnF/+zzqdA+SRQ0+PiZ7xDN7//pfKjrKJzXWNqwUFplxUtoa5PcG3SKIQuVp3G0V5G5Y0VbdXRP/dnOWM5kZWZ/lZWZ/X6ozPyKOqqJTbhqaCdp8pP0c5b+ntBRQ/sJ7f8iYYitrC0AAAAASUVORK5CYII=");
+}
+
+.swiper-pagination {
+  bottom: 20% !important;
+}
+.swiper-pagination-bullet {
+  width: 17px;
+  height: 1px;
+  background-color: #fff;
+}
+
+.swiper-pagination-bullet-active {
+  width: 20px;
+}
+
 .location {
   .intro {
     position: relative;
@@ -101,11 +161,17 @@
       text-align: center;
       opacity: 1;
       .container-imgs {
+        position: relative;
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        img {
+          width: 100%;
+          height: 100vh;
+        }
       }
       .container-text {
         position: absolute;
+        z-index: 1;
         color: #fff;
         .title {
           width: 364px;
@@ -115,6 +181,14 @@
           background-size: cover;
           background-position: 50% 50%;
           background-repeat: no-repeat;
+        }
+        .paragraph {
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 30px;
+          margin-bottom: 35px;
+          width: 300px;
+          margin-bottom: 35px;
         }
       }
       .title-article {
