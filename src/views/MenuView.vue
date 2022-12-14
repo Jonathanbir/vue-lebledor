@@ -52,15 +52,7 @@
               </p>
             </div>
             <div class="cuisine-image">
-              <img
-                class="prev"
-                src="//lebledor-img.s3.amazonaws.com/cover/7b942d07cdd519e2d815ed7f632c27e2.png"
-                width="432"
-                height="329.390625"
-              /><img
-                class="current"
-                src="//lebledor-img.s3.amazonaws.com/cover/7b942d07cdd519e2d815ed7f632c27e2.png"
-              />
+              <img class="current" :src="active[1]" />
             </div>
           </div>
         </div>
@@ -81,13 +73,16 @@
                 role="option"
                 aria-describedby="slick-slide07"
                 style="width: 154px"
+                @click="changeImg([item.id, item.src])"
               >
                 <img
                   :src="item.src"
                   :alt="item.title"
                   data-info="為了加倍襯出新鮮海鮮的清甜，主廚由經典「五味醬」為靈感創作醬汁，拌入彈脆的鮮蝦、墨魚與當季沙拉時蔬，舞動蒜香與酸甜鹹的滋味，又清爽又開胃！"
                 />
-                <p>{{ item.title }}</p>
+                <p :style="active[0] == item.id && { color: '#8A422E' }">
+                  {{ item.title }}
+                </p>
               </div>
             </swiper-slide>
           </swiper>
@@ -114,10 +109,16 @@ import { Navigation } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 
-let modules = [Navigation];
-const scroll = ref(false);
 const store = useStore();
 const menu = computed(() => store.state.menu);
+
+const modules = [Navigation];
+const scroll = ref(false);
+const active = ref([menu.value[0].id, menu.value[0].src]);
+
+const changeImg = (item) => {
+  active.value = item;
+};
 
 onMounted(() => {
   window.addEventListener(
