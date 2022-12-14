@@ -37,6 +37,7 @@
                 0,
                 menudata[0].data[0].src,
               ]);
+              store.commit('handleChangeMenuIndex', 0);
             "
             @mouseover="
               hover.style =
@@ -88,6 +89,7 @@
                 0,
                 menudata[2].data[0].src,
               ]);
+              store.commit('handleChangeMenuIndex', 2);
             "
             @mouseover="
               hover.style =
@@ -163,6 +165,14 @@
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/78fe6c6e1029b356063e788b306fdfa7.png);'
+            "
+            @click="
+              store.commit('handleChangeMenu', menudata[3].data);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[3].data[0].src,
+              ]);
+              store.commit('handleChangeMenuIndex', 3);
             "
             >甜點飲料</router-link
           >

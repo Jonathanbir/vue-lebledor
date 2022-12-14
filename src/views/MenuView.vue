@@ -38,7 +38,7 @@
       <div class="kv-canvas">
         <div class="kv-image signature"></div>
         <div class="kv-title signature">
-          <img src="../images/signature-kv-title.png" />
+          <img :src="menudata[menuindex].title" />
         </div>
       </div>
       <!-- Slick -->
@@ -114,9 +114,10 @@ import "swiper/css";
 
 const store = useStore();
 const menunow = computed(() => store.state.menu.menu);
+const menudata = computed(() => store.state.menu.data);
 const animationShow = computed(() => store.state.animation);
 const active = computed(() => store.state.menu.active);
-console.log("active", active.value);
+const menuindex = computed(() => store.state.menu.index);
 const modules = [Navigation];
 const scroll = ref(false);
 
