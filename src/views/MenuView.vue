@@ -108,10 +108,8 @@
 <script setup>
 import { ref, computed, onMounted, Transition } from "vue";
 import { useStore } from "vuex";
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation } from "swiper";
-// Import Swiper styles
 import "swiper/css";
 
 const store = useStore();

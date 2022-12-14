@@ -14,8 +14,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { Transition } from "vue";
+import { ref, Transition } from "vue";
 import BannerController from "../components/BannerController.vue";
 
 const banners = ref([
