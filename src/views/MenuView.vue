@@ -51,9 +51,11 @@
                 精選新鮮大蝦事先去除蝦殼，加入蔥蒜、辣椒乾煎後以啤酒調味，蝦肉鮮甜略帶淡淡啤酒麥香，是不可錯過的下酒良伴。
               </p>
             </div>
-            <div class="cuisine-image">
-              <img class="current" :src="active[1]" />
-            </div>
+            <Transition name="fadeAndShow" mode="out-in">
+              <div v-show="animationShow" class="cuisine-image">
+                <img class="current" :src="active[1]" />
+              </div>
+            </Transition>
           </div>
         </div>
         <div class="slider-nav slick-initialized slick-slider">
@@ -73,7 +75,10 @@
                 role="option"
                 aria-describedby="slick-slide07"
                 style="width: 154px"
-                @click="changeImg([item.id, item.src])"
+                @click="
+                  changeImg([item.id, item.src]);
+                  store.commit('handleAnimation');
+                "
               >
                 <img
                   :src="item.src"
@@ -101,7 +106,7 @@
   </section>
 </template>
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, Transition } from "vue";
 import { useStore } from "vuex";
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -111,16 +116,20 @@ import "swiper/css";
 
 const store = useStore();
 const menu = computed(() => store.state.menu);
+const animationShow = computed(() => store.state.animation);
 
 const modules = [Navigation];
 const scroll = ref(false);
 const active = ref([menu.value[0].id, menu.value[0].src]);
 
 const changeImg = (item) => {
-  active.value = item;
+  setTimeout(() => {
+    active.value = item;
+  }, 300);
 };
 
 onMounted(() => {
+  store.commit("handleAnimation");
   window.addEventListener(
     "scroll",
     () => {

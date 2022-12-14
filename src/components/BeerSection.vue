@@ -149,9 +149,8 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, Transition } from "vue";
 import { useStore } from "vuex";
-import { Transition } from "vue";
 const flavor = ref("0");
 const animationShow = computed(() => store.state.animation);
 
