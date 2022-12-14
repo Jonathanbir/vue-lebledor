@@ -30,10 +30,10 @@
           class="menu"
           to="/menu"
           @mouseover="
-            store.commit('handleMouseOver', { show: true, submenu: true })
+            store.commit('handleSubMenu', { show: true, submenu: true })
           "
           @mouseout="
-            store.commit('handleMouseOut', { show: false, submenu: true })
+            store.commit('handleSubMenu', { show: false, submenu: true })
           "
           >美味餐點
           <img class="arrow-triggle" src="../images/10018.png" />
@@ -42,9 +42,9 @@
           class="location"
           to="/location"
           @mouseover="
-            store.commit('handleMouseOver', { show: true, submenu: false })
+            store.commit('handleSubMenu', { show: true, submenu: false })
           "
-          @mouseout="store.commit('handleMouseOut', { show: false })"
+          @mouseout="store.commit('handleSubMenu', { show: false })"
           >餐廳據點 <img class="arrow-triggle" src="../images/10018.png"
         /></RouterLink>
         <RouterLink to="/news">最新消息</RouterLink>

@@ -22,11 +22,7 @@ export const store = createStore({
     };
   },
   mutations: {
-    handleMouseOver(state, value) {
-      state.bool.submenu = value.submenu;
-      state.bool.show = value.show;
-    },
-    handleMouseOut(state, value) {
+    handleSubMenu(state, value) {
       state.bool.submenu = value.submenu;
       state.bool.show = value.show;
     },

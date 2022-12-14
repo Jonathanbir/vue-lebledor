@@ -4,18 +4,14 @@
     id="nav-top-sub"
     :class="{ transform: show }"
     :style="black && { opacity: '1' }"
-    @mouseover="
-      store.commit('handleMouseOver', { show: true, submenu: submenu })
-    "
-    @mouseout="
-      store.commit('handleMouseOut', { show: false, submenu: submenu })
-    "
+    @mouseover="store.commit('handleSubMenu', { show: true, submenu: submenu })"
+    @mouseout="store.commit('handleSubMenu', { show: false, submenu: submenu })"
   >
     <div
       class="sub-menu-inner cuisine active"
       id="nav-top-sub-cuisine"
       v-if="submenu"
-      @mouseover="store.commit('handleMouseOver', { submenu: true })"
+      @mouseover="store.commit('handleSubMenu', { submenu: true })"
     >
       <div class="row picture">
         <div
@@ -38,6 +34,7 @@
                 menudata[0].data[0].src,
               ]);
               store.commit('handleChangeMenuIndex', 0);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             @mouseover="
               hover.style =
@@ -61,6 +58,7 @@
                 0,
                 menudata[1].data[0].src,
               ]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >開胃菜
           </router-link>
@@ -90,6 +88,7 @@
                 menudata[2].data[0].src,
               ]);
               store.commit('handleChangeMenuIndex', 2);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             @mouseover="
               hover.style =
@@ -173,6 +172,7 @@
                 menudata[3].data[0].src,
               ]);
               store.commit('handleChangeMenuIndex', 3);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >甜點飲料</router-link
           >
