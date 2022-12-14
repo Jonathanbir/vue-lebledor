@@ -27,112 +27,141 @@
       <div class="row">
         <h4 class="title">主廚推薦</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/menu/chef-recommended/signature"
+            to="/menu/chef-recommended/signature"
             data-id="2011"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https:////lebledor-img.s3.amazonaws.com/cover/536c9e8a9dc058d004a0294b55840313.png);'
             "
-            >精選菜色</a
+            >精選菜色</router-link
           >
         </div>
         <h4 class="title">開胃前菜</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/menu/appetizer/starter"
-            data-id="2022"
+            to="/menu/appetizer/starter"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/e422d258991d8f566cfd179f426e2520.png);'
             "
-            >開胃菜</a
-          ><a
+            @click="
+              store.commit('handleChangeMenu', [
+                {
+                  id: 0,
+                  src: '//lebledor-img.s3.amazonaws.com/cover/ad50eb7e0a527ea2fe8dcf6557c995d9.png',
+                  title: '握握手小農溫沙拉',
+                },
+                {
+                  id: 1,
+                  src: '//lebledor-img.s3.amazonaws.com/cover/58dcda455a1f5087797301f6d6f47300.png',
+                  title: '凱薩沙拉',
+                },
+                {
+                  id: 2,
+                  src: '//lebledor-img.s3.amazonaws.com/cover/fcdb71737592d0d347d0a6dec30fd6a6.png',
+                  title: '南洋松阪豬',
+                },
+                {
+                  id: 3,
+                  src: '//lebledor-img.s3.amazonaws.com/cover/05937adacba1effdbff40a652a373034.png',
+                  title: '海鮮水果沙拉',
+                },
+                {
+                  id: 4,
+                  src: '//lebledor-img.s3.amazonaws.com/cover/12c0fcc12e41fe28bc3a6ad21afc2302.png',
+                  title: '貝里斯鮮蔬蝦仁拌檸檬優格',
+                },
+              ])
+            "
+            >開胃菜
+          </router-link>
+          <router-link
+            to="/menu/appetizer/salad"
             class="button button-nav-top-sub"
-            href="/menu/appetizer/salad"
             data-id="2021"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/ad50eb7e0a527ea2fe8dcf6557c995d9.png);'
             "
-            >沙拉類</a
+            >沙拉類</router-link
           >
         </div>
       </div>
       <div class="row">
         <h4 class="title">主打美食</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/menu/iconic-dishes/pot"
+            to="/menu/iconic-dishes/pot"
             data-id="2036"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d508c3b35aef826342d403cceb397fb8.png);'
             "
-            >鍋湯類</a
-          ><a
+            >鍋湯類</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/menu/iconic-dishes/pasta"
+            to="/menu/iconic-dishes/pasta"
             data-id="2032"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d192096e541416472bf682f2e290002a.png);'
             "
-            >義大利麵</a
-          ><a
+            >義大利麵</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/menu/iconic-dishes/rice"
+            to="/menu/iconic-dishes/rice"
             data-id="2031"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/57ca230b9258d09a416d513267503c4f.png);'
             "
-            >飯類</a
-          ><a
+            >飯類</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/menu/iconic-dishes/grilled"
+            to="/menu/iconic-dishes/grilled"
             data-id="2035"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/a77e2f529ed139cfa316479d231f9a07.png);'
             "
-            >燒烤類</a
-          ><a
+            >燒烤類</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/menu/iconic-dishes/pizza"
+            to="/menu/iconic-dishes/pizza"
             data-id="2033"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d1a972853865f69d459300cdf4e731ad.png);'
             "
-            >披薩類</a
-          ><a
+            >披薩類</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/menu/iconic-dishes/fried"
+            to="/menu/iconic-dishes/fried"
             data-id="2034"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/a180d6ab309298c29c13a0ef4cec4cae.png);'
             "
-            >酥炸類</a
+            >酥炸類</router-link
           >
         </div>
       </div>
       <div class="row">
         <h4 class="title">餐後甜點</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/menu/classic-confection/dessert"
+            to="/menu/classic-confection/dessert"
             data-id="2041"
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/78fe6c6e1029b356063e788b306fdfa7.png);'
             "
-            >甜點飲料</a
+            >甜點飲料</router-link
           >
         </div>
       </div>
@@ -148,142 +177,142 @@
       <div class="row">
         <h4 class="title">北區</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/location/miramar"
+            to="/location/miramar"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
             "
-            >台北美麗華店</a
-          ><a
+            >台北美麗華店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/qsquare"
+            to="/location/qsquare"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
             "
-            >台北京站店</a
-          ><a
+            >台北京站店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/cellar"
+            to="/location/cellar"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/3-cellar/cover.png);'
             "
-            >信義誠品店</a
-          ><a
+            >信義誠品店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/citylink"
+            to="/location/citylink"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/4-citylink/cover.png);'
             "
-            >南港CITYLINK店</a
-          ><a
+            >南港CITYLINK店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/megacity"
+            to="/location/megacity"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/5-megacity/cover.png);'
             "
-            >板橋大遠百店</a
-          ><a
+            >板橋大遠百店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/jingguan"
+            to="/location/jingguan"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
             "
-            >新莊晶冠店</a
-          ><a
+            >新莊晶冠店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/bigcity"
+            to="/location/bigcity"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/7-bigcity/cover.png);'
             "
-            >新竹巨城店PARK15</a
-          ><a
+            >新竹巨城店PARK15</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/sogoa21"
+            to="/location/sogoa21"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/14-sogoa21/cover.png);'
             "
-            >中壢SOGO店</a
-          ><a
+            >中壢SOGO店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/zhubei"
+            to="/location/zhubei"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/17-zhubei/cover.png);'
             "
-            >新竹竹北店</a
+            >新竹竹北店</router-link
           >
         </div>
       </div>
       <div class="row">
         <h4 class="title">中區</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/location/shizheng"
+            to="/location/shizheng"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/8-shizheng/cover.png);'
             "
-            >台中市政店</a
-          ><a
+            >台中市政店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/cmp"
+            to="/location/cmp"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/9-cmp/cover.png);'
             "
-            >台中勤美店</a
+            >台中勤美店</router-link
           >
         </div>
         <h4 class="title">南區</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/location/dreammall"
+            to="/location/dreammall"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/10-dreammall/cover.png);'
             "
-            >台南南紡店 </a
-          ><a
+            >台南南紡店 </router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/edamall"
+            to="/location/edamall"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
             "
-            >高雄義大店</a
-          ><a
+            >高雄義大店</router-link
+          ><router-link
             class="button button-nav-top-sub"
-            href="/location/hanshin"
+            to="/location/hanshin"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/15-hanshin/cover.png);'
             "
-            >漢神巨蛋店</a
+            >漢神巨蛋店</router-link
           >
         </div>
       </div>
       <div class="row">
         <h4 class="title">UMAMI 金色三麥</h4>
         <div class="list">
-          <a
+          <router-link
             class="button button-nav-top-sub"
-            href="/location/umami"
+            to="/location/umami"
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/16-umami/cover.png);'
             "
-            >微風南山店</a
+            >微風南山店</router-link
           >
         </div>
       </div>
@@ -297,6 +326,7 @@ import { useStore } from "vuex";
 const hover = ref({ style: "", locations: "" });
 const black = ref(false);
 const store = useStore();
+console.log("state", store.state);
 
 const show = computed(() => store.state.bool.show);
 const submenu = computed(() => store.state.bool.submenu);

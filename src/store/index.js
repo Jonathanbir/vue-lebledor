@@ -63,6 +63,10 @@ export const store = createStore({
       state.bool.submenu = value.submenu;
       state.bool.show = value.show;
     },
+    handleChangeMenu(state, value) {
+      console.log("value", value);
+      state.menu = value;
+    },
     handleAnimation(state) {
       state.animation = false;
       setTimeout(() => {
