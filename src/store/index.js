@@ -30,6 +30,7 @@ export const store = createStore({
           { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].space2 },
           { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].space3 },
         ],
+        scroll: false,
       },
     };
   },
@@ -60,6 +61,9 @@ export const store = createStore({
     },
     handleChangeLocationsNumbers(state, value) {
       state.locations.numbers = value;
+    },
+    handleChangeScroll(state, value) {
+      state.locations.scroll = value;
     },
   },
   actions: {},

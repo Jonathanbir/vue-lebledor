@@ -98,11 +98,11 @@ import { useStore } from "vuex";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-
 const modules = [Navigation, Pagination, Autoplay];
 const store = useStore();
 const locations = computed(() => store.state.locations.location);
 const numbers = computed(() => store.state.locations.numbers);
+const scrollShow = computed(() => store.state.locations.scroll);
 const startTime = Date.now();
 const duration = 10;
 let animationStart = false;
@@ -111,7 +111,8 @@ onMounted(() => {
   window.addEventListener(
     "scroll",
     () => {
-      if (window.pageYOffset > 320) {
+      if (window.pageYOffset > 320 && scrollShow.value == false) {
+        store.commit("handleChangeScroll", true);
         numbers.value.forEach((item) => {
           item.currentNum = item.startNum;
         });

@@ -198,7 +198,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[0]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -237,7 +239,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[1]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -276,8 +280,12 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/3-cellar/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[2]);
+
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[1]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -316,7 +324,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/4-citylink/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[3]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -355,7 +365,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/5-megacity/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[4]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -394,7 +406,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[5]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -433,7 +447,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/7-bigcity/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[6]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -472,7 +488,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/14-sogoa21/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[7]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -511,7 +529,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/17-zhubei/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[8]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -556,7 +576,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/8-shizheng/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[9]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -595,7 +617,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/9-cmp/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[10]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -638,7 +662,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/10-dreammall/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[11]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -677,7 +703,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[12]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -716,7 +744,9 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/15-hanshin/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[13]);
+
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -761,6 +791,7 @@
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/16-umami/cover.png);'
             "
             @click="
+              store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[14]);
               store.commit('handleChangeLocationsNumbers', [
                 {
