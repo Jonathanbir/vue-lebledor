@@ -50,15 +50,10 @@
           <div class="sprite sprite-article-info-chair"></div>
           <div class="text">座位數</div>
           <div class="text counter big" value="640">
-            <!-- <span class="number active">6</span
-            ><span class="number active">4</span
-            ><span class="number first active">0</span> -->
             <span class="number active">{{ locations.seat }}</span>
           </div>
-
           <div class="text">席</div>
         </div>
-
         <div class="stats second">
           <div class="sprite sprite-article-info-block"></div>
           <div v-show="locations.stateroom" class="text">包廂</div>
@@ -69,16 +64,18 @@
           </div>
           <div v-show="locations.stateroom" class="text">間</div>
 
-          <div v-show="locations.space" class="text counter" value="40/100">
-            <!-- <span class="number active">4</span
-            ><span class="number active">0</span
-            ><span class="number active">/</span
-            ><span class="number active">1</span
-            ><span class="number active">0</span
-            ><span class="number first active">0</span> --><span
-              class="number active"
-              >{{ locations.space }}</span
-            >
+          <div class="text counter">
+            <span v-show="locations.space1" class="number active">{{
+              locations.space1
+            }}</span>
+            <span v-show="locations.space2">/</span>
+            <span v-show="locations.space2" class="number active">{{
+              locations.space2
+            }}</span>
+            <span v-show="locations.space3">/</span>
+            <span v-show="locations.space3" class="number active">{{
+              locations.space3
+            }}</span>
           </div>
           <div v-show="locations.space" class="text">席</div>
         </div>
@@ -95,7 +92,7 @@
   </section>
 </template>
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { useStore } from "vuex";
 import { Navigation, Pagination, Autoplay } from "swiper";
@@ -105,6 +102,49 @@ import "swiper/css/pagination";
 const modules = [Navigation, Pagination, Autoplay];
 const store = useStore();
 const locations = computed(() => store.state.locations.location);
+const numbers = computed(() => store.state.locations.numbers);
+const startTime = Date.now();
+const duration = 10;
+let animationStart = false;
+
+onMounted(() => {
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (window.pageYOffset > 320) {
+        numbers.value.forEach((item) => {
+          item.currentNum = item.startNum;
+        });
+        addUp();
+      }
+    },
+    true
+  );
+  const addUp = () => {
+    animationStart =
+      numbers.value[0].currentNum < numbers.value[0].endNum ||
+      numbers.value[1].currentNum < numbers.value[1].endNum
+        ? true
+        : false;
+
+    let now = Date.now();
+
+    document.querySelectorAll(".number").forEach((item, i) => {
+      if (
+        now >
+          startTime +
+            duration *
+              (numbers.value[i].currentNum - numbers.value[i].startNum) &&
+        numbers.value[i].currentNum < numbers.value[i].endNum
+      ) {
+        numbers.value[i].currentNum++;
+        item.innerHTML = numbers.value[i].currentNum;
+      }
+    });
+
+    if (animationStart) requestAnimationFrame(() => addUp());
+  };
+});
 </script>
 
 <style lang="scss">

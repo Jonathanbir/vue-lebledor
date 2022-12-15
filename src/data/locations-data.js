@@ -8,7 +8,9 @@ const LOCATIONS_DATA = [
     location: "台北市中山區敬業3路20號5樓",
     seat: "250",
     stateroom: "2",
-    space: "40/100",
+    space1: "40",
+    space2: "100",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -33,7 +35,9 @@ const LOCATIONS_DATA = [
     location: "台北市大同區承德路1段1號4樓",
     seat: "250",
     stateroom: "1",
-    space: "20",
+    space1: "20",
+    space2: "",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -58,7 +62,9 @@ const LOCATIONS_DATA = [
     location: "台北市信義區松高路11號B1",
     seat: "500",
     stateroom: "3",
-    space: "30/40/70",
+    space1: "30",
+    space2: "40",
+    space3: "70",
     banners: [
       {
         id: 0,
@@ -83,7 +89,9 @@ const LOCATIONS_DATA = [
     location: "台北市南港區忠孝東路七段299號C棟1樓",
     seat: "260",
     stateroom: "1",
-    space: "12",
+    space1: "12",
+    space2: "",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -107,7 +115,9 @@ const LOCATIONS_DATA = [
     location: "新北市板橋區新站路28號9樓",
     seat: "270",
     stateroom: "3",
-    space: "30/50/60",
+    space1: "30",
+    space2: "50",
+    space3: "60",
     banners: [
       {
         id: 0,
@@ -131,7 +141,9 @@ const LOCATIONS_DATA = [
     location: "新北市新莊區五工路66號1樓",
     seat: "354",
     stateroom: "2",
-    space: "40/30",
+    space1: "40",
+    space2: "30",
+    space3: "",
     device: "歡聚包廂 30位（含卡拉OK設備）",
     banners: [
       {
@@ -156,7 +168,9 @@ const LOCATIONS_DATA = [
     location: "新竹市東區中央路229號7樓",
     seat: "262",
     stateroom: "2",
-    space: "64/64",
+    space1: "64",
+    space2: "64",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -180,7 +194,9 @@ const LOCATIONS_DATA = [
     location: "桃園市中壢區元化路357號8樓",
     seat: "",
     stateroom: "104",
-    space: "",
+    space1: "",
+    space2: "",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -204,7 +220,9 @@ const LOCATIONS_DATA = [
     location: "新竹縣竹北市自強南路36號1樓",
     seat: "188",
     stateroom: "1",
-    space: "53",
+    space1: "53",
+    space2: "",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -228,7 +246,9 @@ const LOCATIONS_DATA = [
     location: "台中市西屯區市政路20號",
     seat: "450",
     stateroom: "3",
-    space: "12/40/40",
+    space1: "12",
+    space2: "40",
+    space3: "40",
     banners: [
       {
         id: 0,
@@ -252,7 +272,9 @@ const LOCATIONS_DATA = [
     location: "台中市西區公益路68號B1",
     seat: "212",
     stateroom: "",
-    space: "",
+    space1: "",
+    space2: "",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -276,7 +298,9 @@ const LOCATIONS_DATA = [
     location: "台南市東區中華東路1段366號5樓",
     seat: "320",
     stateroom: "",
-    space: "",
+    space1: "",
+    space2: "",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -300,7 +324,9 @@ const LOCATIONS_DATA = [
     location: "高雄市大樹區學城路1段12號A區5樓（義大世界)",
     seat: "210",
     stateroom: "3",
-    space: "10/30/30",
+    space1: "10",
+    space2: "30",
+    space3: "30",
     banners: [
       {
         id: 0,
@@ -324,7 +350,9 @@ const LOCATIONS_DATA = [
     location: "高雄市左營區博愛二路777號四樓",
     seat: "150",
     stateroom: "1",
-    space: "16",
+    space1: "16",
+    space2: "",
+    space3: "",
     banners: [
       {
         id: 0,
@@ -348,7 +376,9 @@ const LOCATIONS_DATA = [
     location: "台北市信義區松智路17號7樓",
     seat: "104",
     stateroom: "3",
-    space: "20/24/28",
+    space1: "20",
+    space2: "24",
+    space3: "28",
     banners: [
       {
         id: 0,

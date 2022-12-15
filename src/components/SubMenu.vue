@@ -199,6 +199,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[0]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[0].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[0].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[0].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[0].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[0].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >台北美麗華店</router-link
@@ -211,6 +238,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[1]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[1].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[1].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[1].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[1].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[1].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >台北京站店</router-link
@@ -223,6 +277,34 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[2]);
+              store.commit('handleChangeLocations', locationsdata[1]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[2].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[2].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[2].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[2].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[2].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >信義誠品店</router-link
@@ -235,6 +317,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[3]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[3].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[3].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[3].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[3].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[3].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >南港CITYLINK店</router-link
@@ -247,6 +356,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[4]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[4].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[4].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[4].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[4].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[4].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >板橋大遠百店</router-link
@@ -259,6 +395,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[5]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[5].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[5].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[5].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[5].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[5].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >新莊晶冠店</router-link
@@ -271,6 +434,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[6]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[6].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[6].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[6].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[6].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[6].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >新竹巨城店PARK15</router-link
@@ -283,6 +473,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[7]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[7].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[7].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[7].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[7].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[7].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >中壢SOGO店</router-link
@@ -295,6 +512,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[8]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[8].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[8].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[8].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[8].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[8].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >新竹竹北店</router-link
@@ -313,6 +557,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[9]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[9].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[9].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[9].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[9].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[9].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >台中市政店</router-link
@@ -325,6 +596,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[10]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[10].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[10].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[10].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[10].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[10].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >台中勤美店</router-link
@@ -341,6 +639,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[11]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[11].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[11].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[11].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[11].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[11].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >台南南紡店 </router-link
@@ -353,6 +678,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[12]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[12].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[12].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[12].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[12].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[12].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >高雄義大店</router-link
@@ -365,6 +717,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[13]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[13].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[13].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[13].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[13].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[13].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >漢神巨蛋店</router-link
@@ -383,6 +762,33 @@
             "
             @click="
               store.commit('handleChangeLocations', locationsdata[14]);
+              store.commit('handleChangeLocationsNumbers', [
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[14].seat,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[14].stateroom,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[14].space1,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[14].space2,
+                },
+                {
+                  startNum: 0,
+                  currentNum: 100,
+                  endNum: locationsdata[14].space3,
+                },
+              ]);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >微風南山店</router-link

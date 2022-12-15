@@ -3,11 +3,11 @@ import MENU_DATA from "../data/menu-data";
 import LOCATIONS_DATA from "../data/locations-data";
 
 export const store = createStore({
-  plugins: [
-    createLogger({
-      collapsed: false, // 默认展开
-    }),
-  ],
+  // plugins: [
+  //   createLogger({
+  //     collapsed: false, // 默认展开
+  //   }),
+  // ],
   state() {
     return {
       animation: false,
@@ -23,6 +23,13 @@ export const store = createStore({
       locations: {
         data: LOCATIONS_DATA,
         location: LOCATIONS_DATA[0],
+        numbers: [
+          { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].seat },
+          { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].stateroom },
+          { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].space1 },
+          { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].space2 },
+          { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].space3 },
+        ],
       },
     };
   },
@@ -50,6 +57,9 @@ export const store = createStore({
     },
     handleChangeLocations(state, value) {
       state.locations.location = value;
+    },
+    handleChangeLocationsNumbers(state, value) {
+      state.locations.numbers = value;
     },
   },
   actions: {},
