@@ -29,16 +29,19 @@
               }
             "
           >
-            <a href="#signature-menu">精選菜色</a>
+            <a href="#signature-menu">{{ menunow.name }}</a>
           </li>
         </ul>
       </div>
     </nav>
     <section id="signature-menu" class="menu-category signature-menu first">
-      <div class="kv-canvas">
+      <div
+        class="kv-canvas"
+        :style="'background:url(' + menunow.subbanner + ')'"
+      >
         <div class="kv-image signature"></div>
         <div class="kv-title signature">
-          <img :src="menudata[menuindex].title" />
+          <img :src="menunow.title" />
         </div>
       </div>
       <!-- Slick -->
@@ -46,9 +49,9 @@
         <div class="slider-for">
           <div class="menu-slide">
             <div class="cuisine-info">
-              <h2>金色三麥現釀啤酒蝦</h2>
+              <h2>{{ menunow.data[active[0]].title }}</h2>
               <p>
-                精選新鮮大蝦事先去除蝦殼，加入蔥蒜、辣椒乾煎後以啤酒調味，蝦肉鮮甜略帶淡淡啤酒麥香，是不可錯過的下酒良伴。
+                {{ menunow.data[active[0]].description }}
               </p>
             </div>
             <Transition name="fadeAndShow" mode="out-in">
@@ -60,13 +63,13 @@
         </div>
         <div class="slider-nav slick-initialized slick-slider">
           <swiper
-            :slidesPerView="5"
+            :slidesPerView="menunow.data.length >= 4 ? 5 : 3"
             :spaceBetween="30"
-            :navigation="true"
+            :navigation="menunow.data.length >= 5 ? true : false"
             :modules="modules"
             class="mySwiper"
           >
-            <swiper-slide v-for="item in menunow">
+            <swiper-slide v-for="item in menunow.data">
               <div
                 class="menu-slide slick-slide"
                 data-slick-index="7"
@@ -114,10 +117,8 @@ import "swiper/css";
 
 const store = useStore();
 const menunow = computed(() => store.state.menu.menu);
-const menudata = computed(() => store.state.menu.data);
 const animationShow = computed(() => store.state.animation);
 const active = computed(() => store.state.menu.active);
-const menuindex = computed(() => store.state.menu.index);
 const modules = [Navigation];
 const scroll = ref(false);
 
@@ -249,10 +250,10 @@ onMounted(() => {
       width: 100%;
       height: 374px;
       background-image: url("../images/signature-kv-parallax.jpeg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
       .kt-image {
         width: 100%;
         height: 100%;

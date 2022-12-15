@@ -13,9 +13,8 @@ export const store = createStore({
       animation: false,
       bool: { show: false, submenu: true },
       menu: {
-        index: 0,
         data: MENU_DATA,
-        menu: MENU_DATA[0].data,
+        menu: MENU_DATA[0],
         active: [0, MENU_DATA[0].data[0].src],
         // menu: MENU_DATA[4].data,
         // active: [0, MENU_DATA[4].data[0].items[0].src],
@@ -41,9 +40,6 @@ export const store = createStore({
     },
     handleChangeMenu(state, value) {
       state.menu.menu = value;
-    },
-    handleChangeMenuIndex(state, value) {
-      state.menu.index = value;
     },
     handleChangeMenuActive(state, value) {
       setTimeout(() => {

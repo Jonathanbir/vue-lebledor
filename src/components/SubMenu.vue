@@ -28,12 +28,11 @@
             to="/menu/chef-recommended/signature"
             data-id="2011"
             @click="
-              store.commit('handleChangeMenu', menudata[0].data);
+              store.commit('handleChangeMenu', menudata[0]);
               store.commit('handleChangeMenuActive', [
                 0,
                 menudata[0].data[0].src,
               ]);
-              store.commit('handleChangeMenuIndex', 0);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             @mouseover="
@@ -53,7 +52,7 @@
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/e422d258991d8f566cfd179f426e2520.png);'
             "
             @click="
-              store.commit('handleChangeMenu', menudata[1].data);
+              store.commit('handleChangeMenu', menudata[1]);
               store.commit('handleChangeMenuActive', [
                 0,
                 menudata[1].data[0].src,
@@ -66,6 +65,13 @@
             to="/menu/appetizer/salad"
             class="button button-nav-top-sub"
             data-id="2021"
+            @click="
+              store.commit('handleChangeMenu', menudata[2]);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[2].data[0].src,
+              ]);
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/ad50eb7e0a527ea2fe8dcf6557c995d9.png);'
@@ -82,12 +88,11 @@
             to="/menu/iconic-dishes/pot"
             data-id="2036"
             @click="
-              store.commit('handleChangeMenu', menudata[2].data);
+              store.commit('handleChangeMenu', menudata[3]);
               store.commit('handleChangeMenuActive', [
                 0,
-                menudata[2].data[0].src,
+                menudata[3].data[0].src,
               ]);
-              store.commit('handleChangeMenuIndex', 2);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             @mouseover="
@@ -100,6 +105,14 @@
             class="button button-nav-top-sub"
             to="/menu/iconic-dishes/pot"
             data-id="2036"
+            @click="
+              store.commit('handleChangeMenu', menudata[4]);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[4].data[0].src,
+              ]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d508c3b35aef826342d403cceb397fb8.png);'
@@ -110,6 +123,14 @@
             class="button button-nav-top-sub"
             to="/menu/iconic-dishes/pasta"
             data-id="2032"
+            @click="
+              store.commit('handleChangeMenu', menudata[5]);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[5].data[0].src,
+              ]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d192096e541416472bf682f2e290002a.png);'
@@ -119,6 +140,14 @@
             class="button button-nav-top-sub"
             to="/menu/iconic-dishes/rice"
             data-id="2031"
+            @click="
+              store.commit('handleChangeMenu', menudata[6]);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[6].data[0].src,
+              ]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/57ca230b9258d09a416d513267503c4f.png);'
@@ -128,6 +157,14 @@
             class="button button-nav-top-sub"
             to="/menu/iconic-dishes/grilled"
             data-id="2035"
+            @click="
+              store.commit('handleChangeMenu', menudata[7]);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[7].data[0].src,
+              ]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/a77e2f529ed139cfa316479d231f9a07.png);'
@@ -137,6 +174,14 @@
             class="button button-nav-top-sub"
             to="/menu/iconic-dishes/pizza"
             data-id="2033"
+            @click="
+              store.commit('handleChangeMenu', menudata[8]);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[8].data[0].src,
+              ]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/d1a972853865f69d459300cdf4e731ad.png);'
@@ -146,6 +191,14 @@
             class="button button-nav-top-sub"
             to="/menu/iconic-dishes/fried"
             data-id="2034"
+            @click="
+              store.commit('handleChangeMenu', menudata[9]);
+              store.commit('handleChangeMenuActive', [
+                0,
+                menudata[9].data[0].src,
+              ]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             @mouseover="
               hover.style =
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/a180d6ab309298c29c13a0ef4cec4cae.png);'
@@ -166,12 +219,11 @@
                 'opacity:1;background-image:url(https://lebledor-img.s3.amazonaws.com/cover/78fe6c6e1029b356063e788b306fdfa7.png);'
             "
             @click="
-              store.commit('handleChangeMenu', menudata[3].data);
+              store.commit('handleChangeMenu', menudata[10]);
               store.commit('handleChangeMenuActive', [
                 0,
-                menudata[3].data[0].src,
+                menudata[10].data[0].src,
               ]);
-              store.commit('handleChangeMenuIndex', 3);
               store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >甜點飲料</router-link
