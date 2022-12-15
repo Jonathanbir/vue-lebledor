@@ -5,7 +5,12 @@
         <div class="beer-background" :style="beers[flavor].background"></div>
       </div>
       <div class="center">
-        <h3 class="title-background">滴滴是精釀</h3>
+        <h3
+          class="title-background"
+          :style="'transform:translate3d(-60px,' + height + 'px ,0px)'"
+        >
+          滴滴是精釀
+        </h3>
         <div class="left">
           <div class="container-beer">
             <div class="container-img">
@@ -152,11 +157,19 @@
 import { ref, computed, onMounted, Transition } from "vue";
 import { useStore } from "vuex";
 const flavor = ref("0");
+const height = ref("");
 const animationShow = computed(() => store.state.animation);
 
 const store = useStore();
 onMounted(() => {
   store.commit("handleAnimation");
+  window.addEventListener(
+    "scroll",
+    () => {
+      height.value = window.pageYOffset * 0.1 - 300;
+    },
+    true
+  );
 });
 
 const beers = ref([
