@@ -104,7 +104,8 @@ const locations = computed(() => store.state.locations.location);
 const numbers = computed(() => store.state.locations.numbers);
 const scrollShow = computed(() => store.state.locations.scroll);
 const startTime = Date.now();
-const duration = 10;
+const durationFirst = 5;
+const duration = 150;
 let animationStart = false;
 
 onMounted(() => {
@@ -131,15 +132,28 @@ onMounted(() => {
     let now = Date.now();
 
     document.querySelectorAll(".number").forEach((item, i) => {
-      if (
-        now >
-          startTime +
-            duration *
-              (numbers.value[i].currentNum - numbers.value[i].startNum) &&
-        numbers.value[i].currentNum < numbers.value[i].endNum
-      ) {
-        numbers.value[i].currentNum++;
-        item.innerHTML = numbers.value[i].currentNum;
+      if (i === 0) {
+        if (
+          now >
+            startTime +
+              durationFirst *
+                (numbers.value[i].currentNum - numbers.value[i].startNum) &&
+          numbers.value[i].currentNum < numbers.value[i].endNum
+        ) {
+          numbers.value[i].currentNum++;
+          item.innerHTML = numbers.value[i].currentNum;
+        }
+      } else {
+        if (
+          now >
+            startTime +
+              duration *
+                (numbers.value[i].currentNum - numbers.value[i].startNum) &&
+          numbers.value[i].currentNum < numbers.value[i].endNum
+        ) {
+          numbers.value[i].currentNum++;
+          item.innerHTML = numbers.value[i].currentNum;
+        }
       }
     });
 
