@@ -1,5 +1,6 @@
 import { createStore, createLogger } from "vuex";
-import MENU_DATA from "../menu-data";
+import MENU_DATA from "../data/menu-data";
+import LOCATIONS_DATA from "../data/locations-data";
 
 export const store = createStore({
   plugins: [
@@ -19,6 +20,10 @@ export const store = createStore({
         // menu: MENU_DATA[4].data,
         // active: [0, MENU_DATA[4].data[0].items[0].src],
       },
+      locations: {
+        data: LOCATIONS_DATA,
+        location: LOCATIONS_DATA[0],
+      },
     };
   },
   mutations: {
@@ -33,7 +38,6 @@ export const store = createStore({
       state.menu.index = value;
     },
     handleChangeMenuActive(state, value) {
-      console.log("value", value);
       setTimeout(() => {
         state.menu.active = value;
       }, 300);
@@ -43,6 +47,9 @@ export const store = createStore({
       setTimeout(() => {
         state.animation = true;
       }, 300);
+    },
+    handleChangeLocations(state, value) {
+      state.locations.location = value;
     },
   },
   actions: {},

@@ -13,46 +13,47 @@
             :modules="modules"
             class="mySwiper"
           >
-            <swiper-slide
-              ><img
-                src="https://www.lebledor.com/img/location/1-miramar/img1-x2.jpg" /></swiper-slide
-            ><swiper-slide
-              ><img
-                src="https://www.lebledor.com/img/location/1-miramar/img2-x2.jpg" /></swiper-slide
-            ><swiper-slide
-              ><img
-                src="https://www.lebledor.com/img/location/1-miramar/img3-x2.jpg"
+            <swiper-slide v-for="banner in locations.banners"
+              ><img :src="banner.src"
             /></swiper-slide>
           </swiper>
         </div>
         <div class="container-text">
-          <h1 class="sprite title" id="article-intro-title">台北美麗華店</h1>
-          <p class="paragraph" id="article-intro-paragraph">
-            <b>氣勢磅礡，尊貴非凡</b
-            ><br />美麗華旗艦店為全台首創圓弧形歌劇院式設計的餐廳<br />步入店內宛若置身歐洲歌劇院，感受旗艦格局的尊貴氣度<br />是與重要的人分享重要時刻，一生必訪的經典選擇
-          </p>
+          <h1
+            class="sprite title"
+            :style="'background:url(' + locations.title + ')'"
+          >
+            {{ locations.name }}
+          </h1>
+          <p
+            :innerHTML="locations.text"
+            class="paragraph"
+            id="article-intro-paragraph"
+          ></p>
         </div>
       </div>
     </article>
-
     <article class="info" id="article-info">
       <div class="container-article transition">
         <h3 class="title-article sprite sprite-article-info-title">分店資訊</h3>
-
         <hr class="title-article-hr" />
-
         <p class="paragraph">
-          <a class="button tel" href="tel:(02)2175-3739">(02)2175-3739</a><br />
-          台北市中山區敬業3路20號5樓<br />週日至週四&nbsp;11:00-22:00<br />週五至週六&nbsp;11:00-23:00
+          <a class="button tel" href="tel:(02)2175-3739">{{
+            locations.phone
+          }}</a
+          ><br />
+          {{ locations.location
+          }}<br />週日至週四&nbsp;11:00-22:00<br />週五至週六&nbsp;11:00-23:00
+          <br /><span v-show="locations.device"> {{ locations.device }}</span>
         </p>
         <div class="stats" id="article-info-stats-trigger">
           <div class="sprite sprite-article-info-chair"></div>
           <div class="text">座位數</div>
-
           <div class="text counter big" value="640">
-            <span class="number active">6</span
+            <!-- <span class="number active">6</span
             ><span class="number active">4</span
-            ><span class="number first active">0</span>
+            ><span class="number first active">0</span> -->
+            <span class="number active">{{ locations.seat }}</span>
           </div>
 
           <div class="text">席</div>
@@ -60,21 +61,26 @@
 
         <div class="stats second">
           <div class="sprite sprite-article-info-block"></div>
-          <div class="text">包廂</div>
-          <div class="text counter" value="2">
-            <span class="number first active">2</span>
+          <div v-show="locations.stateroom" class="text">包廂</div>
+          <div v-show="locations.stateroom" class="text counter" value="2">
+            <span v-show="locations.stateroom" class="number first active">{{
+              locations.stateroom
+            }}</span>
           </div>
-          <div class="text">間</div>
+          <div v-show="locations.stateroom" class="text">間</div>
 
-          <div class="text counter" value="40/100">
-            <span class="number active">4</span
+          <div v-show="locations.space" class="text counter" value="40/100">
+            <!-- <span class="number active">4</span
             ><span class="number active">0</span
             ><span class="number active">/</span
             ><span class="number active">1</span
             ><span class="number active">0</span
-            ><span class="number first active">0</span>
+            ><span class="number first active">0</span> --><span
+              class="number active"
+              >{{ locations.space }}</span
+            >
           </div>
-          <div class="text">席</div>
+          <div v-show="locations.space" class="text">席</div>
         </div>
 
         <button class="button button-rectangle">
@@ -89,14 +95,16 @@
   </section>
 </template>
 <script setup>
+import { computed } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
-
+import { useStore } from "vuex";
 import { Navigation, Pagination, Autoplay } from "swiper";
-
 import "swiper/css";
 import "swiper/css/pagination";
 
 const modules = [Navigation, Pagination, Autoplay];
+const store = useStore();
+const locations = computed(() => store.state.locations.location);
 </script>
 
 <style lang="scss">
@@ -177,10 +185,9 @@ const modules = [Navigation, Pagination, Autoplay];
           width: 364px;
           height: 58px;
           margin: 0 auto 40px;
-          background-image: url("https://www.lebledor.com/img/location/1-miramar/title.png");
-          background-size: cover;
-          background-position: 50% 50%;
-          background-repeat: no-repeat;
+          background-size: contain !important;
+          background-position: 50% 50% !important;
+          background-repeat: no-repeat !important;
         }
         .paragraph {
           font-size: 12px;

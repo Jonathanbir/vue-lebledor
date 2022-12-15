@@ -197,6 +197,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[0]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >台北美麗華店</router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -204,6 +208,10 @@
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
+            "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[1]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >台北京站店</router-link
           ><router-link
@@ -213,6 +221,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/3-cellar/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[2]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >信義誠品店</router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -220,6 +232,10 @@
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/4-citylink/cover.png);'
+            "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[3]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >南港CITYLINK店</router-link
           ><router-link
@@ -229,6 +245,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/5-megacity/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[4]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >板橋大遠百店</router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -236,6 +256,10 @@
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/6-jingguan/cover.png);'
+            "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[5]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >新莊晶冠店</router-link
           ><router-link
@@ -245,6 +269,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/7-bigcity/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[6]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >新竹巨城店PARK15</router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -253,6 +281,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/14-sogoa21/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[7]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >中壢SOGO店</router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -260,6 +292,10 @@
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/17-zhubei/cover.png);'
+            "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[8]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >新竹竹北店</router-link
           >
@@ -275,6 +311,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/8-shizheng/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[9]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >台中市政店</router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -282,6 +322,10 @@
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/9-cmp/cover.png);'
+            "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[10]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >台中勤美店</router-link
           >
@@ -295,6 +339,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/10-dreammall/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[11]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >台南南紡店 </router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -303,6 +351,10 @@
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/11-edamall/cover.png);'
             "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[12]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
+            "
             >高雄義大店</router-link
           ><router-link
             class="button button-nav-top-sub"
@@ -310,6 +362,10 @@
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/15-hanshin/cover.png);'
+            "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[13]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >漢神巨蛋店</router-link
           >
@@ -324,6 +380,10 @@
             @mouseover="
               hover.locations =
                 'opacity:1;background-image:url(https://www.lebledor.com/img/location/16-umami/cover.png);'
+            "
+            @click="
+              store.commit('handleChangeLocations', locationsdata[14]);
+              store.commit('handleSubMenu', { show: false, submenu: submenu });
             "
             >微風南山店</router-link
           >
@@ -342,6 +402,7 @@ const store = useStore();
 const show = computed(() => store.state.bool.show);
 const submenu = computed(() => store.state.bool.submenu);
 const menudata = computed(() => store.state.menu.data);
+const locationsdata = computed(() => store.state.locations.data);
 
 onMounted(() => {
   window.addEventListener(
