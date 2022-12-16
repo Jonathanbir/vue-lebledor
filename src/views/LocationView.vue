@@ -8,7 +8,7 @@
             :spaceBetween="30"
             :cssMode="true"
             :navigation="true"
-            :pagination="true"
+            :pagination="pagination"
             :autoplay="true"
             :modules="modules"
             class="mySwiper"
@@ -92,7 +92,7 @@
   </section>
 </template>
 <script setup>
-import { computed, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { useStore } from "vuex";
 import { Navigation, Pagination, Autoplay } from "swiper";
@@ -100,6 +100,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 const modules = [Navigation, Pagination, Autoplay];
 const store = useStore();
+const pagination = ref({
+  clickable: true,
+});
 const locations = computed(() => store.state.locations.location);
 const numbers = computed(() => store.state.locations.numbers);
 const scrollShow = computed(() => store.state.locations.scroll);

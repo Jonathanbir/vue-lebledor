@@ -1,118 +1,125 @@
 <template>
   <BannerVue />
-  <div class="signature">
-    <div
-      class="signature-title"
-      :style="'transform:translate3d(-60px,' + height + 'px ,0px)'"
-    ></div>
-    <div class="container-article">
-      <div class="container-inner">
-        <div class="container-text">
-          <div class="container-text-inner">
-            <h3 class="title-article">It's our signature</h3>
-            <h3 class="sprite-article-signature-title">經典不私藏</h3>
-            <hr class="title-article-hr" />
-            <p class="paragraph">
-              <span class="no-break">金色三麥精心研發的獨家菜色，</span>
-              <span class="no-break">尤其以啤酒入菜的手法，增添菜色層次。</span>
-              <span class="no-break"
-                >使用最傳統的歐洲烹調技術結合主廚的料理創意，</span
+  <div v-if="screen > 530">
+    <div class="signature">
+      <div
+        class="signature-title"
+        :style="'transform:translate3d(-60px,' + height + 'px ,0px)'"
+      ></div>
+      <div class="container-article">
+        <div class="container-inner">
+          <div class="container-text">
+            <div class="container-text-inner">
+              <h3 class="title-article">It's our signature</h3>
+              <h3 class="sprite-article-signature-title">經典不私藏</h3>
+              <hr class="title-article-hr" />
+              <p class="paragraph">
+                <span class="no-break">金色三麥精心研發的獨家菜色，</span>
+                <span class="no-break"
+                  >尤其以啤酒入菜的手法，增添菜色層次。</span
+                >
+                <span class="no-break"
+                  >使用最傳統的歐洲烹調技術結合主廚的料理創意，</span
+                >
+                多年以來店內的人氣餐點，絕對不能錯過的美味。
+              </p>
+              <button
+                class="button button-rectangle"
+                onclick="window.location='/menu/chef-recommended';"
               >
-              多年以來店內的人氣餐點，絕對不能錯過的美味。
-            </p>
-            <button
-              class="button button-rectangle"
-              onclick="window.location='/menu/chef-recommended';"
-            >
-              <div class="text">
-                主廚推薦
-                <span class="arrow sprite-button-rectangle-arrow"></span>
-              </div>
-            </button>
+                <div class="text">
+                  主廚推薦
+                  <span class="arrow sprite-button-rectangle-arrow"></span>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <AppetizerVue />
-  <article class="main-attraction" id="article-main-attraction">
-    <div class="container-article transition">
-      <div class="center">
-        <div class="left">
+    <AppetizerVue />
+    <article class="main-attraction" id="article-main-attraction">
+      <div class="container-article transition">
+        <div class="center">
+          <div class="left">
+            <div class="container-text">
+              <h3 class="title-article">
+                Here's the <span class="no-break">main attraction</span>
+              </h3>
+              <div class="container-title">
+                <hr class="title-article-hr" />
+                <h3 class="sprite sprite-article-main-attraction-title">
+                  美味難以忘懷
+                </h3>
+              </div>
+              <p class="paragraph">
+                六大類主食交織出無限多種搭配，吃一口不加味精的健康料理，感受難以忘懷的美好滋味。
+              </p>
+              <button
+                class="button button-rectangle"
+                onclick="window.location='/menu/iconic-dishes';"
+              >
+                <div class="text">
+                  主打美食
+                  <span
+                    class="arrow sprite sprite-button-rectangle-arrow"
+                  ></span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="sweet-tooth" id="article-sweet-tooth">
+      <div class="container-article transition">
+        <div class="center">
           <div class="container-text">
             <h3 class="title-article">
-              Here's the <span class="no-break">main attraction</span>
+              Have a <span class="no-break">sweet tooth</span>
             </h3>
-            <div class="container-title">
-              <hr class="title-article-hr" />
-              <h3 class="sprite sprite-article-main-attraction-title">
-                美味難以忘懷
-              </h3>
-            </div>
+            <hr class="title-article-hr" />
+            <h3 class="sprite sprite-article-sweet-tooth-title">還有一個胃</h3>
             <p class="paragraph">
-              六大類主食交織出無限多種搭配，吃一口不加味精的健康料理，感受難以忘懷的美好滋味。
+              捨不得結束，也或許只是嘴饞的小藉口。<br />今天決定，想吃至上！嘗到甜蜜滋味，才能滿足謝幕。
             </p>
             <button
               class="button button-rectangle"
-              onclick="window.location='/menu/iconic-dishes';"
+              onclick="window.location='/menu/classic-confection';"
             >
               <div class="text">
-                主打美食
+                餐後甜點
                 <span class="arrow sprite sprite-button-rectangle-arrow"></span>
               </div>
             </button>
+
+            <img
+              class="img-left"
+              width="381"
+              height="257"
+              id="article-sweet-tooth-img1"
+              :style="'transform:translate3d(0px,' + height + 'px ,0px)'"
+              src="../images/10004.jpg"
+            />
+          </div>
+        </div>
+        <div class="right">
+          <div class="container-cake">
+            <img
+              class="img-cake"
+              width="869"
+              height="281"
+              id="article-sweet-tooth-cake"
+              src="../images/10005.png"
+            />
           </div>
         </div>
       </div>
-    </div>
-  </article>
-  <article class="sweet-tooth" id="article-sweet-tooth">
-    <div class="container-article transition">
-      <div class="center">
-        <div class="container-text">
-          <h3 class="title-article">
-            Have a <span class="no-break">sweet tooth</span>
-          </h3>
-          <hr class="title-article-hr" />
-          <h3 class="sprite sprite-article-sweet-tooth-title">還有一個胃</h3>
-          <p class="paragraph">
-            捨不得結束，也或許只是嘴饞的小藉口。<br />今天決定，想吃至上！嘗到甜蜜滋味，才能滿足謝幕。
-          </p>
-          <button
-            class="button button-rectangle"
-            onclick="window.location='/menu/classic-confection';"
-          >
-            <div class="text">
-              餐後甜點
-              <span class="arrow sprite sprite-button-rectangle-arrow"></span>
-            </div>
-          </button>
-
-          <img
-            class="img-left"
-            width="381"
-            height="257"
-            id="article-sweet-tooth-img1"
-            :style="'transform:translate3d(0px,' + height + 'px ,0px)'"
-            src="../images/10004.jpg"
-          />
-        </div>
-      </div>
-      <div class="right">
-        <div class="container-cake">
-          <img
-            class="img-cake"
-            width="869"
-            height="281"
-            id="article-sweet-tooth-cake"
-            src="../images/10005.png"
-          />
-        </div>
-      </div>
-    </div>
-  </article>
-  <BeerSectionVue />
-  <LocationsVue />
+    </article>
+    <BeerSectionVue />
+    <LocationsVue />
+  </div>
+  <div v-else></div>
 </template>
 
 <script setup>
@@ -121,12 +128,14 @@ import BannerVue from "../components/Banner.vue";
 import BeerSectionVue from "../components/BeerSection.vue";
 import AppetizerVue from "../components/Appetizer.vue";
 import LocationsVue from "../components/Locations.vue";
+const screen = ref(document.documentElement.scrollWidth);
 const height = ref("");
 
 onMounted(() => {
   window.addEventListener(
     "scroll",
     () => {
+      console.log("innerWidth", document.documentElement.scrollWidth);
       height.value = window.pageYOffset * 0.15 - 100;
     },
     true

@@ -1,5 +1,5 @@
 <template>
-  <div class="banner" :style="banners[index].background">
+  <div v-if="screen > 530" class="banner" :style="banners[index].background">
     <Transition name="fadeAndScale" mode="out-in">
       <div class="black-banner" v-show="show"></div>
     </Transition>
@@ -11,11 +11,35 @@
     <div class="awwwards"></div>
     <div class="cssdesignawards"></div>
   </div>
+  <div v-else class="banner-mobile">
+    <swiper
+      :slidesPerView="1"
+      :spaceBetween="30"
+      :cssMode="true"
+      :pagination="pagination"
+      :autoplay="true"
+      :modules="modules"
+      class="mySwiper"
+    >
+      <swiper-slide v-for="banner in bannersMobile"
+        ><div class="banner-img" :style="banner.background"></div
+      ></swiper-slide>
+    </swiper>
+    <div class="dots"></div>
+  </div>
 </template>
 
 <script setup>
 import { ref, Transition } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Pagination, Autoplay } from "swiper";
 import BannerController from "../components/BannerController.vue";
+import "swiper/css";
+import "swiper/css/pagination";
+
+const modules = [Pagination, Autoplay];
+
+const screen = ref(document.documentElement.scrollWidth);
 
 const banners = ref([
   {
@@ -43,9 +67,41 @@ const banners = ref([
     },
   },
 ]);
+
+const bannersMobile = ref([
+  {
+    id: 1,
+    background: {
+      backgroundImage: "url('/src/images/banners/mobile-pic1.jpeg')",
+    },
+  },
+  {
+    id: 2,
+    background: {
+      backgroundImage: "url('/src/images/banners/mobile-pic2.jpeg')",
+    },
+  },
+  {
+    id: 3,
+    background: {
+      backgroundImage: "url('/src/images/banners/mobile-pic1.jpeg')",
+    },
+  },
+  {
+    id: 4,
+    background: {
+      backgroundImage: "url('/src/images/banners/mobile-pic2.jpeg')",
+    },
+  },
+]);
+
 const show = ref(false);
 
 let index = ref(0);
+
+const pagination = ref({
+  clickable: true,
+});
 
 const animiation = () => {
   show.value = true;
@@ -69,7 +125,7 @@ setInterval(() => {
 }, 5000);
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .black-banner {
   width: 100%;
   height: 100%;
@@ -96,6 +152,7 @@ setInterval(() => {
 .fadeAndScale-leave-from {
   opacity: 1;
 }
+
 .fadeAndScale-leave-to {
   opacity: 0;
 }
@@ -141,6 +198,7 @@ setInterval(() => {
     background-position: center;
     background-repeat: no-repeat;
   }
+
   .web-title-3 {
     position: absolute;
     top: 50px;
@@ -188,9 +246,11 @@ setInterval(() => {
     cursor: pointer;
     transition: all 0.5s ease-in-out;
   }
+
   .awwwards:hover {
     left: 0;
   }
+
   .cssdesignawards {
     width: 90px;
     height: 90px;
@@ -204,8 +264,53 @@ setInterval(() => {
     cursor: pointer;
     transition: all 0.5s ease-in-out;
   }
+
   .cssdesignawards:hover {
     left: 0;
+  }
+}
+@media (max-width: 530px) {
+  .banner-img {
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .swiper-pagination-bullet {
+    width: 30px;
+    height: 30px;
+    margin: 20px !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .swiper-pagination-bullet:nth-child(1) {
+    background-image: url("../images/icons/10030.png");
+  }
+
+  .swiper-pagination-bullet:nth-child(2) {
+    background-image: url("../images/icons/10031.png");
+  }
+
+  .swiper-pagination-bullet:nth-child(3) {
+    background-image: url("../images/icons/10032.png");
+  }
+
+  .swiper-pagination-bullet:nth-child(4) {
+    background-image: url("../images/icons/10033.png");
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #ccc;
+  }
+
+  .dots {
+    width: 100%;
+    height: 80px;
+    background-color: #000;
   }
 }
 </style>

@@ -5,22 +5,22 @@
   <div class="controller">
     <div class="controller-btn">
       <img
-        src="../images/10030.png"
+        src="../images/icons/10030.png"
         class="controller-btn-item controller-btn-01"
         @click="clickDeg01"
       />
       <img
-        src="../images/10031.png"
+        src="../images/icons/10031.png"
         class="controller-btn-item controller-btn-02"
         @click="clickDeg02"
       />
       <img
-        src="../images/10032.png"
+        src="../images/icons/10032.png"
         class="controller-btn-item controller-btn-03"
         @click="clickDeg03"
       />
       <img
-        src="../images/10033.png"
+        src="../images/icons/10033.png"
         class="controller-btn-item controller-btn-04"
         @click="clickDeg04"
       />

@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header v-if="screen > 530">
     <div
       class="wrapper"
       :style="scroll && { background: '#000', top: '-15px' }"
@@ -58,6 +58,7 @@
       </nav>
     </div>
   </header>
+  <header v-else></header>
   <RouterView />
 </template>
 
@@ -67,8 +68,8 @@ import { useStore } from "vuex";
 import { RouterLink, RouterView, useRouter } from "vue-router";
 
 const store = useStore();
-
 const scroll = ref(false);
+const screen = ref(document.documentElement.scrollWidth);
 
 onMounted(() => {
   window.addEventListener(

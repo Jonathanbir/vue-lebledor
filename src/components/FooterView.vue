@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer v-show="screen > 530">
     <div class="container-footer">
       <div class="sprite sprite-logo-footer"></div>
       <h3 class="title-company">金色三麥餐飲股份有限公司</h3>
@@ -28,7 +28,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+const screen = ref(document.documentElement.scrollWidth);
+</script>
 
 <style lang="scss" scoped>
 footer {
@@ -109,5 +112,18 @@ footer {
   color: #000;
   background: #89412e;
   z-index: 2;
+}
+
+@media (max-width: 530px) {
+  .notification-drink-safely {
+    width: 75%;
+    padding: 1.2em 0;
+    margin: auto;
+    line-height: 1.5em;
+    letter-spacing: 8px;
+    font-size: 1.0625em;
+    color: #89422e;
+    background: #000;
+  }
 }
 </style>
