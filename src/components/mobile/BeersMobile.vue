@@ -2,35 +2,55 @@
   <section id="indexBeers" class="index-beers">
     <h2 class="maintitle">
       <img
-        src="https://www.lebledor.com/m/img/index/beers-maintitle.png"
+        src="https://www.lebledor.com/m/img/index/beers-title-honey.png"
         alt="滴滴是精釀"
       />
     </h2>
-    <div class="beers-container" :style="active[0] && 'height: 250px;'">
+    <div v-for="(item, index) in beers">
       <div
-        v-show="animationShow"
-        class="beers-img"
+        class="beers-container"
         :style="
-          active[0] &&
-          'bottom:0;height:230px;background-size: 100%;background-position-y: 0px;'
+          active[index]
+            ? 'height: 250px;background:' + item.bgc
+            : 'background:' + item.bgc
         "
-      ></div>
-      <div class="beers-btn" @click="clickBtn(0)">
-        <h4 class="title">
-          <b
-            ><img
-              v-show="animationShow"
-              src="https://www.lebledor.com/m/img/index/beers-title-honey.png"
-              alt="蜂蜜啤酒"
-            />
-          </b>
-          <i v-show="!active[0]" class="bdr-maroon"></i>
-        </h4>
-        <Transition name="fadeAndShow" mode="out-in">
-          <p v-show="animationShow && active[0]" class="descr">
-            採用台灣特有龍眼蜜釀造，鮮明的花香結合麥芽糖般口感，蜂蜜獨特的甜香讓你越喝越迷人。
-          </p>
-        </Transition>
+      >
+        <div
+          v-show="animationShow"
+          class="beers-img"
+          :style="
+            active[index]
+              ? 'bottom:0;height:230px;background:url(' +
+                item.beer +
+                ');background-size: 100%;background-position-y: 0px;'
+              : 'background:url(' +
+                item.beer +
+                ');background-size: 100%;background-position-y: -10px;background-repeat: no-repeat;'
+          "
+        ></div>
+        <div class="beers-btn" @click="clickBtn(index)">
+          <h4 class="title">
+            <b
+              ><img v-show="animationShow" :src="item.title" alt="蜂蜜啤酒" />
+            </b>
+            <i
+              v-show="!active[index]"
+              class="bdr-maroon"
+              :style="index == 2 && 'border-color:#fff'"
+            ></i>
+          </h4>
+          <Transition name="fadeAndShow" mode="out-in">
+            <p
+              v-show="animationShow && active[index]"
+              class="descr"
+              :style="
+                (index == 2 && 'color:#fff') || (index == 3 && 'color:#fff')
+              "
+            >
+              {{ item.descr }}
+            </p>
+          </Transition>
+        </div>
       </div>
     </div>
   </section>
@@ -42,6 +62,37 @@ import { useStore } from "vuex";
 const store = useStore();
 const active = ref([false, false, false, false]);
 const animationShow = computed(() => store.state.animation);
+
+const beers = [
+  {
+    title: "https://www.lebledor.com/m/img/index/beers-title-honey.png",
+    bgc: "",
+    beer: "src/images/10006.png",
+    descr:
+      " 採用台灣特有龍眼蜜釀造，鮮明的花香結合麥芽糖般口感，蜂蜜獨特的甜香讓你越喝越迷人。",
+  },
+  {
+    title: "https://www.lebledor.com/m/img/index/beers-title-amber.png",
+    bgc: "#B57460",
+    beer: "src/images/10007.png",
+    descr:
+      "來自德國製酒的工法傳承，表現焦香麥芽帶來的琥珀色澤，香氣由大麥麥芽主導酒體帶有甜潤但內斂、精緻。",
+  },
+  {
+    title: "https://www.lebledor.com/m/img/index/beers-title-wheat.png",
+    bgc: "#89422F",
+    beer: "src/images/10008.png",
+    descr:
+      "含有豐富的小麥芽蛋白質與新鮮酵母，使酒體如雲霧般濃郁，入口卻十分清爽。",
+  },
+  {
+    title: "https://www.lebledor.com/m/img/index/beers-title-rye.png",
+    bgc: "#2E2823",
+    beer: "src/images/10009.png",
+    descr:
+      "選用德國著名的巴伐利亞巧克力麥芽，香味濃郁，卻順口易飲，是經典德式釀酒工藝的展現。",
+  },
+];
 
 let clickBtn = (e) => {
   active.value[e] = !active.value[e];
@@ -66,6 +117,7 @@ let clickBtn = (e) => {
     height: 150px;
     display: flex;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
     .beers-img {
       position: absolute;
       left: 30px;
@@ -76,6 +128,7 @@ let clickBtn = (e) => {
       background-size: 100%;
       background-position-y: -10px;
       background-repeat: no-repeat;
+      transition: all 0.5s ease-in-out;
     }
     .beers-btn {
       width: 39.0625%;
@@ -89,7 +142,7 @@ let clickBtn = (e) => {
         }
       }
       .bdr-maroon {
-        border-color: #89422e !important;
+        border-color: #89422e;
       }
       i {
         display: block;
