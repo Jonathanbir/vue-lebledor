@@ -79,13 +79,17 @@
           </div>
           <div v-show="locations.space" class="text">席</div>
         </div>
-
-        <button class="button button-rectangle">
-          <div class="text">
-            立即訂位
-            <span class="arrow sprite sprite-button-rectangle-arrow"></span>
-          </div>
-        </button>
+        <a
+          class="btn-prime btn-golden-o"
+          href="https://inline.app/booking/lebledor/"
+          target="_blank"
+        >
+          <button class="button button-rectangle">
+            <div class="text">
+              立即訂位
+              <span class="arrow sprite sprite-button-rectangle-arrow"></span>
+            </div></button
+        ></a>
       </div>
       <div class="article-loader" id="article-info-loader"></div>
     </article>
@@ -166,6 +170,10 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+.btn-prime {
+  color: #fff;
+}
+
 .swiper {
   position: relative;
 }
@@ -220,10 +228,6 @@ onMounted(() => {
       margin: 0 auto;
       width: 100%;
       height: 100%;
-      background-image: url("https://www.lebledor.com/img/location/1-miramar/img3-x2.jpg");
-      background-size: cover;
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
       text-align: center;
       opacity: 1;
       .container-imgs {
@@ -327,6 +331,58 @@ onMounted(() => {
       }
       .second {
         margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .swiper-pagination-bullet {
+    margin: 3px !important;
+  }
+
+  .swiper-button-prev {
+    top: 40%;
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+  }
+
+  .swiper-button-next {
+    top: 40%;
+    width: 30px;
+    height: 30px;
+    background-size: 100%;
+  }
+  .location {
+    .intro {
+      min-height: initial;
+      height: 300px;
+      top: 50px;
+      .container-article {
+        height: 300px;
+
+        .container-imgs {
+          height: 300px;
+          img {
+            height: 300px;
+          }
+        }
+
+        .container-text {
+          .title {
+            width: 200px;
+          }
+          .paragraph {
+            display: none;
+          }
+        }
+      }
+    }
+    .info {
+      .title-article {
+        width: 100px !important;
+        height: 30px !important;
       }
     }
   }

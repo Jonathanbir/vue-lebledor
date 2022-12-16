@@ -11,7 +11,7 @@
     <div class="awwwards"></div>
     <div class="cssdesignawards"></div>
   </div>
-  <div v-else class="banner-mobile">
+  <div v-else class="banner">
     <swiper
       :slidesPerView="1"
       :spaceBetween="30"
@@ -25,7 +25,11 @@
         ><div class="banner-img" :style="banner.background"></div
       ></swiper-slide>
     </swiper>
-    <div class="dots"></div>
+    <div class="logo">
+      <h1 class="web-title"></h1>
+      <div class="web-title-2"></div>
+      <div class="web-title-3"></div>
+    </div>
   </div>
 </template>
 
@@ -270,12 +274,22 @@ setInterval(() => {
   }
 }
 @media (max-width: 530px) {
+  .banner {
+    height: 90vh;
+  }
+
   .banner-img {
     width: 100%;
     height: 80vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  .logo {
+    position: relative;
+    top: -40%;
+    z-index: 2;
   }
 
   .swiper-pagination-bullet {
@@ -305,12 +319,6 @@ setInterval(() => {
 
   .swiper-pagination-bullet-active {
     background-color: #ccc;
-  }
-
-  .dots {
-    width: 100%;
-    height: 80px;
-    background-color: #000;
   }
 }
 </style>
