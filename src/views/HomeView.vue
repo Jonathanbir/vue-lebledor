@@ -123,6 +123,7 @@
     <LocationsMobileVue />
     <NewsMobileVue />
     <MenuMobileVue />
+    <BeersMobileVue />
   </div>
 </template>
 
@@ -135,6 +136,8 @@ import LocationsVue from "../components/Locations.vue";
 import LocationsMobileVue from "../components/mobile/LocationsMobile.vue";
 import NewsMobileVue from "../components/mobile/NewsMobile.vue";
 import MenuMobileVue from "../components/mobile/MenuMobile.vue";
+import BeersMobileVue from "../components/mobile/BeersMobile.vue";
+
 const screen = ref(document.documentElement.scrollWidth);
 const height = ref("");
 

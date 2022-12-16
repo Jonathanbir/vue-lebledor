@@ -966,4 +966,10 @@ onMounted(() => {
 .transform {
   transform: matrix(1, 0, 0, 1, 0, 0);
 }
+
+@media (max-width: 530px) {
+  .sub-menu {
+    display: none;
+  }
+}
 </style>
