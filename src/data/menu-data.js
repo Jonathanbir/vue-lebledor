@@ -101,31 +101,36 @@ const MENU_DATA = [
         id: 0,
         src: "//lebledor-img.s3.amazonaws.com/cover/ad50eb7e0a527ea2fe8dcf6557c995d9.png",
         title: "握握手小農溫沙拉",
-        description: "",
+        description:
+          "安心與美味，都跟小農約定好了！來自臺灣小農的四種頂級生菜，不同的鮮脆拌勻煎烤蕈菇、鮮蝦、堅果與義大利酒醋醬汁，交融出多層次的開胃享受。(可做素食)",
       },
       {
         id: 1,
         src: "//lebledor-img.s3.amazonaws.com/cover/58dcda455a1f5087797301f6d6f47300.png",
         title: "凱薩沙拉",
-        description: "",
+        description:
+          "特調凱薩醬拌勻蘿蔓心、培根絲、葡萄乾、小黃瓜、小番茄，最後灑上帕瑪森起司與麵包丁，清爽風味適合餐前享用，開啟味蕾饗宴。(可做素食)",
       },
       {
         id: 2,
         src: "//lebledor-img.s3.amazonaws.com/cover/fcdb71737592d0d347d0a6dec30fd6a6.png",
         title: "南洋松阪豬",
-        description: "",
+        description:
+          "慢烤頂級松阪豬，嚼勁十足，搭配新鮮蘿蔓心、小黃瓜、番茄與濃郁的南洋風味醬拌勻，最後撒上夏威夷豆，香氣迷人，爽口開胃!",
       },
       {
         id: 3,
         src: "//lebledor-img.s3.amazonaws.com/cover/05937adacba1effdbff40a652a373034.png",
         title: "海鮮水果沙拉",
-        description: "",
+        description:
+          "以法式芥末沙拉醬拌勻奶油生菜、芝麻葉、白蝦、干貝、墨魚、洋蔥絲、甜椒、小番茄，再巧妙搭配新鮮水果丁，清爽開胃，鮮美驚艷。",
       },
       {
         id: 4,
         src: "//lebledor-img.s3.amazonaws.com/cover/12c0fcc12e41fe28bc3a6ad21afc2302.png",
         title: "貝里斯鮮蔬蝦仁拌檸檬優格",
-        description: "",
+        description:
+          "冰鎮的清脆蝦子，搭配各式新鮮生菜，拌上清爽的特調檸檬優格醬，最後灑上薄薄紅椒粉，酸甜滋味，爽口開胃。(可做素食)",
       },
     ],
   },
