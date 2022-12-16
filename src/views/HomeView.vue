@@ -122,6 +122,7 @@
   <div v-else>
     <LocationsMobileVue />
     <NewsMobileVue />
+    <MenuMobileVue />
   </div>
 </template>
 
@@ -133,6 +134,7 @@ import AppetizerVue from "../components/Appetizer.vue";
 import LocationsVue from "../components/Locations.vue";
 import LocationsMobileVue from "../components/mobile/LocationsMobile.vue";
 import NewsMobileVue from "../components/mobile/NewsMobile.vue";
+import MenuMobileVue from "../components/mobile/MenuMobile.vue";
 const screen = ref(document.documentElement.scrollWidth);
 const height = ref("");
 
