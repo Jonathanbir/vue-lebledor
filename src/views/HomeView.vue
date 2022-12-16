@@ -119,7 +119,10 @@
     <BeerSectionVue />
     <LocationsVue />
   </div>
-  <div v-else></div>
+  <div v-else>
+    <LocationsMobileVue />
+    <NewsMobileVue />
+  </div>
 </template>
 
 <script setup>
@@ -128,6 +131,8 @@ import BannerVue from "../components/Banner.vue";
 import BeerSectionVue from "../components/BeerSection.vue";
 import AppetizerVue from "../components/Appetizer.vue";
 import LocationsVue from "../components/Locations.vue";
+import LocationsMobileVue from "../components/mobile/LocationsMobile.vue";
+import NewsMobileVue from "../components/mobile/NewsMobile.vue";
 const screen = ref(document.documentElement.scrollWidth);
 const height = ref("");
 
@@ -135,7 +140,6 @@ onMounted(() => {
   window.addEventListener(
     "scroll",
     () => {
-      console.log("innerWidth", document.documentElement.scrollWidth);
       height.value = window.pageYOffset * 0.15 - 100;
     },
     true

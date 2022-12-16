@@ -252,7 +252,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[0]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -293,7 +292,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[1]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -334,10 +332,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[2]);
-
-              store.commit('handleChangeScroll', false);
-              store.commit('handleChangeLocations', locationsdata[1]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -378,7 +372,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[3]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -419,7 +412,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[4]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -460,7 +452,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[5]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -501,7 +492,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[6]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -542,7 +532,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[7]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -583,7 +572,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[8]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -630,7 +618,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[9]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -671,7 +658,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[10]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -716,7 +702,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[11]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -757,7 +742,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[12]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
@@ -798,7 +782,6 @@
             @click="
               store.commit('handleChangeScroll', false);
               store.commit('handleChangeLocations', locationsdata[13]);
-
               store.commit('handleChangeLocationsNumbers', [
                 {
                   startNum: 0,
