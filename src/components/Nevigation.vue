@@ -88,7 +88,11 @@
             ></i
           ></b>
         </div>
-        <router-link to="/" class="sprite-nav-logo"></router-link>
+        <router-link
+          to="/"
+          class="sprite-nav-logo"
+          @click="store.commit('handleChangeMenuMobileActive', false)"
+        ></router-link>
         <a
           class="btn-reserve"
           href="https://inline.app/booking/lebledor/"

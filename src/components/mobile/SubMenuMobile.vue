@@ -9,7 +9,12 @@
             location = [false, false, false, false];
           "
         >
-          <a><b>餐廳據點</b><i></i></a>
+          <a
+            ><b>餐廳據點</b
+            ><i
+              :style="active[0] == true && { transform: 'rotate(135deg)' }"
+            ></i
+          ></a>
         </h4>
         <div
           :class="active[0] ? 'submenu location-down' : 'submenu'"
@@ -683,7 +688,12 @@
             menu = [false, false, false, false];
           "
         >
-          <a><b>美味餐點</b><i></i></a>
+          <a
+            ><b>美味餐點</b
+            ><i
+              :style="active[1] == true && { transform: 'rotate(135deg)' }"
+            ></i
+          ></a>
         </h4>
         <div
           :class="active[1] ? 'submenu menu-down' : 'submenu'"
@@ -1089,6 +1099,9 @@ const location = ref([false, false, false, false]);
           margin-right: auto;
         }
         b {
+          position: relative;
+          z-index: 1;
+          background: #000;
           display: block;
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1105,6 +1118,7 @@ const location = ref([false, false, false, false]);
           left: 6px;
           top: 0;
           bottom: 0;
+          z-index: 2;
           margin: auto;
           width: 7px;
           height: 7px;
