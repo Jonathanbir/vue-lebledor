@@ -12,7 +12,7 @@
           <a><b>餐廳據點</b><i></i></a>
         </h4>
         <div
-          :class="active[0] ? 'submenu down' : 'submenu'"
+          :class="active[0] ? 'submenu location-down' : 'submenu'"
           :style="
             (location[0] && {
               height: '400px',
@@ -686,12 +686,8 @@
           <a><b>美味餐點</b><i></i></a>
         </h4>
         <div
-          class="submenu"
-          :style="
-            active[1]
-              ? { height: '200px', transform: 'translateY(0px)' }
-              : { height: '0', transform: 'translateY(-200px)' }
-          "
+          :class="active[1] ? 'submenu menu-down' : 'submenu'"
+          :style="menu[2] && { height: '300px', transform: 'translateY(0px)' }"
         >
           <h5 class="title" @click="menu = [!menu[0], false, false, false]">
             <b>主廚推薦</b><i :class="menu[0] ? 'icon on' : 'icon'"></i>
@@ -700,7 +696,7 @@
             class="list"
             :style="
               menu[0]
-                ? { height: '20px', transform: 'translateY(0px)' }
+                ? { height: '30px', transform: 'translateY(0px)' }
                 : { height: '0', transform: 'translateY(-20px)' }
             "
           >
@@ -729,7 +725,7 @@
             class="list"
             :style="
               menu[1]
-                ? { height: '20px', transform: 'translateY(0px)' }
+                ? { height: '30px', transform: 'translateY(0px)' }
                 : { height: '0', transform: 'translateY(-20px)' }
             "
           >
@@ -782,7 +778,7 @@
             class="list"
             :style="
               menu[2]
-                ? { height: '20px', transform: 'translateY(0px)' }
+                ? { height: '160px', transform: 'translateY(0px)' }
                 : { height: '0', transform: 'translateY(-20px)' }
             "
           >
@@ -844,7 +840,6 @@
                 >義大利麵</router-link
               >
             </li>
-
             <li>
               <router-link
                 class="button button-nav-top-sub"
@@ -925,7 +920,7 @@
             class="list"
             :style="
               menu[3]
-                ? { height: '20px', transform: 'translateY(0px)' }
+                ? { height: '30px', transform: 'translateY(0px)' }
                 : { height: '0', transform: 'translateY(-20px)' }
             "
           >
@@ -1011,6 +1006,7 @@ const location = ref([false, false, false, false]);
           z-index: 1;
           display: block;
           font-size: 1em;
+          text-align: left;
           line-height: 2em;
           color: #cdb8a5;
           background-color: #000;
@@ -1021,6 +1017,7 @@ const location = ref([false, false, false, false]);
           right: 5px;
           top: 0;
           bottom: 0;
+          z-index: 2;
           margin: auto;
           width: 8px;
           height: 1px;
@@ -1067,7 +1064,11 @@ const location = ref([false, false, false, false]);
         }
       }
     }
-    .down {
+    .location-down {
+      height: 160px;
+      transform: translateY(0px);
+    }
+    .menu-down {
       height: 160px;
       transform: translateY(0px);
     }

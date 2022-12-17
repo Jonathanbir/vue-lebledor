@@ -2,7 +2,7 @@
   <section id="indexBeers" class="index-beers">
     <h2 class="maintitle">
       <img
-        src="https://www.lebledor.com/m/img/index/beers-title-honey.png"
+        src="https://www.lebledor.com/m/img/index/beers-maintitle.png"
         alt="滴滴是精釀"
       />
     </h2>

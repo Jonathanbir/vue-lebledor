@@ -489,7 +489,7 @@ const MENU_DATA = [
   },
   {
     name: "酥炸類",
-    subbanner: "/src/images/menu-seb-banner/10011.jpg",
+    subbanner: "/src/images/menu-seb-banner/100011.jpg",
     title: "https://www.lebledor.com/img/menu/fried-kv-title.png",
     data: [
       {

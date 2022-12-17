@@ -5,7 +5,6 @@
         <div class="menu-kv-title"></div>
       </div>
     </header>
-
     <nav
       class="menu-nav-desk"
       :style="
@@ -37,7 +36,11 @@
     <section id="signature-menu" class="menu-category signature-menu first">
       <div
         class="kv-canvas"
-        :style="'background:url(' + menunow.subbanner + ')'"
+        :style="
+          'background-image:url(' +
+          menunow.subbanner +
+          ');background-size:cover;background-position: center;background-repeat: no-repeat;background-attachment:fixed;'
+        "
       >
         <div class="kv-image signature"></div>
         <div class="kv-title signature">
@@ -45,7 +48,7 @@
         </div>
       </div>
       <!-- Slick -->
-      <div id="signature-slick" class="menu-carousel">
+      <div id="signature-slick" class="menu-carousel" v-if="screenWidth > 530">
         <div class="slider-for">
           <div class="menu-slide">
             <div class="cuisine-info">
@@ -94,7 +97,6 @@
               </div>
             </swiper-slide>
           </swiper>
-
           <div aria-live="polite" class="slick-list">
             <div
               class="slick-track"
@@ -105,6 +107,17 @@
         </div>
       </div>
       <!-- Slick -->
+      <div v-else>
+        <div class="menu-container" v-for="item in menunow.data">
+          <div>
+            <img :src="item.src" :alt="item.title" />
+            <h2>
+              {{ item.title }}
+            </h2>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
     </section>
   </section>
 </template>
@@ -121,7 +134,7 @@ const animationShow = computed(() => store.state.animation);
 const active = computed(() => store.state.menu.active);
 const modules = [Navigation];
 const scroll = ref(false);
-
+const screenWidth = ref(document.documentElement.scrollWidth);
 onMounted(() => {
   store.commit("handleAnimation");
   window.addEventListener(
@@ -250,10 +263,6 @@ onMounted(() => {
       width: 100%;
       height: 374px;
       background-image: url("../images/signature-kv-parallax.jpeg");
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat !important;
-      background-attachment: fixed !important;
       .kt-image {
         width: 100%;
         height: 100%;
@@ -341,6 +350,83 @@ onMounted(() => {
             color: #000;
           }
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .menu-section {
+    .menu-kv {
+      display: none;
+    }
+    .menu-carousel {
+      width: 100%;
+    }
+    .menu-nav-desk {
+      position: relative;
+      top: 50px;
+      height: 60px;
+      .menu-nav-container {
+        height: 60px;
+        .menu-nav {
+          width: 100%;
+          li {
+            a {
+              line-height: initial;
+            }
+          }
+        }
+      }
+    }
+    .signature-menu {
+      .kv-canvas {
+        position: relative;
+        top: 50px;
+        background-repeat: no-repeat;
+        text-align: left;
+        height: 0;
+        padding-top: 43.75%;
+        background: no-repeat 50% 0;
+        -webkit-background-size: 100% auto;
+        background-size: 100% auto;
+        .kv-title {
+          width: 400px;
+          top: -135px;
+          max-width: initial;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .menu-container {
+      position: relative;
+      top: -30px;
+      z-index: 2;
+      width: 350px;
+      margin: auto;
+      margin-bottom: 50px;
+      img {
+        width: 100%;
+      }
+      h2 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.535714em;
+        margin-top: 0.178571em;
+        font-size: 1.75em;
+        line-height: 1.1;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #000;
+      }
+      p {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 0.9375em;
+        text-align: left;
+        color: #000;
       }
     }
   }
