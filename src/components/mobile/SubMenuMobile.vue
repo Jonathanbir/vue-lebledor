@@ -14,7 +14,11 @@
         <div
           :class="active[0] ? 'submenu down' : 'submenu'"
           :style="
-            location[0] && { height: '350px', transform: 'translateY(0px)' }
+            (location[0] && {
+              height: '400px',
+              transform: 'translateY(0px)',
+            }) ||
+            (location[2] && { height: '240px', transform: 'translateY(0px)' })
           "
         >
           <h5
@@ -23,7 +27,18 @@
           >
             <b>北區</b><i :class="location[0] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="location[0]">
+          <ul
+            class="list"
+            :style="
+              location[0]
+                ? {
+                    height: '200px',
+                    transform: 'translateY(0px)',
+                    opacity: '1',
+                  }
+                : { height: '0', transform: 'translateY(-200px)', opacity: '0' }
+            "
+          >
             <li>
               <router-link
                 to="/location/miramar"
@@ -373,7 +388,14 @@
           >
             <b>中區</b><i :class="location[1] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="location[1]">
+          <ul
+            class="list"
+            :style="
+              location[1]
+                ? { height: '30px', transform: 'translateY(0px)' }
+                : { height: '0', transform: 'translateY(-20px)' }
+            "
+          >
             <li>
               <router-link
                 to="/location/shizheng"
@@ -461,7 +483,14 @@
           >
             <b>南區</b><i :class="location[2] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="location[2]">
+          <ul
+            class="list"
+            :style="
+              location[2]
+                ? { height: '80px', transform: 'translateY(0px)' }
+                : { height: '0', transform: 'translateY(-20px)' }
+            "
+          >
             <li>
               <router-link
                 class="button button-nav-top-sub"
@@ -587,7 +616,14 @@
             <b>UMAMI 金色三麥</b
             ><i :class="location[3] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="location[3]">
+          <ul
+            class="list"
+            :style="
+              location[3]
+                ? { height: '200px', transform: 'translateY(-2px)' }
+                : { height: '0', transform: 'translateY(-20px)' }
+            "
+          >
             <li>
               <router-link
                 class="button button-nav-top-sub"
@@ -660,7 +696,14 @@
           <h5 class="title" @click="menu = [!menu[0], false, false, false]">
             <b>主廚推薦</b><i :class="menu[0] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="menu[0]">
+          <ul
+            class="list"
+            :style="
+              menu[0]
+                ? { height: '20px', transform: 'translateY(0px)' }
+                : { height: '0', transform: 'translateY(-20px)' }
+            "
+          >
             <li>
               <router-link
                 class="button button-nav-top-sub"
@@ -682,7 +725,14 @@
           <h5 class="title" @click="menu = [false, !menu[1], false, false]">
             <b>開胃前菜</b><i :class="menu[1] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="menu[1]">
+          <ul
+            class="list"
+            :style="
+              menu[1]
+                ? { height: '20px', transform: 'translateY(0px)' }
+                : { height: '0', transform: 'translateY(-20px)' }
+            "
+          >
             <li>
               <router-link
                 class="button button-nav-top-sub"
@@ -728,7 +778,14 @@
           <h5 class="title" @click="menu = [false, false, !menu[2], false]">
             <b>主打美食</b><i :class="menu[2] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="menu[2]">
+          <ul
+            class="list"
+            :style="
+              menu[2]
+                ? { height: '20px', transform: 'translateY(0px)' }
+                : { height: '0', transform: 'translateY(-20px)' }
+            "
+          >
             <li>
               <router-link
                 class="button button-nav-top-sub"
@@ -864,7 +921,14 @@
           <h5 class="title" @click="menu = [false, false, false, !menu[3]]">
             <b>餐後甜點</b><i :class="menu[3] ? 'icon on' : 'icon'"></i>
           </h5>
-          <ul class="list" v-show="menu[3]">
+          <ul
+            class="list"
+            :style="
+              menu[3]
+                ? { height: '20px', transform: 'translateY(0px)' }
+                : { height: '0', transform: 'translateY(-20px)' }
+            "
+          >
             <li>
               <router-link
                 class="button button-nav-top-sub"
@@ -941,13 +1005,15 @@ const location = ref([false, false, false, false]);
         display: block;
         position: relative;
         margin-bottom: 0.75em;
-        margin-top: 0.75em;
         border-bottom: 1px solid rgba(205, 184, 165, 0.5);
         b {
+          position: relative;
+          z-index: 1;
           display: block;
           font-size: 1em;
           line-height: 2em;
           color: #cdb8a5;
+          background-color: #000;
         }
         .icon {
           display: block;
@@ -987,6 +1053,8 @@ const location = ref([false, false, false, false]);
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 40px;
         padding: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
         li {
           box-sizing: border-box;
           list-style: none;
@@ -1000,7 +1068,7 @@ const location = ref([false, false, false, false]);
       }
     }
     .down {
-      height: 200px;
+      height: 160px;
       transform: translateY(0px);
     }
     .mainitem {
