@@ -25,7 +25,7 @@
                 ');background-size: 100%;background-position-y: 0px;'
               : 'background:url(' +
                 item.beer +
-                ');background-size: 100%;background-position-y: -10px;background-repeat: no-repeat;'
+                ');background-size: 100%;background-position-y: -20px;background-repeat: no-repeat;'
           "
         ></div>
         <div class="beers-btn" @click="clickBtn(index)">

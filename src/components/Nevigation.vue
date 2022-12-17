@@ -61,8 +61,32 @@
   <header v-else>
     <div class="nav-wrapper">
       <nav>
-        <div id="navToggle" class="navtoggle">
-          <b><i></i><i></i><i></i></b>
+        <div
+          id="navToggle"
+          class="navtoggle"
+          @click="store.commit('handleChangeMenuMobileActive', !mobileActive)"
+        >
+          <b
+            ><i
+              :style="
+                mobileActive && { width: '23px', transform: 'rotate(45deg)' }
+              "
+            ></i
+            ><i
+              :style="
+                mobileActive && {
+                  opacity: '0',
+                  width: '23px',
+                  transitionDuration: '.1s',
+                }
+              "
+            ></i
+            ><i
+              :style="
+                mobileActive && { width: '23px', transform: 'rotate(-45deg)' }
+              "
+            ></i
+          ></b>
         </div>
         <router-link to="/" class="sprite-nav-logo"></router-link>
         <a
@@ -78,13 +102,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { RouterLink, RouterView } from "vue-router";
 
 const store = useStore();
 const scroll = ref(false);
 const screen = ref(document.documentElement.scrollWidth);
+const mobileActive = computed(() => store.state.menu.mobileActive);
 
 onMounted(() => {
   window.addEventListener(

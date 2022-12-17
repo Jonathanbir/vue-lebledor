@@ -16,6 +16,7 @@ export const store = createStore({
         data: MENU_DATA,
         menu: MENU_DATA[0],
         active: [0, MENU_DATA[0].data[0].src],
+        mobileActive: false,
         // menu: MENU_DATA[4].data,
         // active: [0, MENU_DATA[4].data[0].items[0].src],
       },
@@ -45,6 +46,9 @@ export const store = createStore({
       setTimeout(() => {
         state.menu.active = value;
       }, 300);
+    },
+    handleChangeMenuMobileActive(state, value) {
+      state.menu.mobileActive = value;
     },
     handleAnimation(state) {
       state.animation = false;

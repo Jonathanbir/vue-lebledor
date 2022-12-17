@@ -107,6 +107,7 @@ const store = useStore();
 const pagination = ref({
   clickable: true,
 });
+const screen = ref(document.documentElement.scrollWidth);
 const locations = computed(() => store.state.locations.location);
 const numbers = computed(() => store.state.locations.numbers);
 const scrollShow = computed(() => store.state.locations.scroll);
@@ -119,12 +120,22 @@ onMounted(() => {
   window.addEventListener(
     "scroll",
     () => {
-      if (window.pageYOffset > 320 && scrollShow.value == false) {
-        store.commit("handleChangeScroll", true);
-        numbers.value.forEach((item) => {
-          item.currentNum = item.startNum;
-        });
-        addUp();
+      if (screen > 530) {
+        if (window.pageYOffset > 320 && scrollShow.value == false) {
+          store.commit("handleChangeScroll", true);
+          numbers.value.forEach((item) => {
+            item.currentNum = item.startNum;
+          });
+          addUp();
+        }
+      } else {
+        if (window.pageYOffset > 0 && scrollShow.value == false) {
+          store.commit("handleChangeScroll", true);
+          numbers.value.forEach((item) => {
+            item.currentNum = item.startNum;
+          });
+          addUp();
+        }
       }
     },
     true

@@ -1,13 +1,17 @@
 <template>
   <NevigationVue />
-  <SubMenuVue />
+  <SubMenuVue v-if="screen > 530" />
+  <SubMenuMobileVue v-else />
   <FooterViewVue />
 </template>
 
 <script setup>
+import { ref } from "vue";
 import NevigationVue from "./components/Nevigation.vue";
 import SubMenuVue from "./components/SubMenu.vue";
+import SubMenuMobileVue from "./components/mobile/SubMenuMobile.vue";
 import FooterViewVue from "./views/FooterView.vue";
+const screen = ref(document.documentElement.scrollWidth);
 </script>
 
 <style scoped>
