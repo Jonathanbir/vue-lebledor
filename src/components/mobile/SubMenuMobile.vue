@@ -5,13 +5,18 @@
         <h4
           class="mainbtn"
           @click="
-            active = [!active[0], active[1]];
+            active = [!active[0], false];
             location = [false, false, false, false];
           "
         >
           <a><b>餐廳據點</b><i></i></a>
         </h4>
-        <div class="submenu" :style="active[0] && { height: 'auto' }">
+        <div
+          :class="active[0] ? 'submenu down' : 'submenu'"
+          :style="
+            location[0] && { height: '350px', transform: 'translateY(0px)' }
+          "
+        >
           <h5
             class="title 1"
             @click="location = [!location[0], false, false, false]"
@@ -638,13 +643,20 @@
         <h4
           class="mainbtn"
           @click="
-            active = [active[0], !active[1]];
+            active = [false, !active[1]];
             menu = [false, false, false, false];
           "
         >
           <a><b>美味餐點</b><i></i></a>
         </h4>
-        <div class="submenu" :style="active[1] && { height: 'auto' }">
+        <div
+          class="submenu"
+          :style="
+            active[1]
+              ? { height: '200px', transform: 'translateY(0px)' }
+              : { height: '0', transform: 'translateY(-200px)' }
+          "
+        >
           <h5 class="title" @click="menu = [!menu[0], false, false, false]">
             <b>主廚推薦</b><i :class="menu[0] ? 'icon on' : 'icon'"></i>
           </h5>
@@ -895,8 +907,8 @@ const mobileActive = computed(() => store.state.menu.mobileActive);
 const menudata = computed(() => store.state.menu.data);
 const locationsdata = computed(() => store.state.locations.data);
 const active = ref([false, false]);
-const location = ref([false, false, false, false]);
 const menu = ref([false, false, false, false]);
+const location = ref([false, false, false, false]);
 </script>
 
 <style lang="scss" scoped>
@@ -918,11 +930,13 @@ const menu = ref([false, false, false, false]);
       box-sizing: border-box;
       width: 87.5%;
       height: 0;
+      transform: translateY(-200px);
       margin-left: auto;
       margin-right: auto;
       padding-left: 24px;
       padding-right: 24px;
       overflow: hidden;
+      transition: all 0.5s ease-in-out;
       .title {
         display: block;
         position: relative;
@@ -985,10 +999,15 @@ const menu = ref([false, false, false, false]);
         }
       }
     }
+    .down {
+      height: 200px;
+      transform: translateY(0px);
+    }
     .mainitem {
       display: block;
       margin-bottom: 2px;
       color: #cdb8a5;
+      overflow: hidden;
       .mainbtn {
         position: relative;
         display: block;
