@@ -1,6 +1,7 @@
 import { createStore, createLogger } from "vuex";
 import MENU_DATA from "../data/menu-data";
 import LOCATIONS_DATA from "../data/locations-data";
+import NEWS_DATA from "../data/news-data";
 
 export const store = createStore({
   // plugins: [
@@ -31,6 +32,9 @@ export const store = createStore({
           { startNum: 0, currentNum: 100, endNum: LOCATIONS_DATA[0].space3 },
         ],
         scroll: false,
+      },
+      news: {
+        data: NEWS_DATA,
       },
     };
   },
