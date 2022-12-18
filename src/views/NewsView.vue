@@ -1,6 +1,6 @@
 <template>
   <section class="news">
-    <header class="header">
+    <header class="header" v-if="screenWidth > 530">
       <div class="image"></div>
       <div class="container">
         <h1 class="title sprite sprite-article-new-title">歡樂，五花八門</h1>
@@ -69,11 +69,12 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { ref, computed } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
 const news = computed(() => store.state.news.data);
+const screenWidth = ref(document.documentElement.scrollWidth);
 </script>
 
 <style lang="scss" scoped>
@@ -250,6 +251,25 @@ const news = computed(() => store.state.news.data);
       }
       .span6 {
         grid-row-end: span 6;
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .news {
+    background: #cdb8a5;
+    .context {
+      .category {
+        position: relative;
+        top: -20px;
+        margin-bottom: 10px;
+        background: #2e2822;
+      }
+      .event-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
       }
     }
   }
