@@ -17,7 +17,7 @@
         <swiper-slide v-for="news in NEWS_DATA" class="event-item"
           ><div class="newsfeed">
             <a class="inner" href="/news/2022-worldcup">
-              <div class="pic" :style="news.src"></div>
+              <img class="pic" :src="news.src" />
               <div class="text">
                 <p class="time">{{ news.time }}</p>
                 <h4 class="title">{{ news.title }}</h4>
@@ -70,10 +70,7 @@ const modules = [Navigation];
     background: white;
     .pic {
       width: 100%;
-      padding-top: 58.139535%;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 200px;
     }
     .text {
       padding: 1.875em 0.625em;
