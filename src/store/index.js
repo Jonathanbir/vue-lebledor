@@ -11,7 +11,7 @@ export const store = createStore({
   // ],
   state() {
     return {
-      animation: false,
+      animation: true,
       bool: { show: false, submenu: true },
       menu: {
         data: MENU_DATA,

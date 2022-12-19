@@ -19,6 +19,7 @@
           @click="
             active = 0;
             selectActivity(active);
+            store.commit('handleAnimation');
           "
           >所有活動</a
         >
@@ -32,6 +33,7 @@
           @click="
             active = 1;
             selectActivity(active);
+            store.commit('handleAnimation');
           "
           >全店活動</a
         >
@@ -45,50 +47,52 @@
           @click="
             active = 2;
             selectActivity(active);
+            store.commit('handleAnimation');
           "
           >分店活動</a
         >
       </div>
-      <div id="event-list" class="event-list">
-        <div
-          :class="
-            (item.imgSize == '3' && 'item span3') ||
-            (item.imgSize == '4' && 'item span4') ||
-            (item.imgSize == '5' && 'item span5') ||
-            (item.imgSize == '6' && 'item span6')
-          "
-          v-for="(item, index) in newsList"
-        >
-          <div class="cover">
-            <img :src="item.src" />
-          </div>
-          <div class="body">
-            <div class="share-btn hide-text">open share</div>
-            <div class="date">{{ item.date }}</div>
-            <h2 class="title">{{ item.title }}</h2>
-            <p>{{ item.descr }}</p>
-            <div class="share">
-              <div class="close-btn hide-text">close</div>
-              <div class="box">
-                <a
-                  class="flipper facebook"
-                  href="https://www.facebook.com/sharer/sharer.php?u=https://www.lebledor.com/news/2022-worldcup"
-                  target="_blank"
-                  ><div class="front"></div>
-                  <div class="back"></div
-                ></a>
-                <a
-                  class="flipper link"
-                  href="https://www.lebledor.com/news/2022-worldcup"
-                  target="_blank"
-                  ><div class="front"></div>
-                  <div class="back"></div
-                ></a>
+      <Transition name="fadeAndShow" mode="out-in">
+        <div v-show="animationShow" id="event-list" class="event-list">
+          <div
+            :class="
+              (item.imgSize == '3' && 'item span3') ||
+              (item.imgSize == '4' && 'item span4') ||
+              (item.imgSize == '5' && 'item span5') ||
+              (item.imgSize == '6' && 'item span6')
+            "
+            v-for="(item, index) in newsList"
+          >
+            <div class="cover">
+              <img :src="item.src" />
+            </div>
+            <div class="body">
+              <div class="share-btn hide-text">open share</div>
+              <div class="date">{{ item.date }}</div>
+              <h2 class="title">{{ item.title }}</h2>
+              <p>{{ item.descr }}</p>
+              <div class="share">
+                <div class="close-btn hide-text">close</div>
+                <div class="box">
+                  <a
+                    class="flipper facebook"
+                    href="https://www.facebook.com/sharer/sharer.php?u=https://www.lebledor.com/news/2022-worldcup"
+                    target="_blank"
+                    ><div class="front"></div>
+                    <div class="back"></div
+                  ></a>
+                  <a
+                    class="flipper link"
+                    href="https://www.lebledor.com/news/2022-worldcup"
+                    target="_blank"
+                    ><div class="front"></div>
+                    <div class="back"></div
+                  ></a>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div></div
+      ></Transition>
       <div
         id="next-link"
         class="loading-context"
@@ -105,7 +109,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, Transition } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
@@ -113,6 +117,8 @@ const news = computed(() => store.state.news.data);
 const newsList = computed(() => store.state.news.news);
 const active = ref(0);
 const screenWidth = ref(document.documentElement.scrollWidth);
+const animationShow = computed(() => store.state.animation);
+
 const selectActivity = (e) => {
   if (e == 0) {
     store.commit("handleChangeNews", news.value);
