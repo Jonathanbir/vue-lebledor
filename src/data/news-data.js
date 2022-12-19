@@ -5,6 +5,7 @@ const NEWS_DATA = [
     descr: "全台最大串連！邀你打開五感迎世界冠軍",
     date: "2022/12/05~2022/12/18",
     imgSize: "4",
+    selected: "master",
   },
   {
     src: "src/images/news/10003.jpg",
@@ -12,6 +13,7 @@ const NEWS_DATA = [
     descr: "測_新竹竹北店 一站式聚餐首選",
     date: "2022/12/14~2022/12/20",
     imgSize: "4",
+    selected: "branch",
   },
   {
     src: "src/images/news/10004.png",
@@ -19,6 +21,7 @@ const NEWS_DATA = [
     descr: "12/1-2/28 歡慶首選",
     date: "2022/12/01~2023/02/28",
     imgSize: "5",
+    selected: "master",
   },
   {
     src: "src/images/news/10005.jpg",
@@ -26,6 +29,7 @@ const NEWS_DATA = [
     descr: "歡聚歲末繽紛食光，一起分享奇雞美味！",
     date: "2022/11/21~2022/12/25",
     imgSize: "3",
+    selected: "branch",
   },
   {
     src: "src/images/news/10006.jpg",
@@ -33,6 +37,7 @@ const NEWS_DATA = [
     descr: "即日起 每日 21:00 - 23:00",
     date: "即日起",
     imgSize: "4",
+    selected: "master",
   },
   {
     src: "src/images/news/10007.jpg",
@@ -40,6 +45,7 @@ const NEWS_DATA = [
     descr: "《南洋風味叻沙鍋》只要半價",
     date: "即日起~2022/11/30",
     imgSize: "4",
+    selected: "branch",
   },
   {
     src: "src/images/news/10008.jpg",
@@ -47,6 +53,7 @@ const NEWS_DATA = [
     descr: "立包廂BAR，歡唱享美味",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10009.jpg",
@@ -54,6 +61,7 @@ const NEWS_DATA = [
     descr: "新型態餐酒KTV，歡樂開唱吃美食",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10010.jpg",
@@ -61,6 +69,7 @@ const NEWS_DATA = [
     descr: "主廚團隊料理一鍵宅配到府 全方位應援自煮生活",
     date: "即日起",
     imgSize: "5",
+    selected: "master",
   },
   {
     src: "src/images/news/10011.jpg",
@@ -68,6 +77,7 @@ const NEWS_DATA = [
     descr: "歡聚時刻，與大家一起分享經典美味",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10012.jpg",
@@ -75,6 +85,7 @@ const NEWS_DATA = [
     descr: "健康吃也能很歡樂",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10013.png",
@@ -82,6 +93,7 @@ const NEWS_DATA = [
     descr: "每週一至週五 11:00-17:00供應 ※假日/國定假日不供應",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10014.png",
@@ -89,6 +101,7 @@ const NEWS_DATA = [
     descr: "加入會員，專屬優惠",
     date: "即日起",
     imgSize: "4",
+    selected: "master",
   },
   {
     src: "src/images/news/10015.png",
@@ -96,6 +109,7 @@ const NEWS_DATA = [
     descr: "週一至週五 商業午餐美味價（均附例湯）※假日/國定假日不供應 ",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10016.jpg",
@@ -103,6 +117,7 @@ const NEWS_DATA = [
     descr: "下午時段啤酒優惠享不完",
     date: "即日起",
     imgSize: "6",
+    selected: "master",
   },
   {
     src: "src/images/news/10017.jpg",
@@ -110,6 +125,7 @@ const NEWS_DATA = [
     descr: "加入會員享有專屬優惠！",
     date: "即日起",
     imgSize: "4",
+    selected: "branch",
   },
   {
     src: "src/images/news/10018.jpg",
@@ -117,6 +133,7 @@ const NEWS_DATA = [
     descr: "加入「金色三麥 Lebledor」好友，掌握最新資訊與優惠！",
     date: "即日起",
     imgSize: "4",
+    selected: "master",
   },
   {
     src: "src/images/news/10019.jpg",
@@ -124,6 +141,7 @@ const NEWS_DATA = [
     descr: "給懂得享受與善待自己的你！",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10020.jpg",
@@ -131,6 +149,7 @@ const NEWS_DATA = [
     descr: "來一場專屬味蕾的全新體驗！",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10021.jpg",
@@ -138,6 +157,7 @@ const NEWS_DATA = [
     descr: "每週一至週五 11:00-17:00供應 ※假日/國定假日不供應",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10022.png",
@@ -145,6 +165,7 @@ const NEWS_DATA = [
     descr: "同時可享受 精選美食與精釀啤酒（或調酒）",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10023.jpg",
@@ -152,6 +173,7 @@ const NEWS_DATA = [
     descr: "金色三麥把生日變大啦！來金色三麥過生日，壽星送最大。全年適用！ ",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10024.jpg",
@@ -159,6 +181,7 @@ const NEWS_DATA = [
     descr: "真功夫精燉熬煮，滴滴精華 湯頭鮮美",
     date: "即日起",
     imgSize: "4",
+    selected: "master",
   },
   {
     src: "src/images/news/10025.jpg",
@@ -166,6 +189,7 @@ const NEWS_DATA = [
     descr: "微醺的午後時光",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
   {
     src: "src/images/news/10026.png",
@@ -174,6 +198,7 @@ const NEWS_DATA = [
     descr: "好市多經典大拼盤＆現釀啤酒套券說明",
     date: "即日起",
     imgSize: "5",
+    selected: "branch",
   },
 ];
 export default NEWS_DATA;

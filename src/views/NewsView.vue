@@ -9,9 +9,45 @@
     </header>
     <div class="context">
       <div id="news-fliter" class="category">
-        <a href="#cate-all" class="active">所有活動</a>
-        <a href="#cate-1">全店活動</a>
-        <a href="#cate-2">分店活動</a>
+        <a
+          :style="
+            active == 0 && {
+              borderBottom: '1px solid #9d8c7e',
+              color: '#ccb7a4',
+            }
+          "
+          @click="
+            active = 0;
+            selectActivity(active);
+          "
+          >所有活動</a
+        >
+        <a
+          :style="
+            active == 1 && {
+              borderBottom: '1px solid #9d8c7e',
+              color: '#ccb7a4',
+            }
+          "
+          @click="
+            active = 1;
+            selectActivity(active);
+          "
+          >全店活動</a
+        >
+        <a
+          :style="
+            active == 2 && {
+              borderBottom: '1px solid #9d8c7e',
+              color: '#ccb7a4',
+            }
+          "
+          @click="
+            active = 2;
+            selectActivity(active);
+          "
+          >分店活動</a
+        >
       </div>
       <div id="event-list" class="event-list">
         <div
@@ -21,7 +57,7 @@
             (item.imgSize == '5' && 'item span5') ||
             (item.imgSize == '6' && 'item span6')
           "
-          v-for="(item, index) in news"
+          v-for="(item, index) in newsList"
         >
           <div class="cover">
             <img :src="item.src" />
@@ -74,7 +110,20 @@ import { useStore } from "vuex";
 
 const store = useStore();
 const news = computed(() => store.state.news.data);
+const newsList = computed(() => store.state.news.news);
+const active = ref(0);
 const screenWidth = ref(document.documentElement.scrollWidth);
+const selectActivity = (e) => {
+  if (e == 0) {
+    store.commit("handleChangeNews", news.value);
+  } else if (e == 1) {
+    const news1 = news.value.filter((item) => item.selected == "master");
+    store.commit("handleChangeNews", news1);
+  } else {
+    const news2 = news.value.filter((item) => item.selected == "branch");
+    store.commit("handleChangeNews", news2);
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -137,6 +186,7 @@ const screenWidth = ref(document.documentElement.scrollWidth);
         display: inline-block;
         border-bottom: 1px solid transparent;
         font-weight: 700;
+        cursor: pointer;
       }
       a:hover {
         border-bottom: 1px solid #9d8c7e;

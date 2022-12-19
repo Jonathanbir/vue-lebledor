@@ -8,12 +8,14 @@
     <nav
       class="menu-nav-desk"
       :style="
-        scroll && {
-          position: 'fixed',
-          top: '40px',
-          zIndex: '98',
-          height: '40px',
-        }
+        screenWidth > 530
+          ? scroll && {
+              position: 'fixed',
+              top: '40px',
+              zIndex: '98',
+              height: '40px',
+            }
+          : { position: 'fixed' }
       "
     >
       <div class="menu-nav-container">
@@ -21,11 +23,13 @@
           <li
             class=""
             :style="
-              scroll && {
-                position: 'fixed',
-                top: '40px',
-                fontSize: '13px',
-              }
+              screenWidth > 530
+                ? scroll && {
+                    position: 'fixed',
+                    top: '40px',
+                    fontSize: '13px',
+                  }
+                : {}
             "
           >
             <a href="#signature-menu">{{ menunow.name }}</a>
@@ -382,7 +386,7 @@ onMounted(() => {
     .signature-menu {
       .kv-canvas {
         position: relative;
-        top: 50px;
+        top: 80px;
         background-repeat: no-repeat;
         text-align: left;
         height: 0;
@@ -390,6 +394,7 @@ onMounted(() => {
         background: no-repeat 50% 0;
         -webkit-background-size: 100% auto;
         background-size: 100% auto;
+        overflow: hidden;
         .kv-title {
           width: 400px;
           top: -135px;

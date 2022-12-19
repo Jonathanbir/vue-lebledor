@@ -35,6 +35,7 @@ export const store = createStore({
       },
       news: {
         data: NEWS_DATA,
+        news: NEWS_DATA,
       },
     };
   },
@@ -65,6 +66,9 @@ export const store = createStore({
     },
     handleChangeLocationsNumbers(state, value) {
       state.locations.numbers = value;
+    },
+    handleChangeNews(state, value) {
+      state.news.news = value;
     },
     handleChangeScroll(state, value) {
       state.locations.scroll = value;
