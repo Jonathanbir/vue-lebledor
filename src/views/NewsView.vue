@@ -100,7 +100,7 @@
         style="display: none"
       >
         <div id="infscr-loading" style="display: none">
-          <img alt="Loading..." src="/img/news/loading.gif" />
+          <img alt="Loading..." />
           <div><em>Loading the next set of posts...</em></div>
         </div>
       </div>
