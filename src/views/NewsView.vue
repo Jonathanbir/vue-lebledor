@@ -163,7 +163,6 @@ const selectActivity = (e) => {
         width: 423px;
         height: 58px;
         margin: 255px auto 90px;
-        text-indent: 100%;
         white-space: nowrap;
       }
       .sprite-article-new-title {

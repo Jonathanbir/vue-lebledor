@@ -48,13 +48,13 @@
           >餐廳據點 <img class="arrow-triggle" src="../images/10018.png"
         /></RouterLink>
         <RouterLink to="/news">最新消息</RouterLink>
-        <RouterLink to="/members">會員優惠</RouterLink>
+        <RouterLink to="/">會員優惠</RouterLink>
         <RouterLink class="button-rectangle" to="/">
           <div class="text">訂位/點餐</div>
         </RouterLink>
-        <RouterLink class="small" to="/about">品牌介紹</RouterLink>
-        <RouterLink class="small" to="/contact">聯絡我們</RouterLink>
-        <RouterLink class="small" to="/recruitement">企業徵才</RouterLink>
+        <RouterLink class="small" to="/">品牌介紹</RouterLink>
+        <RouterLink class="small" to="/">聯絡我們</RouterLink>
+        <RouterLink class="small" to="/">企業徵才</RouterLink>
       </nav>
     </div>
   </header>
